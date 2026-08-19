@@ -1,0 +1,123 @@
+/* ==========================================================================
+   SGF WEB 4.3.25 · ESTILOS REALES ALINEADOS DE MÓDULOS
+   Capa final y encapsulada. Evita que estilos globales posteriores deformen
+   Reportes y Publicación de Aplicación dentro del iframe principal.
+   ========================================================================== */
+
+/* Base segura para todos los módulos incrustados: ningún hijo puede ampliar
+   el ancho del iframe. El desplazamiento horizontal queda en el componente
+   que realmente lo necesita (por ejemplo, una tabla), no en toda la página. */
+body.modo-modulo-iframe{width:100%;max-width:100%;overflow-x:clip}
+body.modo-modulo-iframe .main-area,
+body.modo-modulo-iframe .content,
+body.modo-modulo-iframe .content>*{min-width:0;max-width:100%}
+body.modo-modulo-iframe :where(.dashboard-grid,.dashboard-insights,.kpi-grid,.card,.card-header,.form-grid,.table-wrap){min-width:0;max-width:100%}
+body.modo-modulo-iframe :where(img,svg,canvas,video){max-width:100%}
+
+/* --------------------------------------------------------------------------
+   ACTUALIZACIÓN DE APLICACIÓN · formulario, metadatos, filtros y tablas
+   -------------------------------------------------------------------------- */
+.modulo-actualizaciones-app .content,
+.modulo-actualizaciones-app .content>*,
+.modulo-actualizaciones-app .dashboard-grid,
+.modulo-actualizaciones-app .dashboard-grid>.card{width:100%;min-width:0;max-width:100%}
+.modulo-actualizaciones-app .dashboard-grid{grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr)!important;align-items:start}
+.modulo-actualizaciones-app .dashboard-grid>.card{overflow:hidden}
+.modulo-actualizaciones-app .card-header{min-width:0;max-width:100%;flex-wrap:wrap}
+.modulo-actualizaciones-app .card-header>div{min-width:0;flex:1 1 260px}
+.modulo-actualizaciones-app .card-header :where(h3,p){overflow-wrap:anywhere}
+
+.modulo-actualizaciones-app .app-update-upload-form{
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  width:100%;max-width:100%;min-width:0;gap:14px;
+}
+.modulo-actualizaciones-app .app-update-upload-form>*{min-width:0;max-width:100%}
+.modulo-actualizaciones-app .app-update-upload-form .full,
+.modulo-actualizaciones-app .app-update-upload-form .form-actions{grid-column:1/-1!important}
+.modulo-actualizaciones-app .app-apk-drop{position:relative;width:100%;max-width:100%;overflow:hidden}
+.modulo-actualizaciones-app .app-apk-metadata{
+  width:100%;max-width:100%;min-width:0;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+}
+.modulo-actualizaciones-app .app-apk-metadata>span{min-width:0;max-width:100%;overflow:hidden}
+.modulo-actualizaciones-app .app-apk-metadata .hash{grid-column:1/-1!important}
+.modulo-actualizaciones-app .app-apk-metadata b{max-width:100%;overflow-wrap:anywhere;word-break:break-word}
+.modulo-actualizaciones-app .app-upload-progress,
+.modulo-actualizaciones-app .app-upload-success,
+.modulo-actualizaciones-app .advanced-filter-panel{width:100%;max-width:100%;min-width:0}
+.modulo-actualizaciones-app .form-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px}
+.modulo-actualizaciones-app .form-actions .btn{max-width:100%;white-space:normal;text-align:center}
+.modulo-actualizaciones-app .table-wrap{
+  width:100%;max-width:100%;min-width:0;overflow-x:auto!important;overflow-y:hidden;
+  -webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;
+}
+.modulo-actualizaciones-app .table-wrap table{width:max-content;min-width:100%;max-width:none;table-layout:auto}
+
+@media(max-width:1180px){.modulo-actualizaciones-app .dashboard-grid{grid-template-columns:1fr!important}}
+@media(max-width:760px){
+  .modulo-actualizaciones-app .app-update-upload-form{grid-template-columns:1fr!important}
+  .modulo-actualizaciones-app .app-update-upload-form .full,
+  .modulo-actualizaciones-app .app-update-upload-form .form-actions{grid-column:1!important}
+  .modulo-actualizaciones-app .app-apk-metadata{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .modulo-actualizaciones-app .app-apk-metadata .hash{grid-column:1/-1!important}
+}
+@media(max-width:520px){
+  .modulo-actualizaciones-app .app-apk-metadata{grid-template-columns:1fr!important}
+  .modulo-actualizaciones-app .app-apk-metadata .hash{grid-column:1!important}
+  .modulo-actualizaciones-app .form-actions{display:grid!important;grid-template-columns:1fr}
+  .modulo-actualizaciones-app .form-actions .btn{width:100%}
+}
+
+
+/* SGF 4.3.29 · controles Gerencia, acceso suspendido y Geocerca */
+.assignment-alert-switch.compact{display:inline-flex;align-items:center;gap:8px;max-width:300px;margin:0;padding:7px 10px;border-radius:12px}
+.access-suspended-view{text-align:center;padding:12px}.access-suspended-icon{width:72px;height:72px;margin:0 auto 16px;border-radius:50%;display:grid;place-items:center;font-size:38px;font-weight:900;background:rgba(220,38,38,.12);color:#dc2626}.access-suspended-view h3{max-width:620px;margin:0 auto 18px;line-height:1.45}.nexo-restricted-input{padding:12px;border:1px solid var(--border);border-radius:12px;background:var(--surface-soft)}
+.geocerca-layout .fleet-map{min-height:520px}.geocerca-filter-card .form-actions{align-items:end}.modulo-geocerca .content{overflow-x:hidden}@media(max-width:760px){.geocerca-layout .fleet-map{min-height:420px}.assignment-alert-switch.compact{max-width:none;width:100%}}
+
+.mapa-marcador>i.con-foto{width:46px!important;height:46px!important;border-radius:50%!important;background-size:cover!important;background-position:center!important;border:3px solid #fff!important;box-shadow:0 4px 14px rgba(0,0,0,.28)!important;color:transparent!important}
+
+
+/* SGF 4.3.33 · turnos cíclicos y popup GEOCERCA sin desborde */
+.turno-programacion-panel{display:grid;gap:12px;padding:14px;border:1px solid var(--line);border-radius:16px;background:var(--surface-2)}
+.turno-calendar-head{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;text-align:center;text-transform:capitalize}.turno-calendar-week,.turno-calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.turno-calendar-week span{padding:4px;text-align:center;font-size:10px;font-weight:800;color:var(--muted)}.turno-calendar-grid>span{min-width:0;min-height:54px;padding:7px 4px;border:1px solid var(--line);border-radius:10px;text-align:center;background:var(--surface)}.turno-calendar-grid>span b,.turno-calendar-grid>span small{display:block}.turno-calendar-grid>span small{margin-top:3px;font-size:8px}.turno-calendar-grid>span.trabajo{border-color:#e0e0e0;background:#f4f4f4;color:#000000}.turno-calendar-grid>span.descanso{background:#f4f6f7;color:#6b7b83}.turno-calendar-grid>span.otro-mes{opacity:.42}.turno-calendar-grid>span.hoy{outline:2px solid var(--primary);outline-offset:1px}.turno-calendar-legend{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:10px;color:var(--muted)}.turno-calendar-legend i{width:10px;height:10px;border-radius:50%}.turno-calendar-legend i.trabajo{background:#000000}.turno-calendar-legend i.descanso{background:#a5b0b6}
+.modulo-geocerca .mapa-detalle{box-sizing:border-box;min-width:0!important;overflow-wrap:anywhere;word-break:break-word;white-space:normal}.modulo-geocerca .mapa-detalle-acciones .btn{min-width:0;white-space:normal;overflow-wrap:anywhere;line-height:1.2}.modulo-geocerca .mapa-detalle-contenido{min-width:0}.modulo-geocerca .mapa-detalle-contenido img{float:none!important;display:block;margin:0 auto 10px!important;max-width:54px}.modulo-geocerca .mapa-detalle span,.modulo-geocerca .mapa-detalle b,.modulo-geocerca .mapa-detalle small{max-width:100%;white-space:normal;overflow-wrap:anywhere}.mapa-detalle.detalle-abajo{bottom:auto!important;top:43px}.mapa-detalle[data-ajuste="1"]{will-change:transform}
+@media(max-width:600px){.turno-calendar-grid>span{min-height:44px;padding:5px 2px}.turno-calendar-grid>span small{font-size:7px}.turno-calendar-week span{font-size:8px}.turno-programacion-panel{padding:10px}.modulo-geocerca .mapa-detalle{min-width:0!important}}
+
+/* SGF 4.3.34 · GEOCERCA amplio + fotografías del Check-in */
+.modulo-geocerca .geocerca-map-principal .fleet-map{min-height:540px;width:100%}
+.modulo-geocerca .geocerca-informacion-inferior,.modulo-geocerca .geocerca-eventos-inferiores{margin-top:16px;width:100%}
+.checkin-photo-evidence{padding:14px;border:1px solid var(--line,#e0e0e0);border-radius:14px;background:var(--surface,#fff)}
+.checkin-photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:10px}
+.checkin-photo-card{display:grid;gap:7px;color:inherit;text-decoration:none;padding:8px;border:1px solid var(--line,#e0e0e0);border-radius:12px;background:var(--surface,#fff)}
+.checkin-photo-card img{width:100%;height:130px;object-fit:cover;border-radius:9px;background:#e8efec}
+.checkin-photo-card span{font-size:11px;font-weight:700;overflow-wrap:anywhere}
+@media(max-width:680px){.modulo-geocerca .geocerca-map-principal .fleet-map{min-height:400px}.checkin-photo-grid{grid-template-columns:1fr 1fr}.checkin-photo-card img{height:115px}}
+
+/* E-fleet R8.2.26 · Mantenciones preventivas por kilometraje */
+.maintenance-km-state{display:inline-flex;align-items:center;justify-content:center;min-width:124px;padding:6px 10px;border:1px solid #bfc4ca;border-radius:999px;background:#fff;color:#111;font-size:12px;font-weight:800;white-space:nowrap}
+.maintenance-km-state.warning{border-color:#9a6700;background:#fff8db;color:#6b4d00}
+.maintenance-km-state.danger{border-color:#b45309;background:#fff1e6;color:#7c2d12}
+.maintenance-km-state.critical{border-color:#b91c1c;background:#fff0f0;color:#991b1b;box-shadow:0 0 0 2px rgba(185,28,28,.08)}
+.maintenance-history{margin-top:18px}
+.maintenance-history-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:14px}
+.maintenance-history-card{border:1px solid #d8dadd;border-radius:18px;background:#fff;color:#111;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.maintenance-history-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px}
+.maintenance-history-head span{font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#555}
+.maintenance-history-head h4{margin:3px 0 0;font-size:17px;color:#111}
+.maintenance-history-grid-data{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.maintenance-history-grid-data>div{padding:10px;border:1px solid #e2e4e7;border-radius:12px;background:#fafafa}
+.maintenance-history-grid-data small{display:block;color:#666;font-size:11px;margin-bottom:4px}
+.maintenance-history-grid-data b{color:#111;font-size:13px;word-break:break-word}
+.maintenance-history-card>p{margin:12px 0 0;padding-top:12px;border-top:1px solid #e4e4e4;color:#444;font-size:13px;line-height:1.5}
+body.dark .maintenance-history-card,body.oscuro .maintenance-history-card,html.tema-oscuro-inicial body:not(.dark):not(.oscuro) .maintenance-history-card{background:#080808;color:#fff;border-color:#3a3a3a;box-shadow:none}
+body.dark .maintenance-history-head h4,body.oscuro .maintenance-history-head h4,html.tema-oscuro-inicial body:not(.dark):not(.oscuro) .maintenance-history-head h4,
+body.dark .maintenance-history-grid-data b,body.oscuro .maintenance-history-grid-data b,html.tema-oscuro-inicial body:not(.dark):not(.oscuro) .maintenance-history-grid-data b{color:#fff}
+body.dark .maintenance-history-head span,body.oscuro .maintenance-history-head span,html.tema-oscuro-inicial body:not(.dark):not(.oscuro) .maintenance-history-head span,
+body.dark .maintenance-history-grid-data small,body.oscuro .maintenance-history-grid-data small,html.tema-oscuro-inicial body:not(.dark):not(.oscuro) .maintenance-history-grid-data small{color:#cfcfcf}
+body.dark .maintenance-history-grid-data>div,body.oscuro .maintenance-history-grid-data>div,html.tema-oscuro-inicial body:not(.dark):not(.oscuro) .maintenance-history-grid-data>div{background:#111;border-color:#333}
+body.dark .maintenance-history-card>p,body.oscuro .maintenance-history-card>p,html.tema-oscuro-inicial body:not(.dark):not(.oscuro) .maintenance-history-card>p{color:#ddd;border-color:#333}
+body.dark .maintenance-km-state,body.oscuro .maintenance-km-state,html.tema-oscuro-inicial body:not(.dark):not(.oscuro) .maintenance-km-state{background:#0c0c0c;color:#fff;border-color:#555}
+body.dark .maintenance-km-state.warning,body.oscuro .maintenance-km-state.warning,html.tema-oscuro-inicial body:not(.dark):not(.oscuro) .maintenance-km-state.warning{border-color:#eab308;color:#fde68a}
+body.dark .maintenance-km-state.danger,body.oscuro .maintenance-km-state.danger,html.tema-oscuro-inicial body:not(.dark):not(.oscuro) .maintenance-km-state.danger{border-color:#f97316;color:#fed7aa}
+body.dark .maintenance-km-state.critical,body.oscuro .maintenance-km-state.critical,html.tema-oscuro-inicial body:not(.dark):not(.oscuro) .maintenance-km-state.critical{border-color:#ef4444;color:#fecaca}
+@media(max-width:760px){.maintenance-history-grid{grid-template-columns:1fr}.maintenance-history-grid-data{grid-template-columns:1fr 1fr}.resource-vehicles .table-wrap,.resource-maintenance .table-wrap{overflow-x:auto}}

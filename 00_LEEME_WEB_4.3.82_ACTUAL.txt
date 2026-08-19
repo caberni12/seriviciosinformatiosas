@@ -1,0 +1,33 @@
+E-fleet Web responsive 4.3.82 · R8.2.40
+
+CHECK-IN · TARJETAS COMPACTAS DE ASIGNACIÓN
+- Conductor y Supervisor GEO ven una tarjeta pequeña "Mi asignación actual".
+- La tarjeta muestra patente, marca/modelo, fecha y estado QR.
+- La tarjeta permanece visible antes y después de validar el QR.
+- Administrador, Gerencia y Operador ven TODAS las tarjetas de asignación vigentes del Check-in.
+- Se muestran únicamente asignaciones activas: ASIGNADO, CHECKIN_PENDIENTE, CHECKIN_LISTO y RUTA_ASIGNADA.
+- La lista de inspección del Conductor/Supervisor continúa bloqueada hasta validar el QR físico del vehículo asignado.
+- Token QR: 15 minutos, consumido al guardar el Check-in.
+
+COMPATIBILIDAD
+- Requiere flotas-api 4.3.85 para tarjetas de Check-in y geocodificación robusta de domicilios.
+- No requiere SQL nuevo.
+- Nuevo Service Worker / bundle físico para evitar caché de 4.3.79.
+
+DISEÑO R8.2.40 · BOTONES AZUL CLARO + BUSCADORES
+- Revisión visual completa de todos los módulos Web.
+- Los botones operativos que heredaban fondo negro/negro oscuro ahora usan azul claro/eléctrico (#3B82F6 / #2563EB).
+- Botones secundarios: fondo azul muy suave (#EFF8FF) con borde celeste.
+- Rojo, ámbar y verde se conservan exclusivamente para peligro, advertencia y estados positivos.
+- Historial de cargas y todos los buscadores de tablas/toolbars usan el nuevo control redondeado con icono, borde celeste, fondo blanco/azul muy suave y foco cian.
+- Se creó el asset físico efleet-palette.4382.css y un caché nuevo R8.2.40 para impedir que vuelva a mostrarse el CSS oscuro anterior.
+
+Corrección R8.2.40: el domicilio del módulo Usuarios geocodifica automáticamente, con Google Places New y respaldo Nominatim.
+
+
+USUARIOS · DOMICILIO Y COORDENADAS
+- Al escribir una dirección, E-fleet intenta obtener latitud/longitud automáticamente al terminar de editar y también antes de guardar.
+- Se agregó el botón “Buscar coordenadas” para forzar una nueva resolución.
+- Si Google Places devuelve la dirección pero no puede resolver sus coordenadas, flotas-api 4.3.85 reintenta con Nominatim como respaldo.
+- Se prioriza el número de calle solicitado cuando existen varias coincidencias.
+- Las coordenadas manuales válidas siguen siendo aceptadas.
