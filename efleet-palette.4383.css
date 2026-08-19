@@ -529,3 +529,39 @@ body.dark :where(.auth-heading h2,.encabezado-formulario h2,.empresa-conectada-a
 body.dark :where(.auth-heading p,.descripcion-conexion-inicial,.empresa-conectada-acceso span,.estado-empresa-pendiente span,.helper,.tarjeta-acceso .helper),body.oscuro :where(.auth-heading p,.descripcion-conexion-inicial,.empresa-conectada-acceso span,.estado-empresa-pendiente span,.helper,.tarjeta-acceso .helper),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.auth-heading p,.descripcion-conexion-inicial,.empresa-conectada-acceso span,.estado-empresa-pendiente span,.helper,.tarjeta-acceso .helper){color:#5F7285!important}
 body.dark :where(.auth-card input,.auth-card select,.tarjeta-acceso input,.tarjeta-acceso select,.tarjeta-acceso textarea),body.oscuro :where(.auth-card input,.auth-card select,.tarjeta-acceso input,.tarjeta-acceso select,.tarjeta-acceso textarea),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.auth-card input,.auth-card select,.tarjeta-acceso input,.tarjeta-acceso select,.tarjeta-acceso textarea){background:#F4F9FF!important;color:#173047!important;border-color:#B9D4E7!important}
 body.dark :where(.backend-pill),body.oscuro :where(.backend-pill),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.backend-pill){background:#EFF8FF!important;color:#24506E!important;border-color:#CDE3F2!important}
+
+/* =====================================================================
+   E-fleet R8.2.43 · HOTFIX visual conexiones en línea / tarjeta estado rápido
+   Evita desborde del estado y resalta GPS activo en verde.
+   ===================================================================== */
+.device-card .device-title{align-items:flex-start!important;gap:8px!important;flex-wrap:wrap!important}
+.device-card .device-title>b{min-width:0;flex:1 1 150px!important;line-height:1.2!important}
+.device-card .device-title .status,
+.device-card .device-title .badge,
+.device-card .device-title [class*="status"]{
+  flex:0 1 auto!important;
+  max-width:100%!important;
+  white-space:nowrap!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+  font-size:10px!important;
+  line-height:1.2!important;
+  padding:5px 10px!important;
+  border-radius:999px!important;
+}
+.device-card.online .device-title .status,
+.device-card.online .device-title .badge{background:#ECFDF5!important;color:#166534!important;border:1px solid #86EFAC!important}
+.device-card.offline .device-title .status,
+.device-card.offline .device-title .badge{background:#FEF2F2!important;color:#991B1B!important;border:1px solid #FECACA!important}
+.device-card .session-facts{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+.device-card .session-facts>span{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;line-height:1.35!important;word-break:break-word!important}
+.device-card .session-facts>span b{display:block!important;margin-bottom:3px!important}
+.device-card .session-facts .gps-state.gps-on{background:#ECFDF5!important;border:1px solid #86EFAC!important;color:#166534!important;font-weight:800!important}
+.device-card .session-facts .gps-state.gps-off{background:#FEF2F2!important;border:1px solid #FECACA!important;color:#991B1B!important;font-weight:800!important}
+.device-card.online .device-dot{background:#22C55E!important;box-shadow:0 0 0 5px rgba(34,197,94,.18)!important}
+.connection-quick-item.online>i,.connection-state.online>i{background:#22C55E!important;box-shadow:0 0 0 4px rgba(34,197,94,.18)!important}
+.connection-quick-item.online em,.connection-state.online{color:#166534!important}
+@media(max-width:720px){
+  .device-card .session-facts{grid-template-columns:1fr!important}
+  .device-card .device-title .status,.device-card .device-title .badge{max-width:100%!important}
+}
