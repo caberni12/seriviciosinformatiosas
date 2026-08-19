@@ -446,3 +446,86 @@ body.dark :where(.search-box,.table-search) input::placeholder,body.oscuro :wher
 .efleet-user-home-geocode [data-user-geocode-home]{margin-left:auto;flex:0 0 auto}
 .efleet-user-home-geocode [data-domicilio-geo-estado].ok{color:#05634A!important;font-weight:700}
 @media(max-width:640px){.efleet-user-home-geocode{flex-wrap:wrap}.efleet-user-home-geocode [data-user-geocode-home]{width:100%;margin-left:0}}
+
+/* =====================================================================
+   E-fleet R8.2.42 · HOTFIX VISUAL TEMA OSCURO / LOGIN / INDICADORES
+   Reduce negro puro, mejora contraste y unifica azul claro operativo.
+   ===================================================================== */
+:root{
+  --ef-night-bg-2:#081725!important;
+  --ef-night-surface-2:#0E2438!important;
+  --ef-night-surface-3:#13304A!important;
+  --ef-night-topbar:#1F6FAE!important;
+  --ef-night-topbar-2:#2B8AC6!important;
+  --ef-night-border-2:#3E6B8E!important;
+  --ef-night-text-2:#F8FBFF!important;
+  --ef-night-muted-2:#C6D7E6!important;
+  --ef-online:#22C55E!important;
+}
+body.dark,body.oscuro,html.tema-oscuro-inicial body:not(.dark):not(.oscuro){
+  background:var(--ef-night-bg-2)!important;
+  color:var(--ef-night-text-2)!important;
+  --ui-bg:var(--ef-night-bg-2)!important;
+  --ui-surface:var(--ef-night-surface-2)!important;
+  --ui-surface-soft:var(--ef-night-surface-3)!important;
+  --ui-surface-muted:#173852!important;
+  --ui-text:var(--ef-night-text-2)!important;
+  --ui-text-soft:var(--ef-night-muted-2)!important;
+  --ui-border:var(--ef-night-border-2)!important;
+  --ui-primary:#60A5FA!important;
+  --ui-primary-strong:#2B8AC6!important;
+  --ui-primary-soft:#173A5A!important;
+}
+body.dark :where(.card,.panel,.table-wrap,.modal,.modal-content,.form-grid,.content,.module-content,.tarjeta-acceso,.panel-acceso,.geo-card,.info-item,.toolbar,.filters-card,.connection-test-item,.connection-test-placeholder),
+body.oscuro :where(.card,.panel,.table-wrap,.modal,.modal-content,.form-grid,.content,.module-content,.tarjeta-acceso,.panel-acceso,.geo-card,.info-item,.toolbar,.filters-card,.connection-test-item,.connection-test-placeholder),
+html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.card,.panel,.table-wrap,.modal,.modal-content,.form-grid,.content,.module-content,.tarjeta-acceso,.panel-acceso,.geo-card,.info-item,.toolbar,.filters-card,.connection-test-item,.connection-test-placeholder){
+  background:var(--ef-night-surface-2)!important;
+  color:var(--ef-night-text-2)!important;
+  border-color:var(--ef-night-border-2)!important;
+  box-shadow:none!important;
+}
+body.dark :where(input,select,textarea,.field input,.field select,.field textarea,.toolbar input,.toolbar select,.manual-code input,.scanner-controls select),
+body.oscuro :where(input,select,textarea,.field input,.field select,.field textarea,.toolbar input,.toolbar select,.manual-code input,.scanner-controls select),
+html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(input,select,textarea,.field input,.field select,.field textarea,.toolbar input,.toolbar select,.manual-code input,.scanner-controls select){
+  background:#112C45!important;
+  color:#FFFFFF!important;
+  border-color:#4B7A9D!important;
+}
+body.dark :where(input::placeholder,textarea::placeholder),body.oscuro :where(input::placeholder,textarea::placeholder),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(input::placeholder,textarea::placeholder){color:#C9D8E5!important;opacity:1!important}
+body.dark :where(.barra-modular,.topbar,.barra-superior,.topbar-shell),
+body.oscuro :where(.barra-modular,.topbar,.barra-superior,.topbar-shell),
+html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.barra-modular,.topbar,.barra-superior,.topbar-shell){
+  background:linear-gradient(135deg,var(--ef-night-topbar),var(--ef-night-topbar-2))!important;
+  color:#fff!important;
+  border-bottom-color:#6FB0DA!important;
+}
+body.dark :where(.barra-modular .titulo-modular h1,.barra-modular .titulo-modular span,.topbar-title h2,.topbar-title p,.heading h1,.heading p,.card-header h3,.card-header p,.estado-rapido h3,.estado-rapido p,.field>span,.helper,.topbar small,.backend-pill,.connection-config-meta,.connection-test-item span,.table-wrap td,.table-wrap th,.table-wrap b,.table-wrap span,.info-item,.badge,.chip,.state,.sidebar-brand span,.sidebar-brand strong,.brand span,.brand strong,.hero-copy p,.mensaje-acceso p,.mensaje-acceso .etiqueta,.empresa-conectada-acceso span,.estado-empresa-pendiente span),
+body.oscuro :where(.barra-modular .titulo-modular h1,.barra-modular .titulo-modular span,.topbar-title h2,.topbar-title p,.heading h1,.heading p,.card-header h3,.card-header p,.estado-rapido h3,.estado-rapido p,.field>span,.helper,.topbar small,.backend-pill,.connection-config-meta,.connection-test-item span,.table-wrap td,.table-wrap th,.table-wrap b,.table-wrap span,.info-item,.badge,.chip,.state,.sidebar-brand span,.sidebar-brand strong,.brand span,.brand strong,.hero-copy p,.mensaje-acceso p,.mensaje-acceso .etiqueta,.empresa-conectada-acceso span,.estado-empresa-pendiente span),
+html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.barra-modular .titulo-modular h1,.barra-modular .titulo-modular span,.topbar-title h2,.topbar-title p,.heading h1,.heading p,.card-header h3,.card-header p,.estado-rapido h3,.estado-rapido p,.field>span,.helper,.topbar small,.backend-pill,.connection-config-meta,.connection-test-item span,.table-wrap td,.table-wrap th,.table-wrap b,.table-wrap span,.info-item,.badge,.chip,.state,.sidebar-brand span,.sidebar-brand strong,.brand span,.brand strong,.hero-copy p,.mensaje-acceso p,.mensaje-acceso .etiqueta,.empresa-conectada-acceso span,.estado-empresa-pendiente span){
+  color:var(--ef-night-text-2)!important;
+}
+body.dark :where(.heading p,.card-header p,.helper,.topbar small,.backend-pill,.connection-test-item span,.estado-rapido small,.empresa-conectada-acceso span,.estado-empresa-pendiente span,.hero-copy p,.mensaje-acceso p),
+body.oscuro :where(.heading p,.card-header p,.helper,.topbar small,.backend-pill,.connection-test-item span,.estado-rapido small,.empresa-conectada-acceso span,.estado-empresa-pendiente span,.hero-copy p,.mensaje-acceso p),
+html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.heading p,.card-header p,.helper,.topbar small,.backend-pill,.connection-test-item span,.estado-rapido small,.empresa-conectada-acceso span,.estado-empresa-pendiente span,.hero-copy p,.mensaje-acceso p){
+  color:var(--ef-night-muted-2)!important;
+}
+body.dark :where(.estado-modular i,.estado-modular.listo i,.backend-pill i,.empresa-conectada-acceso>i,.estado-empresa-pendiente>i,.punto-estado,.status-dot,.status-indicator,.online-indicator,.chip-online i,.chip-activo i,.en-linea i,.estado-rapido .dot,.estado-rapido .status-dot,.connection-status-dot,.estado-conexion i,.estado-empresa i),
+body.oscuro :where(.estado-modular i,.estado-modular.listo i,.backend-pill i,.empresa-conectada-acceso>i,.estado-empresa-pendiente>i,.punto-estado,.status-dot,.status-indicator,.online-indicator,.chip-online i,.chip-activo i,.en-linea i,.estado-rapido .dot,.estado-rapido .status-dot,.connection-status-dot,.estado-conexion i,.estado-empresa i),
+html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.estado-modular i,.estado-modular.listo i,.backend-pill i,.empresa-conectada-acceso>i,.estado-empresa-pendiente>i,.punto-estado,.status-dot,.status-indicator,.online-indicator,.chip-online i,.chip-activo i,.en-linea i,.estado-rapido .dot,.estado-rapido .status-dot,.connection-status-dot,.estado-conexion i,.estado-empresa i){
+  background:var(--ef-online)!important;
+  color:#FFFFFF!important;
+  box-shadow:0 0 0 4px rgba(34,197,94,.18)!important;
+}
+body.dark :where(.table-wrap thead th,.modulo-tabla thead th,.table thead th),body.oscuro :where(.table-wrap thead th,.modulo-tabla thead th,.table thead th),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.table-wrap thead th,.modulo-tabla thead th,.table thead th){background:#12304B!important;color:#F8FBFF!important;border-bottom-color:#4B7A9D!important}
+body.dark :where(.btn,.boton-principal,.button-primary,.btn.soft,.boton-icono,.abrir-menu,.search-box,.search-input-wrap),body.oscuro :where(.btn,.boton-principal,.button-primary,.btn.soft,.boton-icono,.abrir-menu,.search-box,.search-input-wrap),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.btn,.boton-principal,.button-primary,.btn.soft,.boton-icono,.abrir-menu,.search-box,.search-input-wrap){border-color:#6FAED8!important}
+body.dark :where(.presentacion-acceso,.auth-screen),body.oscuro :where(.presentacion-acceso,.auth-screen),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.presentacion-acceso,.auth-screen){
+  background:linear-gradient(145deg,#0B2338 0%,#123A5C 52%,#1F6FAE 100%)!important;
+}
+body.dark :where(.presentacion-acceso:before,.presentacion-acceso:after,.auth-screen:before,.auth-screen:after),body.oscuro :where(.presentacion-acceso:before,.presentacion-acceso:after,.auth-screen:before,.auth-screen:after),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.presentacion-acceso:before,.presentacion-acceso:after,.auth-screen:before,.auth-screen:after){background:rgba(255,255,255,.10)!important}
+body.dark :where(.resumen-acceso article,.hero-preview div),body.oscuro :where(.resumen-acceso article,.hero-preview div),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.resumen-acceso article,.hero-preview div){background:rgba(255,255,255,.10)!important;border-color:rgba(255,255,255,.20)!important}
+body.dark :where(.panel-acceso,.auth-panel),body.oscuro :where(.panel-acceso,.auth-panel),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.panel-acceso,.auth-panel){background:linear-gradient(180deg,#EAF5FF 0%,#DDF0FF 100%)!important;color:#173047!important}
+body.dark :where(.tarjeta-acceso,.auth-card),body.oscuro :where(.tarjeta-acceso,.auth-card),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.tarjeta-acceso,.auth-card){background:#FFFFFF!important;color:#173047!important;border-color:#CDE0EF!important;box-shadow:0 20px 55px rgba(16,49,75,.16)!important}
+body.dark :where(.auth-heading h2,.encabezado-formulario h2,.empresa-conectada-acceso b,.estado-empresa-pendiente b,.auth-card .field>span,.tarjeta-acceso .field>span),body.oscuro :where(.auth-heading h2,.encabezado-formulario h2,.empresa-conectada-acceso b,.estado-empresa-pendiente b,.auth-card .field>span,.tarjeta-acceso .field>span),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.auth-heading h2,.encabezado-formulario h2,.empresa-conectada-acceso b,.estado-empresa-pendiente b,.auth-card .field>span,.tarjeta-acceso .field>span){color:#173047!important}
+body.dark :where(.auth-heading p,.descripcion-conexion-inicial,.empresa-conectada-acceso span,.estado-empresa-pendiente span,.helper,.tarjeta-acceso .helper),body.oscuro :where(.auth-heading p,.descripcion-conexion-inicial,.empresa-conectada-acceso span,.estado-empresa-pendiente span,.helper,.tarjeta-acceso .helper),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.auth-heading p,.descripcion-conexion-inicial,.empresa-conectada-acceso span,.estado-empresa-pendiente span,.helper,.tarjeta-acceso .helper){color:#5F7285!important}
+body.dark :where(.auth-card input,.auth-card select,.tarjeta-acceso input,.tarjeta-acceso select,.tarjeta-acceso textarea),body.oscuro :where(.auth-card input,.auth-card select,.tarjeta-acceso input,.tarjeta-acceso select,.tarjeta-acceso textarea),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.auth-card input,.auth-card select,.tarjeta-acceso input,.tarjeta-acceso select,.tarjeta-acceso textarea){background:#F4F9FF!important;color:#173047!important;border-color:#B9D4E7!important}
+body.dark :where(.backend-pill),body.oscuro :where(.backend-pill),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.backend-pill){background:#EFF8FF!important;color:#24506E!important;border-color:#CDE3F2!important}
