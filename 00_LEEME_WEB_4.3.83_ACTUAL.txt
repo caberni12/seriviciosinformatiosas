@@ -1,0 +1,15 @@
+E-fleet Web responsive 4.3.83 · R8.2.41
+
+USUARIOS · DOMICILIO / COORDENADAS / GEOCERCA
+- La dirección escrita se geocodifica directamente; ya no depende de seleccionar una sugerencia.
+- Antes de guardar, si faltan latitud/longitud, Web llama a geocodificarDireccionExacta.
+- flotas-api 4.3.86 intenta Google Geocoding directo cuando SGF_GOOGLE_MAPS_API_KEY está disponible.
+- Si Google no está configurado o no resuelve, usa Nominatim con búsqueda libre + estructurada y Photon como respaldo final.
+- El servidor vuelve a geocodificar en create/update de Usuarios: la base no queda con domicilio nuevo sin coordenadas válidas.
+- Si se borra el domicilio, también se limpian las coordenadas anteriores para evitar una geocerca obsoleta.
+- Las coordenadas manuales válidas continúan siendo aceptadas.
+- Nuevo bundle físico 4383 / Service Worker 4383 para evitar caché de R8.2.40.
+
+COMPATIBILIDAD
+- Requiere flotas-api 4.3.86.
+- No requiere SQL nuevo.
