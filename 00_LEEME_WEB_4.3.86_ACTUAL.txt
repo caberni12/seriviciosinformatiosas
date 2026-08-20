@@ -1,0 +1,11 @@
+E-fleet Web responsive 4.3.86 · R8.2.44
+
+HOTFIX WEB LIGHT ONLY
+- Tema oscuro eliminado definitivamente de la versión Web.
+- Se elimina el botón luna/sol en menú y módulos.
+- Se fuerza flotas_tema=light y se ignoran preferencias oscuras antiguas.
+- Configuración Web muestra únicamente tema claro.
+- Puntos En línea / Activo / GPS activo = verde.
+- Tarjetas Control de sesiones: estado corto (Activo/En línea/Inactivo) y sin desbordes.
+- Nuevos assets físicos 4386 y Service Worker 4386 para invalidar caché anterior.
+- Android no se modifica en este hotfix.

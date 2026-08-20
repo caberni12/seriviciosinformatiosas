@@ -24,7 +24,6 @@
   const PREAJUSTES=Object.freeze({
     monocromo:{nombre:'E-fleet logística profesional',valores:{...PREDETERMINADOS}},
     claro:{nombre:'E-fleet claro logístico',valores:{...PREDETERMINADOS,TEMA_PREDETERMINADO:'Claro'}},
-    oscuro:{nombre:'E-fleet oscuro azul marino',valores:{...PREDETERMINADOS,TEMA_PREDETERMINADO:'Oscuro'}}
   });
   function valido(value){return HEX.test(String(value||''));}
   function hex(value,fallback){return valido(value)?String(value).toUpperCase():fallback;}
@@ -57,7 +56,7 @@
       out.COLOR_FONDO_OSCURO=PREDETERMINADOS.COLOR_FONDO_OSCURO;out.COLOR_SUPERFICIE_OSCURO=PREDETERMINADOS.COLOR_SUPERFICIE_OSCURO;out.COLOR_TEXTO_OSCURO=PREDETERMINADOS.COLOR_TEXTO_OSCURO;out.COLOR_TEXTO_SECUNDARIO_OSCURO=PREDETERMINADOS.COLOR_TEXTO_SECUNDARIO_OSCURO;out.COLOR_BORDE_OSCURO=PREDETERMINADOS.COLOR_BORDE_OSCURO;
     }
     const modo=String(datos.TEMA_PREDETERMINADO||PREDETERMINADOS.TEMA_PREDETERMINADO);
-    out.TEMA_PREDETERMINADO=['Claro','Oscuro','Sistema'].includes(modo)?modo:'Sistema';
+    out.TEMA_PREDETERMINADO='Claro';
     return out;
   }
   function guardado(){try{return normalizar(JSON.parse(localStorage.getItem(CLAVE)||'{}'));}catch(_){return normalizar({});}}
@@ -96,16 +95,14 @@
   }
   function aplicarEmpresa(empresa={},opciones={}){return aplicar(empresa,opciones);}
   function modoOscuroInicial(){
-    const preferencia=localStorage.getItem('flotas_tema');
-    if(preferencia==='dark'||preferencia==='light')return preferencia==='dark';
-    const tema=guardado(),modo=tema.TEMA_PREDETERMINADO;
-    if(modo==='Oscuro')return true;if(modo==='Claro')return false;
-    return Boolean(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);
+    try{localStorage.setItem('flotas_tema','light');}catch(_){}
+    return false;
   }
   function aplicarGuardado(){return aplicar(guardado(),{guardar:false});}
   window.TemaFlotas=Object.freeze({CAMPOS,PREDETERMINADOS,PREAJUSTES,normalizar,guardado,aplicar,aplicarEmpresa,aplicarGuardado,modoOscuroInicial,contraste,mezclar,valido});
-  const oscuroInicial=modoOscuroInicial();
-  document.documentElement.classList.toggle('tema-oscuro-inicial',oscuroInicial);
-  document.documentElement.style.colorScheme=oscuroInicial?'dark':'light';
+  const oscuroInicial=false;
+  try{localStorage.setItem('flotas_tema','light');}catch(_){}
+  document.documentElement.classList.remove('tema-oscuro-inicial');
+  document.documentElement.style.colorScheme='light';
   aplicarGuardado();
 })();
