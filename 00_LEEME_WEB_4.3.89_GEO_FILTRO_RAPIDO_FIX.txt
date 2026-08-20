@@ -1,0 +1,27 @@
+E-FLEET MANAGEMENT SYSTEM · WEB 4.3.89
+HOTFIX · FILTRO RÁPIDO GEO PLANIFICADOR ADMIN
+
+Corrección principal
+- El campo “Filtro rápido de Local visitado” del Geo Planificador Admin vuelve a filtrar en tiempo real.
+- Buscar por nombre, dirección, código, referencia o ID oculta inmediatamente los Locales no coincidentes.
+- La búsqueda ignora mayúsculas/minúsculas y tildes.
+- Ejemplo: “casa Alejandro” deja visible Casa Alejandr y oculta los colegios/no coincidentes.
+- Los valores Duración, Traslado, Hora objetivo y checks seleccionados no se eliminan por filtrar; solo se ocultan visualmente.
+- Al borrar el filtro reaparecen todos los Locales.
+
+Causa corregida
+El JavaScript usaba el atributo hidden, pero la regla CSS de .geo-plan-local forzaba display:grid.
+Web 4.3.89 aplica ocultamiento explícito display:none!important y una regla CSS de respaldo.
+
+Caché
+- Nuevo geo-local-common.4389.js
+- Nuevo geo-local.4389.css
+- Service Worker mantiene su URL de registro, pero cambia el nombre de caché a 4.3.89 para purgar el cache estático anterior.
+- Se retiraron assets Geo/Performance obsoletos que podían mezclar caché.
+
+No se modificó
+- flotas-api
+- Android
+- reglas empresa_id
+- lógica de planificación o guardado
+- datos existentes

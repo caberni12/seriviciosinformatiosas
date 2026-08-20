@@ -1,0 +1,26 @@
+E-FLEET WEB 4.3.89 · VALIDACIÓN FILTRO RÁPIDO GEO ADMIN
+
+OK · Admin usa JS 4389
+OK · Admin usa CSS 4389
+OK · JS no usa función antigua
+OK · JS fuerza display none
+OK · CSS hidden prevalece
+OK · CSS aria-hidden prevalece
+OK · Normaliza tildes
+OK · Data search incluye nombre
+OK · Filtro se enlaza a localSearch
+OK · SW cache 4.3.89
+OK · SW precache JS 4389
+OK · SW precache CSS 4389
+OK · geo-local-admin.html referencia JS 4389
+OK · geo-local-admin.html referencia CSS 4389
+OK · geo-local.html referencia JS 4389
+OK · geo-local.html referencia CSS 4389
+OK · mapa-geo-local.html referencia JS 4389
+OK · mapa-geo-local.html referencia CSS 4389
+OK · kpi-geo-locales.html referencia JS 4389
+OK · kpi-geo-locales.html referencia CSS 4389
+OK · malla-turnos.html referencia JS 4389
+OK · malla-turnos.html referencia CSS 4389
+
+TOTAL: 22 · OK: 22 · FALLAS: 0

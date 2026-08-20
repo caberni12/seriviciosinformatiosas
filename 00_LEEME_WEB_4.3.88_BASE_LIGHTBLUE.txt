@@ -1,0 +1,23 @@
+E-FLEET MANAGEMENT SYSTEM
+WEB 4.3.88 LIGHTBLUE UI
+Base funcional: Web 4.3.87 Producción
+
+ALCANCE
+- Hotfix exclusivamente visual.
+- No se alteró la lógica de negocio de los módulos ni flotas-api.
+- Nueva capa final: efleet-lightblue.4388.css.
+
+APLICADO EN TODO EL WEB
+- Login en blanco/azul claro, eliminando el bloque negro dominante.
+- Títulos y encabezados corporativos en azul.
+- Tarjetas de empresa y conexión en azul claro.
+- KPI, paneles, formularios, tablas y modales con la misma identidad.
+- Alertas, notificaciones y toast en tarjetas claras azules.
+- Geo Locales, Geo Admin, KPI Geo, mapa y modales Geo bajo la misma paleta.
+- Menú lateral y barra superior en superficies claras con acento azul.
+- Botones primarios azules; secundarios azul suave.
+- Verde/ámbar/rojo se conservan solo para estados semánticos.
+- El modo oscuro heredado queda neutralizado visualmente en Web.
+
+CACHE
+- Service Worker actualizado a: efleet-static-4.3.88-lightblue-ui
