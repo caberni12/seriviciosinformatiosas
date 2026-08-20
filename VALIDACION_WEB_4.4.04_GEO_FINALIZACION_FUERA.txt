@@ -1,0 +1,9 @@
+E-FLEET WEB 4.4.04 · VALIDACIÓN
+
+OK · Web 4.4.04 JS
+OK · Web Admin closure card
+OK · Web Admin shows address coords
+OK · Web supervisor neutral preserved
+OK · Web Auto preserved
+OK · Web loader preserved
+OK · node --check

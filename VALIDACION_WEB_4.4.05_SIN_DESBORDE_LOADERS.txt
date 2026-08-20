@@ -1,0 +1,13 @@
+E-FLEET WEB 4.4.05 · VALIDACIÓN
+
+OK · Web 4.4.05 JS
+OK · Web compact Check-in direct
+OK · Web Check-in detail modal
+OK · Web navigation loaders
+OK · Web plan loader
+OK · Web close-day loader
+OK · Web early close loader
+OK · Web no-overflow plan CSS
+OK · Web no-overflow trace CSS
+OK · Web mobile compact Check-in
+OK · node --check geo-local-common.4405.js
