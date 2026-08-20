@@ -1,0 +1,14 @@
+E-FLEET WEB 4.4.00 · CALENDARIO GEO
+
+GEO PLANIFICADOR DE LOCALES:
+- Campo de fecha HTML nativo type=date.
+- Botón visible "📅 Calendario".
+- El botón fuerza la apertura del selector nativo mediante showPicker() cuando el navegador lo soporta.
+- Si showPicker() no está disponible, mantiene fallback al control date del navegador.
+- Al cambiar la fecha, la planificación se carga automáticamente.
+- Se mantiene "Ver fecha" como acción explícita.
+- No cambia Geo Admin, notificaciones, geocerca ni reglas operativas.
+
+SERVIDOR VIGENTE:
+- flotas-api 4.3.95.
+- No requiere SQL nuevo.

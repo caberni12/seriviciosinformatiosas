@@ -1,0 +1,9 @@
+E-FLEET WEB 4.4.00 · VALIDACIÓN
+
+OK · Web helper showPicker
+OK · Web calendar button
+OK · Web date input preserved
+OK · Web change loads plan
+OK · Web button opens calendar
+OK · Web SW 4.4.00
+OK · node --check geo-local-common.4400.js
