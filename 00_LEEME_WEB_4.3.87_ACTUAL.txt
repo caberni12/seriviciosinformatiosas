@@ -12,3 +12,16 @@ GEO LOCAL + LOGIN AZUL CLARO
 COMPATIBILIDAD
 - Requiere flotas-api 4.3.87 para conteos, cierre provisional y gestión Cancelar/Eliminar.
 - No requiere SQL nuevo.
+
+------------------------------------------------------------
+HOTFIX VISUAL WEB 4.3.88 LIGHT BLUE UI (base funcional 4.3.87)
+------------------------------------------------------------
+- Cambio exclusivamente visual; no se modifica lógica de módulos ni API.
+- Nueva capa final: efleet-lightblue.4388.css.
+- Azul claro uniforme en encabezados, tarjetas, empresa, KPI, formularios,
+  alertas, notificaciones, toasts, Geo Locales, modales y navegación.
+- Login deja el panel negro y pasa a superficies blanco/azul claro.
+- Web queda visualmente en tema claro aun si existe una clase heredada de
+  tema oscuro, evitando letras negras sobre fondos negros.
+- Estados semánticos conservan verde/ámbar/rojo cuando corresponde.
+- Service Worker usa nueva cache efleet-static-4.3.88-lightblue-ui.
