@@ -1,0 +1,9 @@
+E-FLEET WEB 4.3.92
+GEO ADMIN + GEO LOCAL · CONFIRMACIÓN TIPO CHECK
+
+- Después de guardar una planificación aparece una tarjeta de confirmación con check verde.
+- Informa cuántos Locales nuevos fueron agregados.
+- Informa cuántos seleccionados ya existían y se conservaron.
+- Funciona en Geo Admin y Geo Local porque ambos usan el mismo modal de planificación.
+- Compatible con flotas-api 4.3.89, que realiza el guardado acumulativo real.
+- Mantiene las mejoras de Web 4.3.91: modal ancho/grande y tabla visible.

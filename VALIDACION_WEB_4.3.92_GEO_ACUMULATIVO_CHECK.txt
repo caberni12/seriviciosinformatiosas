@@ -1,0 +1,12 @@
+WEB 4.3.92 · VALIDACIÓN GEO ACUMULATIVO + CHECK
+
+OK · Helper check existe
+OK · Check visual verde
+OK · Usa respuesta AGREGADOS
+OK · Usa YA_EXISTENTES
+OK · Geo Local usa JS 4392
+OK · Geo Admin usa JS 4392
+OK · SW cache nuevo
+OK · Conserva modal grande 1320
+
+TOTAL: 8 · OK: 8 · FALLAS: 0
