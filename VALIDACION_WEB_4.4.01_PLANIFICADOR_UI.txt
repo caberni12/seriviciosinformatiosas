@@ -1,0 +1,9 @@
+E-FLEET WEB 4.4.01 · VALIDACIÓN
+
+OK · Web 2 calendar buttons
+OK · Web address box class
+OK · Web date-box css
+OK · Web separated cards
+OK · Web address boxed style
+OK · Web SW version
+OK · node --check geo-local-common.4401.js

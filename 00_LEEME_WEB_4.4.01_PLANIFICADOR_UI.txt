@@ -1,0 +1,12 @@
+E-FLEET WEB 4.4.01 · GEO PLANIFICADOR UI
+
+- Inicio y Fin semanal muestran botón 📅 propio.
+- El botón abre el selector nativo de fecha.
+- Cada Local del selector aparece como tarjeta separada.
+- Dirección dentro de un cuadro propio.
+- Nombre, código, referencia y radio se distinguen visualmente.
+- Mayor separación entre Locales.
+- Se mantienen duración, traslado, hora objetivo y selección múltiple.
+
+Servidor vigente: flotas-api 4.3.95.
+No requiere SQL nuevo.
