@@ -1,0 +1,15 @@
+E-FLEET WEB 4.3.91 · VALIDACIÓN MODAL GEO MÁS GRANDE
+
+OK · CSS nuevo 4391 existe
+OK · geo-local.html referencia CSS 4391
+OK · geo-local-admin.html referencia CSS 4391
+OK · JS sigue en 4390 con query 4.3.91
+OK · SW cache 4.3.91
+OK · SW precache CSS 4391
+OK · Regla modal ancho 1320
+OK · Regla modal alto viewport
+OK · Regla body alto útil
+OK · Regla plan items min-height 410
+OK · Regla columnas más amplias
+
+TOTAL: 11 · OK: 11 · FALLAS: 0

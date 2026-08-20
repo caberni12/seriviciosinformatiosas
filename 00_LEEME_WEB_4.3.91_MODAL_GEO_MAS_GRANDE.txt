@@ -1,0 +1,16 @@
+E-FLEET MANAGEMENT SYSTEM · WEB 4.3.91
+HOTFIX · MODAL GEO PLANIFICADOR MÁS GRANDE
+
+Cambios
+- El modal de Planificación Geo Locales ahora abarca mucho más ancho del marco de la pantalla.
+- Aplica tanto al Geo Planificador de Locales como al Geo Admin cuando abre el mismo diálogo de planificación.
+- Se aumenta también la altura útil del cuerpo del modal para que se vea mejor la tabla/listado de Locales.
+- Se mejora el espacio de la fila: Local visitado / Duración / Traslado / Hora objetivo.
+- En escritorio el modal puede llegar hasta 1320 px o el ancho disponible de la ventana.
+- El contenido interno usa más alto visible y conserva scroll interno cuando sea necesario.
+- Se mantienen botones fijos al pie del modal.
+- No se modifica flotas-api ni Android.
+
+Objetivo de corrección
+- Evitar que el modal quede demasiado pequeño.
+- Evitar que la TD/listado de Locales quede escondida o excesivamente comprimida.
