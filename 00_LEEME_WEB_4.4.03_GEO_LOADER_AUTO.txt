@@ -1,0 +1,14 @@
+E-FLEET WEB 4.4.03
+
+SOLO GEO PLANIFICADOR DE LOCALES:
+- Recargar manual con loader circular dentro del botón.
+- Auto ON/OFF persistente, refresco cada 30 segundos.
+- Auto silencioso: sin overlay, sin spinner, sin toast y sin vaciar la pantalla.
+- Auto se pospone si hay modal abierto, campo en edición, pestaña oculta o acción operativa en curso.
+- Si la respuesta no cambió, no repinta.
+- Mantiene posición de scroll cuando Auto aplica un cambio.
+- Loaders circulares: Recargar, Ver fecha, Llegada, Finalizar, Foto,
+  Guardar planificación y Registrar Local.
+- Ningún otro módulo Web recibe Auto Refresh.
+
+flotas-api 4.3.95 permanece sin cambios.

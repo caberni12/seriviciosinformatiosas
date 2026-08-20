@@ -1,0 +1,12 @@
+E-FLEET WEB 4.4.03 · VALIDACIÓN
+
+OK · Web 4.4.03 script
+OK · Web Auto 30 sec
+OK · Web Auto persistent
+OK · Web Auto skips modal
+OK · Web Auto skips editing
+OK · Web no repaint if same
+OK · Web manual Recargar
+OK · Web button spinner
+OK · Web no Auto in initAdmin
+OK · node --check geo-local-common.4403.js

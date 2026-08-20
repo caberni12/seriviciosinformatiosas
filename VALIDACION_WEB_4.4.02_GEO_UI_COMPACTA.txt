@@ -1,0 +1,12 @@
+E-FLEET WEB 4.4.02 · VALIDACION
+
+OK · Web JS sintaxis comprobada
+OK · Web Check-in modal
+OK · Web tarjetas Geo colapsables
+OK · Web expandir todas
+OK · Web planificador +/- tamaño
+OK · Web tarjetas plan colapsables
+OK · Web Admin trazabilidad autoheight
+OK · Web Service Worker 4.4.02
+
+node --check geo-local-common.4402.js: OK
