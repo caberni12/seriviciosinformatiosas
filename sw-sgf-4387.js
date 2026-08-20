@@ -1,9 +1,9 @@
-const SGF_CACHE='efleet-static-4.3.98-address-central';
+const SGF_CACHE='efleet-static-4.3.99-neutral-geo-messages';
 const PRECACHE=[
   './','./index.html','./main.html','./logo.svg','./logo-e-fleet.png','./efleet-mark-compact.png','./favicon-efleet.png','./tema.js','./estilos.css','./responsive.css','./interfaz-moderna.css',
   './menu-principal.css','./sgf-final-4.3.44.css','./efleet-palette.4386.css','./efleet-lightblue.4388.css','./login-r8245.css','./sgf-performance.4387.js','./sgf-module.4398.js','./sgf-shell.4395.js',
   './panel-principal.html','./rutas.html','./operaciones.html','./checkin-vehicular.html','./vehiculos.html','./conductores.html',
-  './geo-local.html','./geo-local-admin.html','./mapa-geo-local.html','./kpi-geo-locales.html','./malla-turnos.html','./geo-local.4392.css','./geo-local-common.4398.js','./mapa.js'
+  './geo-local.html','./geo-local-admin.html','./mapa-geo-local.html','./kpi-geo-locales.html','./malla-turnos.html','./geo-local.4392.css','./geo-local-common.4399.js','./mapa.js'
 ];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(SGF_CACHE).then(async cache=>{

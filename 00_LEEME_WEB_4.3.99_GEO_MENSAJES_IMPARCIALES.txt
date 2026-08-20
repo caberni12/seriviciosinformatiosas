@@ -1,0 +1,13 @@
+E-FLEET WEB 4.3.99 · MENSAJES GEO IMPARCIALES
+
+Supervisor/usuario operativo:
+- "Llegada registrada correctamente."
+- "Visita finalizada correctamente."
+- No se informa que Administración/Gerencia recibe avisos silenciosos.
+- No se informa el conteo interno de visitas en el mensaje de llegada.
+- La ayuda de jornada ya no menciona alertas internas a Administración/Gerencia.
+
+Administración/Gerencia:
+- Continúan recibiendo las notificaciones silenciosas internas.
+- No se elimina trazabilidad, conteo ni auditoría.
+- No se modifica la lógica server-side.

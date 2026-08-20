@@ -1,0 +1,6 @@
+E-FLEET WEB 4.3.99 · VALIDACIÓN
+
+OK · Web llegada neutral
+OK · Web finalización neutral
+OK · Web no revela silenciosa al operativo
+OK · Web no revela alerta preventiva interna
