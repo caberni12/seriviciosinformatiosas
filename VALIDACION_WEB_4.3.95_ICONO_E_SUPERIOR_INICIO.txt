@@ -1,0 +1,15 @@
+E-FLEET WEB 4.3.95 · VALIDACIÓN
+
+OK · Existe icono superior identificado
+OK · Solo una ocurrencia de efleetTopHomeLogo en HTML
+OK · Logo lateral NO fue convertido
+OK · Logo verificador NO fue convertido
+OK · Shell 4395 referenciado
+OK · Click navega dashboard
+OK · Teclado accesible
+OK · CSS solo selector superior
+OK · SW caché 4.3.95
+OK · SW usa shell 4395
+OK · Shell anterior retirado
+
+TOTAL: 11 · OK: 11 · FALLAS: 0

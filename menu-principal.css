@@ -53,3 +53,19 @@ body.oscuro{color-scheme:dark;--fondo:var(--tema-fondo-oscuro,#0f1918);--superfi
 .alerta-asignacion-menu.persistente{border-color:#e0a21b;box-shadow:0 28px 85px rgba(83,55,2,.38)}.alerta-asignacion-menu.persistente>header{grid-template-columns:50px minmax(0,1fr);background:linear-gradient(135deg,#775006,#bd7d09)}.alerta-asignacion-menu.persistente>footer{grid-template-columns:1fr}.alerta-asignacion-pendiente{margin:12px 0 0!important;padding:10px 12px;border-radius:11px;background:#fff4d7!important;color:#714a00!important;font-weight:800}.aceptar-aviso-menu{margin-top:8px;min-height:36px;border:0;border-radius:10px;padding:7px 12px;background:#3B82F6;color:#fff;font-weight:850;cursor:pointer}
 @keyframes entradaAsignacion{from{opacity:0;transform:translateY(-18px) scale(.97)}to{opacity:1;transform:none}}
 @media(max-width:620px){.alerta-asignacion-menu{top:auto;right:10px;bottom:max(10px,env(safe-area-inset-bottom));max-height:calc(100dvh - 20px);overflow:auto}.alerta-asignacion-menu>header{position:sticky;top:0;z-index:1}.alerta-asignacion-menu>footer{position:sticky;bottom:0;padding-top:10px;background:var(--superficie)}}
+
+
+/* E-fleet Web 4.3.95 · SOLO icono E superior -> Panel principal */
+#efleetTopHomeLogo{
+  cursor:pointer;
+  user-select:none;
+  -webkit-user-drag:none;
+  border-radius:10px;
+}
+#efleetTopHomeLogo:focus-visible{
+  outline:3px solid rgba(37,99,235,.35);
+  outline-offset:3px;
+}
+#efleetTopHomeLogo:active{
+  transform:scale(.96);
+}

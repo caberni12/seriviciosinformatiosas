@@ -1,0 +1,23 @@
+E-FLEET MANAGEMENT SYSTEM · WEB 4.3.95
+ICONO E SUPERIOR -> PANEL PRINCIPAL
+
+CAMBIO
+- Únicamente el icono E-fleet superior de la barra principal es navegable.
+- Click/touch lleva al Panel principal.
+- Enter o Espacio también funcionan por accesibilidad.
+- Si ya está en Panel principal, desplaza al inicio.
+
+NO SE TOCÓ
+- Logo del menú lateral.
+- Logo del login.
+- Logos de validación/carga.
+- Logos dentro de Geo Local.
+- Iconos E internos de módulos.
+- flotas-api.
+- Android.
+- SQL.
+- cPanel.
+
+CACHÉ
+- Nuevo sgf-shell.4395.js.
+- Nueva caché Service Worker 4.3.95.

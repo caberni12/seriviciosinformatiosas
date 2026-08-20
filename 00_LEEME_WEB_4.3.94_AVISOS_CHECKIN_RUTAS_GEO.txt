@@ -1,0 +1,7 @@
+E-FLEET WEB 4.3.94
+- Todos los usuarios pueden marcar sus propios avisos/alertas como leídos.
+- Avisos globales se marcan por usuario.
+- Check-in aprobado/vigente = LISTO.
+- Tarjeta CHECKIN_LISTO no muestra QR pendiente.
+- Ruta usa conductoresDisponiblesRuta; excluye Supervisor Geo con Locales activos hoy.
+- Geo mantiene selector separado solo de Supervisores Geo.
