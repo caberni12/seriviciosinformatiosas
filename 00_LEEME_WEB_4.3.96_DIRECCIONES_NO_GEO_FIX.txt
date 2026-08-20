@@ -1,0 +1,29 @@
+E-FLEET WEB 4.3.96 · CORRECCIÓN DIRECCIONES NO-GEO
+
+NO SE MODIFICA:
+- Geo Local
+- Geo Admin
+- mapa Geo
+- lógica Geo de direcciones
+
+CORREGIDO:
+- Usuarios / domicilio
+- Punto Operacional
+- Asignación de Ruta: origen y destino
+- Múltiples destinos
+- Edición de puntos de Ruta
+- Cualquier control Web genérico data-address-autocomplete con LAT/LNG
+
+CAUSA:
+Los campos LAT/LNG vacíos se evaluaban con Number('') = 0. El navegador podía creer que
+ya existían coordenadas y no ejecutar la geocodificación exacta.
+
+NUEVA LÓGICA:
+- Vacío nunca equivale a 0.
+- Valida rangos reales LAT [-90,90] / LNG [-180,180].
+- Rechaza 0,0 como falso positivo.
+- Si no hay sugerencias, intenta coordenadas exactas automáticamente.
+- Enter fuerza búsqueda exacta.
+- Al salir del campo, si faltan coordenadas, vuelve a resolver.
+- Antes de guardar Punto Operacional o Rutas, vuelve a garantizar coordenadas.
+- Dirección de Usuario prueba la dirección original y una variante normalizada.

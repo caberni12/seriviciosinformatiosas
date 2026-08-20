@@ -1,0 +1,19 @@
+E-FLEET WEB 4.3.96 · VALIDACIÓN DIRECCIONES NO-GEO
+
+OK · JS nuevo 4396 existe
+OK · Bug Number vacío eliminado en exacta
+OK · Helper asegurar coordenadas existe
+OK · Validación usa coordenadaFormulario
+OK · Rechaza 0,0
+OK · Exacta prueba variante normalizada
+OK · Punto Operacional resuelve antes de guardar
+OK · Ruta resuelve antes de guardar
+OK · Edición punto ruta resuelve antes
+OK · Múltiples destinos usan parser coordenadas
+OK · Usuarios conserva geocodificación dedicada
+OK · Geo HTML no referencia nuevo JS genérico
+OK · Geo common 4393 intacto
+OK · SW cache 4.3.96
+OK · SW usa 4396
+
+TOTAL: 15 · OK: 15 · FALLAS: 0
