@@ -1,0 +1,9 @@
+E-FLEET WEB 4.3.93 · NOMINATIM UNIVERSAL
+
+- Todos los inputs data-address-autocomplete usan el mismo flotas-api.
+- Nominatim/OpenStreetMap es proveedor principal en flotas-api 4.3.90.
+- Al elegir sugerencia se completan latitud/longitud.
+- Si el usuario escribe y no selecciona sugerencia, Enter intenta geocodificación exacta.
+- Al salir del campo, si existen campos LAT/LNG y siguen vacíos, intenta geocodificación exacta.
+- Aplica a Usuario/domicilio, Punto Operacional, Rutas, múltiples destinos y edición de puntos.
+- Geo Local Admin y Geo Local usan el mismo mecanismo y también intentan resolución exacta.
