@@ -1,0 +1,14 @@
+E-fleet Web responsive 4.3.87 · R8.2.45
+
+GEO LOCAL + LOGIN AZUL CLARO
+- Geo Planificador Admin muestra el conteo diario de visitas físicas por Local visitado.
+- Geo Planificador Admin incorpora Cancelar punto y Eliminar punto con motivo obligatorio y auditoría.
+- El cierre anticipado pasa a ser un aviso provisional: no bloquea los puntos pendientes y permite continuar/efectuar cierre definitivo hasta las 23:59.
+- Geo Planificador Supervisor muestra “Visitas detectadas hoy” por local.
+- Login principal cambia el panel negro por azul claro, títulos de empresa azules y estado conectado verde.
+- Tema oscuro continúa eliminado de la versión Web.
+- Assets nuevos: geo-local-common.4387.js, sgf-performance.4387.js, sgf-module.4387.js, sgf-shell.4387.js, sw-sgf-4387.js y login-r8245.css.
+
+COMPATIBILIDAD
+- Requiere flotas-api 4.3.87 para conteos, cierre provisional y gestión Cancelar/Eliminar.
+- No requiere SQL nuevo.

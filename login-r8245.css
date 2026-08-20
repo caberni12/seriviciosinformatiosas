@@ -1,0 +1,29 @@
+/* E-fleet Web 4.3.87 · Login azul claro solicitado · carga después de la paleta global */
+:root{--efleet-login-blue:#2f80ed;--efleet-login-blue-dark:#1565c0;--efleet-login-title:#0d63ad;--efleet-login-ink:#17324a;--efleet-login-soft:#5d7891;--efleet-login-bg:#dff1ff}
+body .pagina-acceso{background:#eef8ff!important}
+body .presentacion-acceso{background:linear-gradient(145deg,#eef8ff 0%,#dcefff 52%,#c9e6fb 100%)!important;color:var(--efleet-login-ink)!important}
+body .presentacion-acceso:before,body .presentacion-acceso:after{background:rgba(47,128,237,.11)!important}
+body .marca-acceso strong,body #nombreEmpresaAcceso{color:var(--efleet-login-title)!important}
+body .marca-acceso span{color:#55758f!important}
+body .mensaje-acceso .etiqueta{color:var(--efleet-login-blue)!important}
+body .mensaje-acceso h1{color:#12324d!important;text-shadow:none!important}
+body .mensaje-acceso p{color:#496981!important}
+body .resumen-acceso article{background:rgba(255,255,255,.72)!important;border-color:#a9cee9!important;box-shadow:0 8px 26px rgba(24,91,145,.08)!important}
+body .resumen-acceso i{background:#e5f3ff!important;color:var(--efleet-login-title)!important}
+body .resumen-acceso b{color:var(--efleet-login-title)!important}
+body .resumen-acceso span{color:#5d7891!important}
+body .panel-acceso{background:radial-gradient(circle at top right,#ffffff 0%,#f5fbff 44%,#e5f4ff 100%)!important}
+body .tarjeta-acceso{border-color:#c8dfef!important;background:rgba(255,255,255,.97)!important;box-shadow:0 22px 60px rgba(24,91,145,.16)!important}
+body .encabezado-formulario .etiqueta{color:var(--efleet-login-blue)!important}
+body .encabezado-formulario h2{color:var(--efleet-login-title)!important}
+body .empresa-conectada-acceso{background:#f2f9ff!important;border-color:#b7d9f2!important}
+body .empresa-conectada-acceso>i{background:var(--efleet-login-title)!important;color:#fff!important}
+body .empresa-conectada-acceso b,body #nombreEmpresaConectada{color:var(--efleet-login-title)!important}
+body .empresa-conectada-acceso span,body #rutEmpresaConectada{color:#5c7489!important}
+body .estado-conexion{background:#f4f9fd!important;border:1px solid #c8deee!important}
+body .estado-conexion.conectado i{background:#16a34a!important;box-shadow:0 0 0 4px rgba(22,163,74,.14)!important}
+body .boton-principal{background:#3b82f6!important;box-shadow:0 10px 24px rgba(59,130,246,.24)!important}
+body .boton-principal:hover{background:#2563eb!important}
+body .boton-enlace{color:#0d6bc0!important}
+body .campo input:focus,body .campo select:focus,body .campo textarea:focus{border-color:#60a5fa!important;box-shadow:0 0 0 3px rgba(96,165,250,.15)!important}
+@media(max-width:860px){body .presentacion-acceso{background:linear-gradient(145deg,#eef8ff,#d9edfc)!important}}
