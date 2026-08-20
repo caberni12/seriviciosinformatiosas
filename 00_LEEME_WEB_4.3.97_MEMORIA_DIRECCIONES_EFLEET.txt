@@ -1,0 +1,26 @@
+E-FLEET WEB 4.3.97 · MEMORIA DE DIRECCIONES E-FLEET
+
+PROCESO RÁPIDO
+1. Busca primero en la memoria E-fleet del navegador.
+2. Si encuentra coincidencia >= 90%, entrega dirección + latitud + longitud inmediatamente.
+3. Si no, consulta el proveedor externo actual.
+4. Toda dirección confirmada se aprende automáticamente.
+5. Guarda alias, coordenadas, proveedor, cantidad de usos y última utilización.
+6. Prioriza las direcciones reutilizadas.
+
+AISLAMIENTO
+- Separada por empresa_id.
+- Clave: efleet_address_memory_v1.
+- Límite provisional: 600 direcciones por empresa/navegador.
+
+ALCANCE
+- Usuarios/domicilio
+- Punto Operacional
+- Rutas
+- múltiples destinos
+- edición de puntos
+- Geo Admin
+- Geo Local
+
+Esta versión es la etapa rápida Web. La memoria se comparte entre módulos del mismo navegador/origen,
+pero aún no entre distintos computadores/teléfonos. La siguiente etapa será migrarla a Supabase.

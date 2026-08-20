@@ -1,0 +1,24 @@
+E-FLEET WEB 4.3.98 · MOTOR CENTRAL DE DIRECCIONES
+
+ORDEN DE BÚSQUEDA:
+1. Caché/memoria local del navegador.
+2. BD central E-fleet en Supabase.
+3. Proveedor externo actual.
+
+APRENDIZAJE:
+- Cuando se confirma una dirección válida, se guarda localmente y se sincroniza con la BD central.
+- Si la dirección ya existe, NO se crea otro registro.
+- Se reutiliza el registro y aumenta VECES_UTILIZADA.
+- Se agregan alias sin duplicarlos.
+
+ALCANCE:
+- Usuarios/domicilio
+- Punto Operacional
+- Rutas
+- múltiples destinos
+- edición de puntos
+- Geo Admin
+- Geo Local
+
+AISLAMIENTO:
+- Toda búsqueda/guardado central usa empresa_id de la sesión del servidor.

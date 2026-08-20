@@ -1,0 +1,27 @@
+E-FLEET WEB 4.3.97 · VALIDACIÓN
+
+OK · Web 4.3.97
+OK · Clave memoria común
+OK · Aislamiento empresa_id genérico
+OK · Aislamiento empresa_id Geo
+OK · Memoria primero genérico
+OK · Memoria primero Geo
+OK · Fuzzy matching genérico
+OK · Fuzzy matching Geo
+OK · Aprende alias genérico
+OK · Aprende alias Geo
+OK · Cuenta usos genérico
+OK · Cuenta usos Geo
+OK · Aprende autocomplete
+OK · Aprende geocodificación
+OK · Aprende Geo
+OK · Límite 600
+OK · SW 4.3.97
+OK · SW módulos 4397
+OK · E superior conservada
+
+TOTAL: 19 · OK: 19 · FALLAS: 0
+
+NODE SYNTAX:
+OK · sgf-module.4397.js
+OK · geo-local-common.4397.js
