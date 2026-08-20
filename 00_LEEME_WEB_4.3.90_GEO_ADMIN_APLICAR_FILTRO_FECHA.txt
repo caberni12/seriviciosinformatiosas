@@ -1,0 +1,28 @@
+E-FLEET MANAGEMENT SYSTEM · WEB 4.3.90
+GEO PLANIFICADOR ADMIN · BOTÓN APLICAR FILTRO DE FECHA
+
+CORRECCIÓN
+- Se agregan campos Desde y Hasta al bloque “Control de Supervisores”.
+- Se agrega botón visible “Aplicar filtro”.
+- El botón consulta geoLocalAdminResumen usando FECHA_DESDE y FECHA_HASTA seleccionadas.
+- Se valida que Desde no sea posterior a Hasta.
+- Enter en cualquiera de las fechas también aplica el filtro.
+- “Actualizar” conserva y reutiliza el rango actualmente seleccionado.
+- Se muestra el período activo debajo de los filtros.
+- El filtro rápido de Supervisor y Local visitado continúa funcionando sobre el resultado del rango aplicado.
+- El mapa de puntos programados y la tabla se reconstruyen con los datos del período devuelto.
+
+ANTES
+La consulta del Geo Admin estaba fija a hoy + 6 días:
+FECHA_DESDE = today()
+FECHA_HASTA = plusDays(today(),6)
+
+AHORA
+La consulta usa exactamente las fechas elegidas por el Administrador/Gerencia.
+
+NO SE MODIFICA
+- empresa_id ni aislamiento multiempresa
+- flotas-api
+- Android
+- guardado de planificaciones
+- Check-in / cierres / evidencias

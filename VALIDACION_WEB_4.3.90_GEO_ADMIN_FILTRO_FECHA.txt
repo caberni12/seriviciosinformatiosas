@@ -1,0 +1,18 @@
+E-FLEET WEB 4.3.90 · VALIDACIÓN GEO ADMIN FILTRO FECHA
+
+OK · Existe input Desde
+OK · Existe input Hasta
+OK · Existe botón Aplicar filtro
+OK · Botón enlazado a aplicarFiltroFecha
+OK · Consulta usa FECHA_DESDE seleccionada
+OK · Consulta usa FECHA_HASTA seleccionada
+OK · Valida rango invertido
+OK · Enter aplica filtro
+OK · Estado período visible
+OK · Reload conserva rango
+OK · Admin referencia JS 4390
+OK · SW usa cache 4.3.90
+OK · SW precachea JS 4390
+OK · No queda JS 4389 físico
+
+TOTAL: 14 · OK: 14 · FALLAS: 0
