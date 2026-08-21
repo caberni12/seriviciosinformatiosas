@@ -1,0 +1,23 @@
+E-FLEET WEB 4.4.14 · R8.2.64
+
+ADMINISTRACIÓN Y GERENCIA
+=========================
+- No muestran tarjetas emergentes de Alertas/Notificaciones.
+- No muestran toasts emergentes de avisos.
+- No muestran tarjetas emergentes de asignaciones.
+- Los avisos siguen llegando y acumulándose en la campanita/bandeja.
+
+SWITCH EXCLUSIVO
+================
+"Pausar avisos fuera de la app"
+
+Solo aparece para Administración y Gerencia.
+Al activarlo:
+- guarda NOTIFICACIONES_SILENCIADAS=SI como preferencia de entrega externa;
+- NO elimina ni deja de generar avisos;
+- NO marca avisos como leídos;
+- la bandeja sigue consultando y mostrando pendientes;
+- Android usa la preferencia para no publicar notificaciones del sistema
+  mientras el usuario está fuera de la app.
+
+Supervisor/Conductor no ven este switch.

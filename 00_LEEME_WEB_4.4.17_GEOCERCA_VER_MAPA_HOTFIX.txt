@@ -1,0 +1,32 @@
+E-FLEET WEB 4.4.17 · R8.2.68
+HOTFIX BOTÓN "VER MAPA" · GEOCERCA
+
+CAUSA
+=====
+El botón solamente llamaba:
+mapaFlota?.establecerVista(...)
+
+Problemas:
+1. El mapa está por encima de la tabla y el navegador no desplazaba la
+   pantalla hacia él.
+2. Si mapaFlota aún no estaba inicializado, optional chaining descartaba
+   el clic sin mostrar error.
+
+CORRECCIÓN
+==========
+Al pulsar "Ver mapa":
+- valida latitud/longitud;
+- desplaza la pantalla al mapa de Geocerca;
+- inicializa el mapa si todavía no estaba listo;
+- espera a que el contenedor tenga tamaño estable;
+- centra la coordenada con zoom 18;
+- redibuja y vuelve a centrar tras el scroll;
+- muestra un realce visual temporal del mapa;
+- muestra "Abriendo mapa…" mientras se procesa.
+
+NO CAMBIA:
+- flotas-api 4.4.06;
+- SQL R8.2.66;
+- Android 3.5.15;
+- KPI/ranking;
+- empresa_id.
