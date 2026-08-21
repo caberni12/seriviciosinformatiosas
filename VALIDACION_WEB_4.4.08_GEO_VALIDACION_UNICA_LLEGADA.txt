@@ -1,0 +1,7 @@
+OK · Web 4.4.08
+OK · Web no separate unplanned button
+OK · Web no separate unplanned function
+OK · Web single arrival action
+OK · Web handles other programmed local
+OK · Web handles unplanned automatically
+OK · node --check
