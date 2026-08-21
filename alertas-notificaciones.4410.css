@@ -1,0 +1,175 @@
+/* E-fleet Web 4.4.10
+   Alertas + Notificaciones:
+   los grupos de acciones nunca se apilan verticalmente.
+   Si no caben, se desplazan horizontalmente.
+*/
+
+:where(body.modulo-alertas,body.modulo-notificaciones){
+  overflow-x:hidden;
+}
+
+/* Cabecera principal: conserva el título, pero los botones quedan en una fila. */
+:where(body.modulo-alertas,body.modulo-notificaciones) .heading{
+  min-width:0;
+}
+
+:where(body.modulo-alertas,body.modulo-notificaciones) .heading-actions{
+  display:flex!important;
+  flex-direction:row!important;
+  flex-wrap:nowrap!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:8px!important;
+  width:auto;
+  max-width:100%;
+  min-width:0;
+  overflow-x:auto!important;
+  overflow-y:hidden!important;
+  overscroll-behavior-x:contain;
+  -webkit-overflow-scrolling:touch;
+  scroll-behavior:smooth;
+  scrollbar-width:thin;
+  scrollbar-color:#7CC6EE #EAF6FF;
+  padding:3px 3px 9px;
+}
+
+/* Cada control mantiene su ancho natural: ninguno cae a una segunda línea. */
+:where(body.modulo-alertas,body.modulo-notificaciones) .heading-actions
+:where(.btn,.icon-button,.assignment-alert-switch){
+  flex:0 0 auto!important;
+  width:auto!important;
+  min-width:max-content!important;
+  max-width:none!important;
+  white-space:nowrap!important;
+}
+
+/* Comandos de voz de Notificaciones también deben deslizar horizontalmente. */
+body.modulo-notificaciones .voice-command-actions{
+  display:flex!important;
+  flex-direction:row!important;
+  flex-wrap:nowrap!important;
+  align-items:center!important;
+  gap:8px!important;
+  max-width:100%;
+  min-width:0;
+  overflow-x:auto!important;
+  overflow-y:hidden!important;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;
+  scrollbar-color:#7CC6EE #EAF6FF;
+  padding:2px 2px 8px;
+}
+body.modulo-notificaciones .voice-command-actions .btn{
+  flex:0 0 auto!important;
+  width:auto!important;
+  min-width:max-content!important;
+  white-space:nowrap!important;
+}
+
+/* Toolbar: buscador estable + acciones en la misma línea.
+   Si falta ancho, el bloque completo puede desplazarse horizontalmente. */
+:where(body.modulo-alertas,body.modulo-notificaciones) .toolbar{
+  display:flex!important;
+  flex-direction:row!important;
+  flex-wrap:nowrap!important;
+  align-items:center!important;
+  gap:8px!important;
+  max-width:100%;
+  min-width:0;
+  overflow-x:auto!important;
+  overflow-y:hidden!important;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;
+  scrollbar-color:#7CC6EE #EAF6FF;
+  padding-bottom:8px;
+}
+:where(body.modulo-alertas,body.modulo-notificaciones) .toolbar .search-box{
+  flex:1 0 270px!important;
+  width:auto!important;
+  min-width:270px!important;
+}
+:where(body.modulo-alertas,body.modulo-notificaciones) .toolbar
+:where(.btn,button,select){
+  flex:0 0 auto!important;
+  width:auto!important;
+  min-width:max-content!important;
+  white-space:nowrap!important;
+  margin-left:0!important;
+}
+
+/* El botón de "Marcar todas" dentro de Pendientes tampoco debe agrandar
+   verticalmente la tarjeta en pantallas estrechas. */
+body.modulo-notificaciones .notification-dashboard .card-header{
+  flex-wrap:nowrap!important;
+  min-width:0;
+}
+body.modulo-notificaciones .notification-dashboard .card-header>div{
+  min-width:180px;
+}
+body.modulo-notificaciones .notification-dashboard .card-header>.link-button{
+  flex:0 0 auto;
+  white-space:nowrap;
+  max-width:min(52vw,260px);
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* Scrollbar visible y discreto en Chromium/WebKit. */
+:where(body.modulo-alertas,body.modulo-notificaciones)
+:where(.heading-actions,.toolbar,.voice-command-actions)::-webkit-scrollbar{
+  height:7px;
+}
+:where(body.modulo-alertas,body.modulo-notificaciones)
+:where(.heading-actions,.toolbar,.voice-command-actions)::-webkit-scrollbar-track{
+  background:#EAF6FF;
+  border-radius:999px;
+}
+:where(body.modulo-alertas,body.modulo-notificaciones)
+:where(.heading-actions,.toolbar,.voice-command-actions)::-webkit-scrollbar-thumb{
+  background:#7CC6EE;
+  border-radius:999px;
+  border:1px solid #EAF6FF;
+}
+:where(body.modulo-alertas,body.modulo-notificaciones)
+:where(.heading-actions,.toolbar,.voice-command-actions)::-webkit-scrollbar-thumb:hover{
+  background:#38A6E6;
+}
+
+/* Tablet/teléfono: anula las reglas antiguas que apilaban los botones. */
+@media (max-width:900px){
+  :where(body.modulo-alertas,body.modulo-notificaciones) .heading-actions{
+    width:100%!important;
+  }
+}
+@media (max-width:680px){
+  :where(body.modulo-alertas,body.modulo-notificaciones) .heading-actions{
+    display:flex!important;
+    grid-template-columns:none!important;
+    width:100%!important;
+  }
+  :where(body.modulo-alertas,body.modulo-notificaciones) .heading-actions .btn{
+    width:auto!important;
+    min-width:max-content!important;
+  }
+
+  :where(body.modulo-alertas,body.modulo-notificaciones) .toolbar{
+    display:flex!important;
+    grid-template-columns:none!important;
+  }
+  :where(body.modulo-alertas,body.modulo-notificaciones) .toolbar>*{
+    width:auto!important;
+    margin-left:0!important;
+  }
+  :where(body.modulo-alertas,body.modulo-notificaciones) .toolbar .search-box{
+    min-width:250px!important;
+  }
+
+  body.modulo-notificaciones .voice-command-panel{
+    overflow:hidden;
+  }
+  body.modulo-notificaciones .voice-command-actions{
+    width:100%!important;
+  }
+}
+
+/* No cambia otros módulos del proyecto Web. */

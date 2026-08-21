@@ -1,0 +1,28 @@
+E-FLEET WEB 4.4.10
+
+CAMBIO EXCLUSIVO WEB
+====================
+Módulos:
+- Alertas
+- Notificaciones
+
+CORRECCIÓN
+==========
+Los botones de acción ya NO se apilan verticalmente cuando disminuye el
+ancho de la ventana.
+
+Ahora:
+- permanecen en una sola línea horizontal;
+- si no caben, aparece desplazamiento horizontal;
+- funciona con mouse, touchpad y pantalla táctil;
+- se conserva una barra de scroll delgada y visible;
+- también se aplica a los controles de voz de Notificaciones;
+- el toolbar de búsqueda/acciones puede deslizarse horizontalmente.
+
+NO SE MODIFICÓ:
+- Android;
+- flotas-api;
+- SQL;
+- cPanel;
+- Geo Admin;
+- otros módulos Web.
