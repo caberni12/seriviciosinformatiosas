@@ -1,0 +1,21 @@
+E-FLEET WEB 4.4.11
+
+CAMBIO SOLO WEB
+===============
+Módulos:
+- Alertas
+- Notificaciones
+
+CORRECCIÓN
+==========
+La barra de botones principales ahora aparece ARRIBA del título del módulo.
+
+Además:
+- queda sticky dentro del módulo para no perderla al desplazarse;
+- botones siempre en una sola fila;
+- si falta espacio conserva scroll horizontal;
+- botón principal queda primero;
+- Actualizar queda entre las primeras acciones;
+- controles de voz de Notificaciones también se muestran arriba de su tarjeta.
+
+No se modificó Android, flotas-api, SQL, cPanel ni Geo.

@@ -1,0 +1,22 @@
+E-FLEET WEB 4.4.09 · R8.2.60
+
+GEO PLANIFICADOR ADMIN
+======================
+La línea de tiempo se muestra SOLO en Geo Planificador Admin.
+
+Por cada Local:
+● Visita 1 · Entrada / Salida / Duración
+● Visita 2 · Entrada / Salida / Duración
+● Visita N · En curso, cuando corresponda
+
+Al final:
+Σ Tiempo total dentro del Local
+
+El total suma únicamente los períodos dentro del perímetro.
+
+SUPERVISOR
+==========
+geo-local.html conserva el flujo operativo anterior y NO muestra esta
+trazabilidad administrativa.
+
+Servidor requerido: flotas-api 4.4.01.

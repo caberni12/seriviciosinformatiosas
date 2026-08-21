@@ -1,0 +1,12 @@
+E-FLEET WEB 4.4.11
+
+OK · Alertas carga 4411
+OK · Notificaciones carga 4411
+OK · Acciones arriba
+OK · Sticky
+OK · Sin wrap
+OK · Scroll horizontal
+OK · Primario primero
+OK · Voz arriba
+
+TOTAL: 8 validaciones OK.

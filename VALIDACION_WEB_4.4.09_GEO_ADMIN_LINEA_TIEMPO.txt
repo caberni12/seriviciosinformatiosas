@@ -1,0 +1,8 @@
+E-FLEET WEB 4.4.09 · R8.2.60
+
+OK · Web 4.4.09 Admin usa JS nuevo
+OK · Web 4.4.09 Admin usa CSS nuevo
+OK · Web Admin timeline
+OK · Web Admin suma total
+OK · Supervisor Web sin timeline admin
+OK · node --check sin errores.

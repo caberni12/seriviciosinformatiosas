@@ -1,0 +1,12 @@
+E-FLEET WEB 4.4.10 · VALIDACIÓN
+
+OK · Alertas tiene clase específica
+OK · Notificaciones tiene clase específica
+OK · Alertas carga CSS 4.4.10
+OK · Notificaciones carga CSS 4.4.10
+OK · Heading sin wrap
+OK · Scroll horizontal
+OK · Override móvil
+OK · No se tocó JS principal
+
+TOTAL: 8 validaciones OK.
