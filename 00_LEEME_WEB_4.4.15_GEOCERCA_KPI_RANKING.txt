@@ -1,0 +1,23 @@
+E-FLEET WEB 4.4.15 · R8.2.66
+
+GEOCERCA
+========
+Debajo del mapa se agrega:
+- KPI circular % personas con visita;
+- KPI circular % actualmente en domicilio;
+- total de visitas;
+- tiempo acumulado + promedio;
+- filtro Desde/Hasta;
+- filtro Persona;
+- filtro Rol;
+- rápidos Día / 7 días / Mes / Año;
+- gráfico visitas por día;
+- gráfico tiempo en domicilio por persona;
+- ranking de permanencia;
+- tabla de eventos de entrada.
+
+Población:
+todos los roles operativos de la empresa, excluyendo:
+ROL-ADMIN, ROL-GERENCIA, ROL-SYSADMIN.
+
+Todo se obtiene desde flotas-api con empresa_id de la sesión.

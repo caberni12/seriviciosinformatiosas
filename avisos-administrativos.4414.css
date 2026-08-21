@@ -1,0 +1,33 @@
+/* E-fleet Web 4.4.14
+   Switch exclusivo Administración/Gerencia.
+*/
+.pausa-avisos-externos-menu{
+  margin:10px 14px 6px;
+  padding:11px 12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  border:1px solid #bfdbfe;
+  border-radius:13px;
+  background:#f8fbff;
+  color:#1e3a5f;
+}
+.pausa-avisos-externos-menu[hidden]{display:none!important}
+.pausa-avisos-externos-menu span{
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  gap:3px;
+}
+.pausa-avisos-externos-menu b{font-size:13px}
+.pausa-avisos-externos-menu small{
+  color:#64748b;
+  line-height:1.25;
+}
+.pausa-avisos-externos-menu input{
+  width:44px;
+  height:24px;
+  flex:0 0 auto;
+  accent-color:#38a6e6;
+}

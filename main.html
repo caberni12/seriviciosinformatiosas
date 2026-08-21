@@ -17,6 +17,7 @@
   <script src="tema.js?v=4.3.87-efleet"></script>
   <link rel="stylesheet" href="sgf-final-4.3.44.css?v=web4387-r845-geolocal">
 <link rel="stylesheet" href="efleet-palette.4386.css?v=4.3.87">  <link rel="stylesheet" href="efleet-lightblue.4388.css?v=4.3.88-lightblue">
+  <link rel="stylesheet" href="avisos-administrativos.4414.css?v=4.4.14">
 </head>
 <body class="verificando-sesion">
   <noscript><div class="sin-javascript">Debe habilitar JavaScript para utilizar el sistema.</div></noscript>
@@ -41,11 +42,7 @@
               <input id="interruptorModoAutoOficina" type="checkbox" aria-label="Activar modo automático de NEXO IA">
               <i></i>
             </label>
-            <label class="modo-auto-oficina-menu" id="avisosEmergentesMenu" hidden>
-              <span><b>Avisos emergentes</b><small>Los pendientes siguen en la campana</small></span>
-              <input id="interruptorAvisosEmergentes" type="checkbox" aria-label="Mostrar alertas y notificaciones emergentes">
-              <i></i>
-            </label>
+
             <label class="modo-auto-oficina-menu" id="vozAsignacionesMenu">
               <span><b>Voz de asignaciones</b><small>La alerta visual siempre permanece</small></span>
               <input id="interruptorVozAsignaciones" type="checkbox" aria-label="Activar voz para nuevas rutas y operaciones">
@@ -77,6 +74,16 @@
       <aside class="panel-avisos-menu" id="panelAvisosMenu" aria-hidden="true">
         <header><div><span>AVISOS AUTOMÁTICOS</span><h2>Centro de notificaciones</h2></div><button class="boton-icono" id="cerrarAvisosMenu" type="button" aria-label="Cerrar avisos">×</button></header>
         <div class="resumen-avisos-menu"><div><span>Notificaciones</span><b id="totalNotificacionesMenu">0</b></div><div><span>Alertas</span><b id="totalAlertasMenu">0</b></div></div>
+
+        <label class="pausa-avisos-externos-menu" id="pausaAvisosExternosMenu" hidden>
+          <span>
+            <b>Pausar avisos fuera de la app</b>
+            <small>Las notificaciones y alertas seguirán guardándose en esta bandeja.</small>
+          </span>
+          <input id="interruptorPausaAvisosExternos" type="checkbox"
+                 aria-label="Pausar notificaciones y alertas externas">
+          <i></i>
+        </label>
         <div class="lista-avisos-menu" id="listaAvisosMenu"><p class="sin-avisos-menu">No existen avisos pendientes.</p></div>
         <footer><button type="button" data-abrir-avisos="notifications">Ver notificaciones</button><button type="button" data-abrir-avisos="alerts">Ver alertas</button></footer>
       </aside>
@@ -89,7 +96,7 @@
     </main>
   </div>
 
-  <script src="sgf-shell.4395.js?v=4.3.95-top-home"></script>
+  <script src="sgf-shell.4414.js?v=4.3.95-top-home"></script>
   <script src="sgf-performance.4387.js?v=4.3.87"></script>
 </body>
 </html>
