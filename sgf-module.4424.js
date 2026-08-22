@@ -4816,12 +4816,6 @@ module.exports = QRCode;
     {id:'herramientas',categoria:'Emergencia',item:'Gata, triángulos y herramientas básicas',critico:false},
     {id:'combustible',categoria:'Operación',item:'Combustible o carga suficiente para la ruta',critico:false},
   ]);
-  function configuracionCpanelHabilitada(){
-    if(!currentUser)return false;
-    if(currentUser.PUEDE_USAR_CONFIGURACION===true)return true;
-    const estado=String(currentUser.CONFIGURACION_CPANEL||'').trim().toUpperCase();
-    return ['HABILITADO','AUTORIZADO','DESBLOQUEADO','SI','TRUE','1'].includes(estado);
-  }
   function hasPermission(module,action='LEER'){
     const m=String(module||'').toUpperCase(),a=String(action||'LEER').toUpperCase();
     if(currentUser&&['NOTIFICACIONES','ALERTAS'].includes(m)&&['LEER','MARCAR_LEIDA'].includes(a))return true;
@@ -4832,9 +4826,19 @@ module.exports = QRCode;
     const rol=String(currentUser?.ROL_ID_CANONICO||currentUser?.ROL_ID||currentUser?.ROL_NOMBRE||'').trim().toUpperCase();
     return ['ROL-SYSADMIN','SYSADMIN','ROL-ADMIN','ADMINISTRADOR','ROL-GERENCIA','GERENCIA'].includes(rol);
   }
+  function configuracionCpanelHabilitada(user=currentUser){
+    if(!user)return false;
+    if(user.PUEDE_ACCEDER_CONFIGURACION===true)return true;
+    const valor=String(
+      user.CONFIGURACION_CPANEL_AUTORIZADA
+      ??user.MODULO_CONFIGURACION_CPANEL
+      ??'NO'
+    ).trim().toUpperCase();
+    return ['SI','TRUE','1','AUTORIZADO','DESBLOQUEADO','HABILITADO'].includes(valor);
+  }
   function puedeAbrirSeccion(section){
-    if(section==='settings')return configuracionCpanelHabilitada()&&hasPermission('CONFIGURACION','LEER');
     if(section==='geofence')return rolPuedeGeocerca();
+    if(section==='settings')return configuracionCpanelHabilitada();
     return hasPermission(navPermission[section]||'PANEL_PRINCIPAL','LEER');
   }
   function puedeDesconectarUsuariosConectados(){return esAdministrador()&&hasPermission('CONEXIONES','DESCONECTAR_USUARIO');}
@@ -5003,7 +5007,7 @@ module.exports = QRCode;
       SISTEMA_YA_INICIALIZADO:'El sistema ya tiene usuarios registrados.', AUTENTICACION_REQUERIDA:'La sesión no está disponible.', SESION_INVALIDA:'La sesión dejó de ser válida.',
       SESION_EXPIRADA:'La sesión expiró.', PERMISO_DENEGADO:'Su rol no tiene permiso para realizar esta acción.', ULTIMO_ADMINISTRADOR_PROTEGIDO:'No se puede quitar o desactivar al último administrador activo.', CONTRASENAS_NO_COINCIDEN:'Las contraseñas no coinciden.', RECURSO_NO_ENCONTRADO:'El recurso solicitado no existe.',
       REGISTRO_NO_ENCONTRADO:'El registro no existe.', NOMBRE_USUARIO_REQUERIDO:'Ingrese el nombre completo del usuario.', ROL_USUARIO_INVALIDO:'Seleccione un rol válido para el usuario.', USUARIO_VALOR_NUMERICO_INVALIDO:'La base de datos tenía un límite numérico insuficiente para la versión de permisos. Ejecute el SQL correctivo 4.2.3 y vuelva a intentar.', VALOR_NUMERICO_FUERA_DE_RANGO:'Uno de los valores numéricos supera el límite permitido.', USUARIO_NO_CONFIRMADO:'El servidor no pudo confirmar el usuario guardado.', SIN_CAMBIOS_PARA_GUARDAR:'No se detectaron cambios para guardar.', NO_PUEDE_ELIMINAR_SU_PROPIA_CUENTA:'No puede eliminar la cuenta con la que tiene la sesión abierta.', NO_PUEDE_DESCONECTAR_SU_PROPIA_SESION:'Use Cerrar sesión para desconectar su propia cuenta.', MOTIVO_DESCONEXION_REQUERIDO:'Escriba un motivo de al menos 5 caracteres.', SESIONES_NO_DISPONIBLES:'No fue posible consultar las sesiones del usuario.', ULTIMO_ADMINISTRADOR_NO_PUEDE_MODIFICARSE:'Debe existir al menos otro Administrador activo antes de cambiar este rol o estado.', ULTIMO_ADMINISTRADOR_NO_PUEDE_ELIMINARSE:'No se puede eliminar el último Administrador activo.', VEHICULO_NO_DISPONIBLE:'El vehículo no está disponible.', CONDUCTOR_NO_DISPONIBLE:'El conductor no está disponible.',
-      OPERACION_NO_ACTIVA:'La operación ya no está activa.', CORREO_YA_EXISTE:'El correo ya está registrado.', DIRECCION_APLICACION_NO_CONFIGURADA:'Falta configurar la dirección de la aplicación en configuracion.js.', CONEXION_EMPRESA_REQUERIDA:'Primero conecte este dispositivo con una empresa.', DIRECTORIO_EMPRESAS_NO_CONFIGURADO:'Falta configurar el directorio de conexión del sistema.', DIRECTORIO_EMPRESAS_NO_DISPONIBLE:'El directorio empresarial no está disponible temporalmente.', RUT_EMPRESA_INVALIDO:'Ingrese un RUT de empresa válido.', RUT_INVALIDO:'Ingrese un RUT de empresa válido.', EMPRESA_NO_REGISTRADA:'El RUT no está registrado en el directorio empresarial.', EMPRESA_INACTIVA:'La conexión de esta empresa está inactiva.', EMPRESA_BLOQUEADA:'La empresa está bloqueada. Contacte al Administrador.', CONEXION_EMPRESA_NO_DISPONIBLE:'La empresa fue encontrada, pero su servicio no respondió correctamente.', RESPUESTA_DIRECTORIO_INVALIDA:'El directorio devolvió una configuración incompleta.', TIEMPO_DE_ESPERA_DIRECTORIO:'El directorio tardó demasiado en responder.', MODULO_CONFIGURACION_CONEXIONES_REQUIERE_SQL:'Falta instalar el módulo de configuración de conexiones en la base de datos.', DIRECTORIO_URL_HTTPS_REQUERIDA:'La dirección del directorio debe usar HTTPS.', ACTUALIZACIONES_URL_HTTPS_REQUERIDA:'La dirección del servicio de actualizaciones debe usar HTTPS.', ACTUALIZACIONES_URL_NO_CONFIRMADA:'El servidor no confirmó la nueva URL oficial de actualizaciones.', API_RESPALDO_URL_HTTPS_REQUERIDA:'La dirección de respaldo debe usar HTTPS.', PRUEBA_CONEXION_NO_SUPERADA:'El Directorio o el servicio de Actualizaciones no superó la prueba. La API de respaldo es opcional.',
+      OPERACION_NO_ACTIVA:'La operación ya no está activa.', CORREO_YA_EXISTE:'El correo ya está registrado.', DIRECCION_APLICACION_NO_CONFIGURADA:'Falta configurar la dirección de la aplicación en configuracion.js.', CONEXION_EMPRESA_REQUERIDA:'Primero conecte este dispositivo con una empresa.', DIRECTORIO_EMPRESAS_NO_CONFIGURADO:'Falta configurar el directorio de conexión del sistema.', DIRECTORIO_EMPRESAS_NO_DISPONIBLE:'El directorio empresarial no está disponible temporalmente.', RUT_EMPRESA_INVALIDO:'Ingrese un RUT de empresa válido.', RUT_INVALIDO:'Ingrese un RUT de empresa válido.', EMPRESA_NO_REGISTRADA:'El RUT no está registrado en el directorio empresarial.', EMPRESA_INACTIVA:'La conexión de esta empresa está inactiva.', EMPRESA_BLOQUEADA:'La empresa está bloqueada. Contacte al Administrador.', CONEXION_EMPRESA_NO_DISPONIBLE:'La empresa fue encontrada, pero su servicio no respondió correctamente.', RESPUESTA_DIRECTORIO_INVALIDA:'El directorio devolvió una configuración incompleta.', TIEMPO_DE_ESPERA_DIRECTORIO:'El directorio tardó demasiado en responder.', CONFIGURACION_BLOQUEADA_CPANEL:'El módulo Configuración está bloqueado. Solo cPanel puede habilitarlo para este usuario.', MODULO_CONFIGURACION_CONEXIONES_REQUIERE_SQL:'Falta instalar el módulo de configuración de conexiones en la base de datos.', DIRECTORIO_URL_HTTPS_REQUERIDA:'La dirección del directorio debe usar HTTPS.', ACTUALIZACIONES_URL_HTTPS_REQUERIDA:'La dirección del servicio de actualizaciones debe usar HTTPS.', ACTUALIZACIONES_URL_NO_CONFIRMADA:'El servidor no confirmó la nueva URL oficial de actualizaciones.', API_RESPALDO_URL_HTTPS_REQUERIDA:'La dirección de respaldo debe usar HTTPS.', PRUEBA_CONEXION_NO_SUPERADA:'El Directorio o el servicio de Actualizaciones no superó la prueba. La API de respaldo es opcional.',
       ID_HOJA_NO_CONFIGURADO:'La base de datos central no está configurada correctamente.', TIEMPO_DE_ESPERA_AGOTADO:'La base de datos tardó demasiado en responder.',
       CONTRASENA_ACTUAL_INVALIDA:'La contraseña actual no es correcta.', FORMATO_LOGOTIPO_INVALIDO:'El formato del logotipo no es válido.', LOGOTIPO_DEMASIADO_GRANDE:'El logotipo supera el tamaño máximo de 1,5 MB.',
       ID_HOJA_NO_CONFIGURADO:'La base de datos central no está configurada correctamente.', CONFIRMACION_REQUERIDA:'Debe escribir exactamente “LIMPIAR DATOS”.',
@@ -5658,8 +5662,9 @@ module.exports = QRCode;
 
   async function go(section, options = {}) {
     if(section==='settings'&&!configuracionCpanelHabilitada()){
-      toast('Configuración bloqueada','Este módulo solo puede habilitarse desde cPanel.','error');
-      section='dashboard';
+      toast('Configuración bloqueada','Este módulo solo puede habilitarse desde cPanel para su usuario.','error');
+      if(embeddedMode)postParent({tipo:'flotas:error-modulo',codigo:'CONFIGURACION_BLOQUEADA_CPANEL',mensaje:'Configuración bloqueada por cPanel'});
+      return false;
     }
     if(section==='connections'&&!hasPermission('CONEXIONES','LEER')){toast('Acceso restringido','El Administrador no ha habilitado este módulo para su cuenta.','error');return false;}
     if (!renderers[section]) section = 'dashboard';
@@ -8990,10 +8995,11 @@ module.exports = QRCode;
   }
 
   async function renderSettings(){
+    if(!configuracionCpanelHabilitada())throw new Error('CONFIGURACION_BLOQUEADA_CPANEL');
     await sincronizarPuntoOperacionDispositivo({silencioso:true});
     const remote=api.isRemote();let company=empresaConPuntoDispositivo(currentCompany||{});
     const empresaConexion=api.getEmpresaConexion?.()||{};
-    const esAdminConexion=currentUser?.ROL_ID==='ROL-ADMIN';let perfilConexion=null;
+    const esAdminConexion=configuracionCpanelHabilitada()&&currentUser?.ROL_ID==='ROL-ADMIN';let perfilConexion=null;
     if(esAdminConexion){try{perfilConexion=(await api.request('getConnectionConfig',{cache:false,force:true}))?.row||null;}catch(error){perfilConexion={ERROR:translateError(error)};}}
     try{const result=await api.request('list',{resource:'companies'});company=seleccionarEmpresaPrincipal(result.rows||[])||company;currentCompany=company;applyBranding(company);}catch(_){ }
     const tema=window.TemaFlotas?.normalizar?.(company)||company;
@@ -11351,11 +11357,18 @@ module.exports = QRCode;
           postParent({tipo:'flotas:autenticacion-requerida',codigo:'MODULO_NO_AUTORIZADO',seccion:initialSection});return;
         }
         if(!auth.token||!auth.user){postParent({tipo:'flotas:autenticacion-requerida',codigo:'AUTENTICACION_REQUERIDA',seccion:initialSection});return;}
-        const versionAnterior=Number(currentUser?.VERSION_PERMISOS||0),rolAnterior=String(currentUser?.ROL_ID||'').toUpperCase(),modoAnterior=String(currentUser?.MODO_PERMISOS||'ROL').toUpperCase();
+        const versionAnterior=Number(currentUser?.VERSION_PERMISOS||0),
+              rolAnterior=String(currentUser?.ROL_ID||'').toUpperCase(),
+              modoAnterior=String(currentUser?.MODO_PERMISOS||'ROL').toUpperCase(),
+              configAnterior=configuracionCpanelHabilitada(currentUser);
         api.setAuth(auth);
         currentUser=auth.user;
         showApp();
-        const permisosCambiaron=versionAnterior!==Number(currentUser?.VERSION_PERMISOS||0)||rolAnterior!==String(currentUser?.ROL_ID||'').toUpperCase()||modoAnterior!==String(currentUser?.MODO_PERMISOS||'ROL').toUpperCase();
+        const permisosCambiaron=
+          versionAnterior!==Number(currentUser?.VERSION_PERMISOS||0)
+          ||rolAnterior!==String(currentUser?.ROL_ID||'').toUpperCase()
+          ||modoAnterior!==String(currentUser?.MODO_PERMISOS||'ROL').toUpperCase()
+          ||configAnterior!==configuracionCpanelHabilitada(currentUser);
         if(permisosCambiaron&&appInicializada){
           buildNav();
           if(!hayInteraccionVisualActiva()){cacheVistasModulo.delete(currentSection);setTimeout(()=>go(currentSection),30);}

@@ -2594,11 +2594,15 @@ window.CONFIGURACION_FLOTAS = Object.freeze({
     try{marco.src='about:blank';}catch(_){ }
     location.replace(`index.html?sesion=${encodeURIComponent(motivo)}`);
   }
-  function configuracionCpanelHabilitada(){
-    if(!usuario)return false;
-    if(usuario.PUEDE_USAR_CONFIGURACION===true)return true;
-    const estado=String(usuario.CONFIGURACION_CPANEL||'').trim().toUpperCase();
-    return ['HABILITADO','AUTORIZADO','DESBLOQUEADO','SI','TRUE','1'].includes(estado);
+  function configuracionCpanelHabilitada(user=usuario){
+    if(!user)return false;
+    if(user.PUEDE_ACCEDER_CONFIGURACION===true)return true;
+    const valor=String(
+      user.CONFIGURACION_CPANEL_AUTORIZADA
+      ??user.MODULO_CONFIGURACION_CPANEL
+      ??'NO'
+    ).trim().toUpperCase();
+    return ['SI','TRUE','1','AUTORIZADO','DESBLOQUEADO','HABILITADO'].includes(valor);
   }
   function permitido(modulo){
     if(!usuario)return false;
@@ -2629,15 +2633,17 @@ window.CONFIGURACION_FLOTAS = Object.freeze({
     }
     return permisos.includes('*:*')||permisos.includes(`${modulo}:LEER`);
   }
-  function permitidoItem(item){
+  function permitidoModulo(item){
     if(!item)return false;
-    if(item[0]==='settings'&&!configuracionCpanelHabilitada())return false;
+    // "Empresa" continúa siendo un módulo separado. Solo la opción específica
+    // "Configuración" (settings) depende exclusivamente de cPanel.
+    if(item[0]==='settings')return configuracionCpanelHabilitada();
     return permitido(item[4]);
   }
   function construirMenu(){
     let html='';
     grupos.forEach(([grupo,items])=>{
-      const visibles=items.filter(item=>permitidoItem(item)&&(!item[5]||usuario.ROL_ID===item[5]));
+      const visibles=items.filter(item=>permitidoModulo(item)&&(!item[5]||usuario.ROL_ID===item[5]));
       if(!visibles.length)return;
       html+=`<p class="etiqueta-menu">${grupo}</p>`+visibles.map(([id,icono,etiqueta])=>`<button class="boton-modulo ${id===seccionActual?'activo':''}" type="button" data-modulo="${id}"><i>${icono}</i><span>${etiqueta}</span></button>`).join('');
     });
@@ -2663,7 +2669,7 @@ window.CONFIGURACION_FLOTAS = Object.freeze({
   }
   function abrirModulo(id,{forzar=false}={}){
     const modulo=modulos.get(id)||modulos.get('dashboard');
-    if(!usuario||!permitidoItem(modulo)){if(modulo?.[0]==='settings')cambiarEstado('Configuración bloqueada por cPanel','error');return;}
+    if(!usuario||!permitidoModulo(modulo))return;
     if((modulo[0]==='gps'||modulo[0]==='connections')&&window.AndroidConfig&&typeof window.AndroidConfig.abrirModuloNativo==='function'){
       try{window.AndroidConfig.abrirModuloNativo(modulo[0]);cerrarMenu();cambiarEstado('Módulo Android nativo abierto','listo');return;}
       catch(error){console.error('No fue posible abrir el módulo nativo',error);}
@@ -2970,7 +2976,17 @@ function esAvisoSilencioso(item){return String(item?.CATEGORIA_EMERGENTE||item?.
       userId:String(estado.userId||estado.USUARIO_ID||''),
       versionPermisos:Number(estado.versionPermisos??estado.VERSION_PERMISOS??0),
       rolId:String(estado.rolId||estado.ROL_ID||'').trim().toUpperCase(),
-      modoPermisos:String(estado.modoPermisos||estado.MODO_PERMISOS||'ROL').trim().toUpperCase()
+      modoPermisos:String(estado.modoPermisos||estado.MODO_PERMISOS||'ROL').trim().toUpperCase(),
+      configuracionCpanelAutorizada:
+        estado.configuracionCpanelAutorizada===true
+        ||estado.PUEDE_ACCEDER_CONFIGURACION===true
+        ||['SI','TRUE','1','AUTORIZADO','DESBLOQUEADO','HABILITADO'].includes(
+          String(
+            estado.CONFIGURACION_CPANEL_AUTORIZADA
+            ??estado.MODULO_CONFIGURACION_CPANEL
+            ??'NO'
+          ).trim().toUpperCase()
+        )
     };
   }
   function estadoAsignacionRespuesta(respuesta){
@@ -2996,8 +3012,16 @@ function esAvisoSilencioso(item){return String(item?.CATEGORIA_EMERGENTE||item?.
 
   async function sincronizarPermisosSesion(respuesta){
     if(!usuario)return false;const estado=estadoPermisosRespuesta(respuesta);if(!estado||!estado.userId||estado.userId!==String(usuario.ID||usuario.USUARIO_ID||''))return false;
-    const versionActual=Number(usuario.VERSION_PERMISOS||0),rolActual=String(usuario.ROL_ID||'').trim().toUpperCase(),modoActual=String(usuario.MODO_PERMISOS||'ROL').trim().toUpperCase();
-    if(versionActual===estado.versionPermisos&&rolActual===estado.rolId&&modoActual===estado.modoPermisos)return false;
+    const versionActual=Number(usuario.VERSION_PERMISOS||0),
+          rolActual=String(usuario.ROL_ID||'').trim().toUpperCase(),
+          modoActual=String(usuario.MODO_PERMISOS||'ROL').trim().toUpperCase(),
+          configuracionActual=configuracionCpanelHabilitada(usuario);
+    if(
+      versionActual===estado.versionPermisos
+      &&rolActual===estado.rolId
+      &&modoActual===estado.modoPermisos
+      &&configuracionActual===estado.configuracionCpanelAutorizada
+    )return false;
     if(sincronizacionPermisosPendiente)return sincronizacionPermisosPendiente;
     sincronizacionPermisosPendiente=(async()=>{
       try{
@@ -3005,7 +3029,7 @@ function esAvisoSilencioso(item){return String(item?.CATEGORIA_EMERGENTE||item?.
         const resultado=await api.request('me',{cache:false});const fresco=resultado?.user||resultado?.usuario;if(!fresco?.ID)return false;
         const auth=api.getAuth();api.setAuth({...auth,user:fresco});aplicarUsuario(fresco);enviarAutenticacionModulo();
         const moduloActual=modulos.get(seccionActual);
-        if(!moduloActual||!permitidoItem(moduloActual)){seccionActual='dashboard';localStorage.setItem('flotas_modulo_actual_v1',seccionActual);abrirModulo('dashboard',{forzar:true});}
+        if(!moduloActual||!permitidoModulo(moduloActual)){seccionActual='dashboard';localStorage.setItem('flotas_modulo_actual_v1',seccionActual);abrirModulo('dashboard',{forzar:true});}
         else cambiarEstado('Permisos actualizados','listo');
         return true;
       }catch(error){console.warn('No fue posible sincronizar permisos de sesión',error);return false;}
@@ -3091,7 +3115,7 @@ function esAvisoSilencioso(item){return String(item?.CATEGORIA_EMERGENTE||item?.
     if(panelInicializado)return;
     panelInicializado=true;
     const modulo=modulos.get(seccionActual);
-    if(!modulo||!permitidoItem(modulo))seccionActual='dashboard';
+    if(!modulo||!permitido(modulo[4]))seccionActual='dashboard';
     abrirModulo(seccionActual,{forzar:true});
     iniciarAvisos();
   }
@@ -3230,7 +3254,7 @@ function esAvisoSilencioso(item){return String(item?.CATEGORIA_EMERGENTE||item?.
         const fresco=resultado?.user||resultado?.usuario;if(!fresco)return;
         const auth=api.getAuth();api.setAuth({...auth,user:fresco});aplicarUsuario(fresco);
         const moduloActual=modulos.get(seccionActual);
-        if(!moduloActual||!permitidoItem(moduloActual)){
+        if(!moduloActual||!permitido(moduloActual[4])){
           seccionActual='dashboard';localStorage.setItem('flotas_modulo_actual_v1',seccionActual);abrirModulo('dashboard',{forzar:true});
         }else enviarAutenticacionModulo();
       }).catch(error=>{if(api.isAuthError?.(error)){api.setAuth({});irAcceso('expirada');}});
@@ -3242,7 +3266,7 @@ function esAvisoSilencioso(item){return String(item?.CATEGORIA_EMERGENTE||item?.
       const seccionSolicitada=String(data.seccion||'').trim();
       if(seccionSolicitada){
         const moduloSolicitado=modulos.get(seccionSolicitada);
-        if(seccionSolicitada!==seccionActual||!moduloSolicitado||!permitidoItem(moduloSolicitado)){
+        if(seccionSolicitada!==seccionActual||!moduloSolicitado||!permitido(moduloSolicitado[4])){
           api.setAuth({});irAcceso('modulo_no_autorizado');return;
         }
       }
