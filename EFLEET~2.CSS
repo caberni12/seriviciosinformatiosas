@@ -1,0 +1,235 @@
+/* =====================================================================
+   E-fleet Web 4.3.88 · LIGHT BLUE UI HOTFIX
+   Capa visual final sobre Web 4.3.87. NO modifica lógica funcional.
+   Objetivo: identidad azul clara uniforme en todos los módulos, alertas,
+   tarjetas, login, navegación, formularios, Geo y ventanas emergentes.
+   ===================================================================== */
+:root{
+  color-scheme:light!important;
+  --ef-ui-blue:#3B82F6!important;
+  --ef-ui-blue-hover:#2563EB!important;
+  --ef-ui-blue-strong:#0F5FA5!important;
+  --ef-ui-navy:#123B63!important;
+  --ef-ui-title:#123B63!important;
+  --ef-ui-text:#17324D!important;
+  --ef-ui-muted:#5E7890!important;
+  --ef-ui-bg:#F7FBFF!important;
+  --ef-ui-surface:#FFFFFF!important;
+  --ef-ui-soft:#EFF8FF!important;
+  --ef-ui-soft-2:#E4F3FE!important;
+  --ef-ui-border:#B9DDF6!important;
+  --ef-ui-border-soft:#D4EAF8!important;
+  --ef-ui-shadow:0 8px 28px rgba(31,111,174,.075)!important;
+  --primary:var(--ef-ui-blue)!important;
+  --primary-dark:var(--ef-ui-blue-hover)!important;
+  --accent:var(--ef-ui-blue)!important;
+  --bg:var(--ef-ui-bg)!important;--fondo:var(--ef-ui-bg)!important;
+  --surface:#fff!important;--superficie:#fff!important;
+  --surface-2:var(--ef-ui-soft)!important;--surface-3:var(--ef-ui-soft-2)!important;
+  --superficie-suave:var(--ef-ui-soft)!important;
+  --text:var(--ef-ui-text)!important;--texto:var(--ef-ui-text)!important;
+  --muted:var(--ef-ui-muted)!important;--suave:var(--ef-ui-muted)!important;--texto-suave:var(--ef-ui-muted)!important;
+  --line:var(--ef-ui-border-soft)!important;--border:var(--ef-ui-border-soft)!important;--borde:var(--ef-ui-border-soft)!important;
+  --primario:var(--ef-ui-blue)!important;--primario-fuerte:var(--ef-ui-blue-hover)!important;
+  --menu-fondo:#F7FCFF!important;--menu-fondo-2:#EAF6FF!important;
+  --ui-bg:var(--ef-ui-bg)!important;--ui-surface:#fff!important;--ui-surface-soft:var(--ef-ui-soft)!important;
+  --ui-surface-muted:var(--ef-ui-soft-2)!important;--ui-text:var(--ef-ui-text)!important;
+  --ui-text-soft:var(--ef-ui-muted)!important;--ui-border:var(--ef-ui-border-soft)!important;
+  --ui-primary:var(--ef-ui-blue)!important;--ui-primary-strong:var(--ef-ui-blue-hover)!important;--ui-primary-soft:#DCEFFF!important;
+}
+
+/* El Web queda visualmente en modo claro aunque exista una clase de tema heredada. */
+body,body.dark,body.oscuro,html.tema-oscuro-inicial body,
+html.tema-oscuro-inicial body.dark,html.tema-oscuro-inicial body.oscuro{
+  color-scheme:light!important;
+  --bg:var(--ef-ui-bg)!important;--fondo:var(--ef-ui-bg)!important;
+  --surface:#fff!important;--superficie:#fff!important;--surface-2:var(--ef-ui-soft)!important;--surface-3:var(--ef-ui-soft-2)!important;
+  --text:var(--ef-ui-text)!important;--texto:var(--ef-ui-text)!important;--muted:var(--ef-ui-muted)!important;
+  --line:var(--ef-ui-border-soft)!important;--border:var(--ef-ui-border-soft)!important;--borde:var(--ef-ui-border-soft)!important;
+  --ui-bg:var(--ef-ui-bg)!important;--ui-surface:#fff!important;--ui-surface-soft:var(--ef-ui-soft)!important;--ui-surface-muted:var(--ef-ui-soft-2)!important;
+  --ui-text:var(--ef-ui-text)!important;--ui-text-soft:var(--ef-ui-muted)!important;--ui-border:var(--ef-ui-border-soft)!important;
+  --ui-primary:var(--ef-ui-blue)!important;--ui-primary-strong:var(--ef-ui-blue-hover)!important;--ui-primary-soft:#DCEFFF!important;
+  --menu-fondo:#F7FCFF!important;--menu-fondo-2:#EAF6FF!important;
+  background:var(--ef-ui-bg)!important;color:var(--ef-ui-text)!important;
+}
+
+/* Estructura global */
+:where(.content,.module-content,.main-area,.area-modular,.contenedor-iframe,.panel-acceso,.auth-panel){background:var(--ef-ui-bg)!important;color:var(--ef-ui-text)!important}
+:where(.card,.panel,.metric-card,.notification-card,.operation-card,.route-card,.device-card,.info-item,.table-wrap,.form-grid,
+       .modal,.modal-content,.modal-card,.auth-card,.tarjeta-acceso,.geo-card,.geo-kpi,.geo-metric,.geo-admin-panel,
+       .geocerca-filter-card,.kpi-filter-card,.report-chart-card,.report-export-card,.connection-manager-card,
+       .connections-filter-card,.connections-detail-card,.connections-tracking-panel,.document-expedient-card,
+       .maintenance-history-card,.checkin-control-card,.checkin-photo-card,.checkin-visible-card,
+       .office-auto-card,.office-chat-card,.office-tool-card,.office-tasks-card,.system-health-card,
+       .backup-database-card,.turno-programacion-panel,.tracking-filter-card,.vehicle-tracking-panel){
+  background:#fff!important;color:var(--ef-ui-text)!important;border-color:var(--ef-ui-border-soft)!important;
+  box-shadow:var(--ef-ui-shadow)!important;
+}
+
+/* Titulares y encabezados: azul corporativo claro */
+:where(.heading h1,.heading h2,.heading h3,.section-heading h1,.section-heading h2,.section-heading h3,
+       .card-header h3,.card-header h4,.topbar-title h2,.titulo-modular h1,.modal-header h3,.auth-heading h2,
+       .encabezado-formulario h2,.geo-stage-heading h1,.geo-stage-heading h2,.geo-section-head h2,
+       .report-dashboard-heading h1,.office-hero h1){color:var(--ef-ui-title)!important}
+:where(.heading .tag,.eyebrow,.etiqueta,.card-header .tag,.modal-header .eyebrow,.geo-eyebrow,
+       .panel-avisos-menu>header span){color:var(--ef-ui-blue)!important}
+:where(.heading p,.section-heading p,.card-header p,.topbar-title p,.titulo-modular span,.helper,.detalle-servicio,
+       .auth-heading p,.encabezado-formulario p,.geo-stage-heading p){color:var(--ef-ui-muted)!important}
+
+/* Barra superior y menú: blanco + azul claro, sin bloques negros */
+:where(.topbar,.barra-modular,.barra-superior,.topbar-shell){
+  background:rgba(255,255,255,.98)!important;color:var(--ef-ui-text)!important;
+  border-color:var(--ef-ui-border-soft)!important;box-shadow:0 2px 12px rgba(31,111,174,.065)!important;
+}
+:where(.menu-lateral,.sidebar){
+  background:linear-gradient(180deg,#F9FDFF 0%,#EAF6FF 100%)!important;color:var(--ef-ui-text)!important;
+  border-color:var(--ef-ui-border-soft)!important;box-shadow:12px 0 30px rgba(31,111,174,.08)!important;
+}
+:where(.marca-menu,.sidebar-brand,.pie-menu,.sidebar-footer){background:transparent!important;color:var(--ef-ui-text)!important;border-color:var(--ef-ui-border-soft)!important}
+:where(.marca-menu strong,.marca-menu span,.sidebar-brand strong,.sidebar-brand span,.usuario-menu b,.usuario-menu small,.pie-menu b,.pie-menu small){color:var(--ef-ui-text)!important}
+:where(.etiqueta-menu){color:#5C7F9C!important}
+:where(.boton-modulo,.nav-button,.nav-item,.menu-item){color:var(--ef-ui-text)!important;border-color:transparent!important}
+:where(.boton-modulo i,.nav-button i,.nav-item i,.menu-item i){background:#E7F4FF!important;color:#176CA8!important}
+:where(.boton-modulo:hover,.nav-button:hover,.nav-item:hover,.menu-item:hover){background:#EAF6FF!important;color:#0F5FA5!important}
+:where(.boton-modulo.activo,.nav-button.active,.nav-item.active,.menu-item.active,[aria-current="page"]){
+  background:#DCEFFF!important;color:#0F5FA5!important;border-color:#B9DDF6!important;box-shadow:none!important;
+}
+:where(.boton-modulo.activo i,.nav-button.active i,.nav-item.active i,.menu-item.active i){background:#fff!important;color:#1677FF!important}
+:where(.boton-icono,.icon-button,.abrir-menu,.cerrar-menu){background:#EFF8FF!important;color:#155E93!important;border-color:#B9DDF6!important}
+:where(.boton-icono:hover,.icon-button:hover,.abrir-menu:hover,.cerrar-menu:hover){background:#DCEFFF!important;color:#0F5FA5!important}
+
+/* Tarjetas KPI y destacados */
+.metric-card,.geo-kpi,.geo-metric{border:1px solid var(--ef-ui-border-soft)!important}
+.metric-icon,.geo-section-icon,.geo-order,.quick-action i{background:#E7F4FF!important;color:#1677FF!important;border-color:#C5E2F5!important}
+.metric-card b,.geo-metric strong{color:#123B63!important}
+
+/* Empresa / conexión: formato azul claro uniforme */
+:where(.empresa-conectada-acceso,.estado-empresa-pendiente,.company-logo-card,.backend-card,.connection-status,.save-status,
+       .backend-pill,.estado-conexion,.connection-config-alert,.connection-test-item,.tracking-notice){
+  background:linear-gradient(180deg,#FFFFFF 0%,#F4FAFF 100%)!important;
+  border:1px solid var(--ef-ui-border)!important;color:var(--ef-ui-text)!important;
+}
+.empresa-conectada-acceso{box-shadow:0 5px 16px rgba(31,111,174,.06)!important}
+:where(.empresa-conectada-acceso>i,.company-logo-card>i,.connection-status>i,.backend-pill i){background:var(--ef-ui-blue)!important;color:#fff!important}
+:where(.empresa-conectada-acceso b,.company-logo-card b,#nombreEmpresaConectada,#authCompanyName,#loginCompanyName,#sidebarCompanyName,#nombreEmpresaMenu){color:#0F5FA5!important}
+:where(.empresa-conectada-acceso span,.company-logo-card span,.backend-card small,.connection-status span,.save-status span){color:#50738F!important}
+.estado-conexion.conectado i,.estado-modular.listo i{background:#22C55E!important;box-shadow:0 0 0 4px rgba(34,197,94,.14)!important}
+
+/* Botones */
+:where(.btn.primary,.boton-principal,.button-primary,.action-primary,.geo-btn.primary,button[data-primary],
+       .theme-preview-button,.alerta-asignacion-menu>footer .aceptar,.aceptar-aviso-menu){
+  background:linear-gradient(180deg,#59A5FF 0%,var(--ef-ui-blue) 100%)!important;
+  color:#fff!important;border-color:var(--ef-ui-blue)!important;box-shadow:0 7px 16px rgba(59,130,246,.18)!important;
+}
+:where(.btn.primary,.boton-principal,.button-primary,.action-primary,.geo-btn.primary,button[data-primary],
+       .alerta-asignacion-menu>footer .aceptar,.aceptar-aviso-menu):hover{background:linear-gradient(180deg,#3F8FF8 0%,#2563EB 100%)!important;border-color:#2563EB!important}
+:where(.btn.soft,.btn.secondary,.button-secondary,.boton-secundario,.geo-btn:not(.primary):not(.danger):not(.warn):not(.ok),.row-actions button){background:#EFF8FF!important;color:#155E93!important;border-color:#B9DDF6!important}
+
+/* Formularios */
+:where(input,select,textarea,.input,.select,.field input,.field select,.field textarea,.campo input,.toolbar input,.toolbar select){
+  background:#fff!important;color:var(--ef-ui-text)!important;border-color:#BFDDF1!important;
+}
+:where(input,select,textarea,.input,.select,.field input,.field select,.field textarea,.campo input,.toolbar input,.toolbar select):focus{
+  border-color:#38A6E6!important;box-shadow:0 0 0 3px rgba(56,189,248,.17)!important;
+}
+:where(input::placeholder,textarea::placeholder){color:#86A0B4!important;opacity:1!important}
+.campo-contrasena button,.password-field button{background:#EAF6FF!important;color:#1677FF!important}
+
+/* Tablas */
+:where(.table-wrap thead th,.modulo-tabla thead th,.table thead th){background:#EFF8FF!important;color:#155E93!important;border-bottom-color:#C8E5F8!important}
+:where(.table-wrap tbody tr:hover,.modulo-tabla tbody tr:hover,.table tbody tr:hover){background:#F6FBFF!important}
+
+/* ALERTAS Y NOTIFICACIONES: mismo lenguaje visual azul claro */
+:where(.notification-card,.automatic-alert-banner,.connection-config-alert,.geo-alert,.geo-dialog-alert:not(.warn),
+       .alerta,.notificacion,.assignment-alert-card,.assignment-alert-body,.nexo-speed-alert){
+  background:linear-gradient(180deg,#F8FCFF 0%,#EDF7FF 100%)!important;
+  color:var(--ef-ui-text)!important;border:1px solid #B9DDF6!important;box-shadow:0 6px 18px rgba(31,111,174,.06)!important;
+}
+:where(.notification-card h3,.notification-card h4,.automatic-alert-banner b,.geo-alert b,.geo-dialog-alert b,.alerta b,.notificacion b,
+       .assignment-alert-card h3,.assignment-alert-body h3){color:#0F5FA5!important}
+:where(.notification-card p,.notification-card span,.automatic-alert-banner span,.geo-alert span,.geo-dialog-alert span,.alerta span,.notificacion span){color:#5E7890!important}
+:where(.notification-card>i,.automatic-alert-banner>i,.geo-alert>i,.notificacion>i,.assignment-alert-card>i){background:#E1F1FD!important;color:#1677FF!important;border-color:#B9DDF6!important}
+
+.panel-avisos-menu{background:#fff!important;color:var(--ef-ui-text)!important;border-color:#B9DDF6!important;box-shadow:0 18px 50px rgba(31,111,174,.16)!important}
+.panel-avisos-menu>header{background:#F7FCFF!important;border-bottom-color:#CDE6F7!important}
+.resumen-avisos-menu>div{background:#EFF8FF!important;border-color:#C8E5F8!important}
+.aviso-menu-item{border-bottom-color:#D7EAF7!important;color:var(--ef-ui-text)!important}
+.aviso-menu-item:hover{background:#F2F9FF!important}
+.aviso-menu-item>i{background:#E7F4FF!important;color:#1677FF!important}
+.aviso-menu-item.alerta>i{background:#FFF1F2!important;color:#D93B45!important}
+.aviso-menu-item.notificacion>i{background:#E7F4FF!important;color:#1677FF!important}
+
+/* Toasts normales: claros y legibles, no cajas negras. */
+:where(.toast,.toast-aviso-menu,.geo-toast){
+  background:#F4FAFF!important;color:var(--ef-ui-text)!important;border:1px solid #B9DDF6!important;
+  box-shadow:0 14px 35px rgba(31,111,174,.17)!important;
+}
+:where(.toast b,.toast-aviso-menu b,.geo-toast b){color:#0F5FA5!important}
+:where(.toast small,.toast-aviso-menu small,.geo-toast small){color:#5E7890!important}
+.toast-aviso-menu.notificacion>i{color:#1677FF!important}.toast-aviso-menu.alerta>i{color:#D93B45!important}
+.toast-aviso-menu button{color:#1677FF!important}
+
+/* Emergentes de asignación: cabecera azul clara y botones siempre visibles. */
+.alerta-asignacion-menu{background:#fff!important;color:var(--ef-ui-text)!important;border-color:#B9DDF6!important;box-shadow:0 22px 60px rgba(31,111,174,.20)!important}
+.alerta-asignacion-menu>header{background:linear-gradient(135deg,#E4F3FE,#CFEAFF)!important;color:#123B63!important;border-bottom:1px solid #B9DDF6!important}
+.alerta-asignacion-menu>header span{color:#1677FF!important}.alerta-asignacion-menu>header h2{color:#123B63!important}.alerta-asignacion-menu>header>i{background:#fff!important;color:#1677FF!important;border:1px solid #B9DDF6!important}
+.alerta-asignacion-cuerpo dl>div{background:#F8FCFF!important;border-color:#D1E8F7!important}
+.alerta-asignacion-menu>footer{background:#fff!important;border-top:1px solid #D7EAF7!important}
+.alerta-asignacion-menu.persistente>header{background:linear-gradient(135deg,#FFF8E7,#FFEAB6)!important;color:#7A4C00!important}
+
+/* Alerta velocidad: superficie clara; rojo/naranja sólo semántico. */
+.alerta-velocidad-menu{background:#fff!important;color:var(--ef-ui-text)!important;box-shadow:0 22px 60px rgba(31,111,174,.18)!important}
+.alerta-velocidad-menu h3,.alerta-velocidad-menu p{color:var(--ef-ui-text)!important}
+.alerta-velocidad-menu footer button:not(:last-child){background:#EFF8FF!important;color:#155E93!important;border-color:#B9DDF6!important}
+
+/* Geo locales completo */
+:where(.geo-page,.geo-content,.geo-admin-page){background:var(--ef-ui-bg)!important;color:var(--ef-ui-text)!important}
+.geo-hero{background:linear-gradient(135deg,#F7FCFF 0%,#EAF6FF 55%,#DCEFFF 100%)!important;color:var(--ef-ui-text)!important;border-color:#B9DDF6!important;box-shadow:var(--ef-ui-shadow)!important}
+.geo-hero :where(h1,h2,h3,strong){color:#123B63!important}.geo-hero :where(p,span){color:#5E7890!important}.geo-hero .geo-eyebrow{color:#1677FF!important}
+.geo-dialog-head{background:#F7FCFF!important;color:var(--ef-ui-text)!important;border-bottom-color:#CDE6F7!important}
+.geo-dialog-head .geo-eyebrow{color:#1677FF!important}.geo-dialog-head h2{color:#123B63!important}.geo-dialog-head p{color:#5E7890!important}
+.geo-dialog-icon{background:#E4F3FE!important;color:#1677FF!important;border-color:#B9DDF6!important}
+.geo-forced-card,.geo-modal-box{background:#fff!important;color:var(--ef-ui-text)!important;border-color:#B9DDF6!important}
+.geo-forced-card>.buttons,.geo-modal-box>.buttons{background:#fff!important;border-top-color:#CDE6F7!important;box-shadow:0 -8px 22px rgba(31,111,174,.07)!important}
+.geo-mobility{background:#F7FCFF!important;border-color:#CDE6F7!important}.geo-mobility span,.geo-mobility b{color:var(--ef-ui-text)!important}
+.geo-badge.info{background:#E7F4FF!important;color:#0F6FCC!important;border-color:#B9DDF6!important}
+
+/* Login: eliminar bloque negro y llevar toda la pantalla a azul claro. */
+.pagina-acceso{background:var(--ef-ui-bg)!important}
+.presentacion-acceso{
+  background:radial-gradient(circle at 12% 12%,#FFFFFF 0,#F5FBFF 30%,#EAF6FF 70%,#DCEFFF 100%)!important;
+  color:var(--ef-ui-text)!important;border-right:1px solid #CDE6F7!important;
+}
+.presentacion-acceso:before,.presentacion-acceso:after{background:rgba(59,130,246,.08)!important}
+.marca-acceso strong{color:#0F5FA5!important}.marca-acceso span{color:#5E7890!important}
+.mensaje-acceso .etiqueta{color:#1677FF!important}.mensaje-acceso h1{color:#123B63!important}.mensaje-acceso p{color:#5E7890!important}
+.resumen-acceso article{background:rgba(255,255,255,.78)!important;border-color:#B9DDF6!important;color:var(--ef-ui-text)!important;box-shadow:0 6px 18px rgba(31,111,174,.06)!important}
+.resumen-acceso i{background:#E4F3FE!important;color:#1677FF!important}.resumen-acceso b{color:#123B63!important}.resumen-acceso span{color:#5E7890!important}
+.panel-acceso{background:linear-gradient(180deg,#FFFFFF 0%,#F4FAFF 100%)!important}
+.tarjeta-acceso{background:#fff!important;border-color:#CDE6F7!important;box-shadow:0 20px 55px rgba(31,111,174,.11)!important}
+.estado-conexion{background:#F4FAFF!important;border:1px solid #CDE6F7!important}
+.icono-ajuste-login{background:#E7F4FF!important;color:#1677FF!important;border:1px solid #B9DDF6!important;box-shadow:none!important}
+
+/* Login embebido de módulos */
+.auth-screen{background:linear-gradient(135deg,#F7FCFF 0%,#EAF6FF 58%,#DCEFFF 100%)!important;color:var(--ef-ui-text)!important}
+.auth-screen:before,.auth-screen:after{background:rgba(59,130,246,.08)!important}
+.auth-art{color:var(--ef-ui-text)!important}.hero-copy .eyebrow{color:#1677FF!important}.hero-copy h1{color:#123B63!important}.hero-copy p{color:#5E7890!important}
+.hero-preview div{background:rgba(255,255,255,.76)!important;border-color:#B9DDF6!important}.hero-preview span{color:#5E7890!important}.hero-preview b{color:#123B63!important}
+.auth-panel{background:linear-gradient(180deg,#FFFFFF 0%,#F4FAFF 100%)!important;color:var(--ef-ui-text)!important;box-shadow:-18px 0 55px rgba(31,111,174,.09)!important}
+.backend-pill{background:#F4FAFF!important;color:#5E7890!important}
+
+/* Modales */
+.modal-backdrop{background:rgba(23,50,77,.30)!important;backdrop-filter:blur(3px)!important}
+.modal-header{background:#F7FCFF!important;border-bottom-color:#CDE6F7!important;color:var(--ef-ui-text)!important}
+
+/* Estados semánticos se mantienen. */
+:where(.status.active,.badge.success,.chip.success,.state.success,.geo-status.ok,.document-auto-approved){background:#ECFDF5!important;color:#05634A!important;border-color:#A6E8D3!important}
+:where(.badge.warning,.chip.warning,.state.warning,.geo-status.warn,.geo-dialog-alert.warn){background:#FFF8E7!important;color:#8A5800!important;border-color:#F4D38A!important}
+:where(.badge.danger,.chip.danger,.state.danger,.geo-status.bad,.modal-error){background:#FFF0F1!important;color:#9D2029!important;border-color:#F2B8BD!important}
+:where(.badge.neutral,.chip.neutral,.state.neutral,.status.offline){background:#F2F6F9!important;color:#536B80!important;border-color:#D7E1E8!important}
+
+/* Responsive: no perder acciones ni botones al reducir alto/ancho. */
+@media(max-width:720px){
+  .alerta-asignacion-menu>footer,.geo-forced-card>.buttons,.geo-modal-box>.buttons{position:sticky!important;bottom:0!important;z-index:8!important;background:#fff!important}
+  .panel-avisos-menu{background:#fff!important}
+}

@@ -1,0 +1,275 @@
+/* SGF Web 4.3.39 · consolidación visual de mapas y tarjetas */
+html,body{max-width:100%;overflow-x:hidden}
+.app,.page,.content,.module,.panel,.card,.tarjeta,.grid,.map-card,.connections-layout,.gps-layout,.geofence-layout{min-width:0;max-width:100%;box-sizing:border-box}
+.mapa-flotas,.fleet-map,.connections-map,#fleetMap,#connectionsMap{max-width:100%;min-width:0;overflow:hidden;box-sizing:border-box}
+.mapa-marcador>span{max-width:min(260px,70vw);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mapa-detalle{box-sizing:border-box;max-width:calc(100vw - 24px)!important;overflow:hidden!important;overscroll-behavior:contain}
+.mapa-detalle-contenido{min-width:0;overflow-x:hidden!important;overflow-y:auto;overflow-wrap:anywhere;word-break:break-word}
+.mapa-detalle-contenido span,.mapa-detalle-contenido small,.mapa-detalle-contenido strong,.mapa-contexto-operativo,.mapa-contexto-operativo span{max-width:100%;overflow-wrap:anywhere;word-break:break-word;white-space:normal}
+.mapa-contexto-operativo{display:grid;gap:5px;min-width:0}
+.mapa-ruta-metricas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 10px;min-width:0}
+.mapa-detalle-acciones{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px!important;min-width:0;max-width:100%}
+.mapa-detalle-acciones .btn,.mapa-detalle-acciones a,.mapa-detalle-acciones button{box-sizing:border-box;width:100%;min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere;line-height:1.15;min-height:38px}
+.connections-quick-list,.connections-table-wrap,.table-scroll,.table-responsive{min-width:0;max-width:100%;overflow:auto}
+.form-grid,.field,.form-actions{min-width:0;max-width:100%}
+input,select,textarea{max-width:100%;box-sizing:border-box}
+@media(max-width:680px){
+  .mapa-detalle-acciones{grid-template-columns:1fr!important}
+  .mapa-ruta-metricas{grid-template-columns:1fr}
+  .mapa-detalle{font-size:13px}
+  .mapa-marcador>span{max-width:58vw}
+}
+
+
+/* =========================================================
+   SGF 4.3.43 · Contexto de empresa dentro de cada sección
+   ========================================================= */
+.section-company-card{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  width:min(100%, 520px);
+  margin:-2px 0 18px;
+  padding:13px 16px;
+  border:1px solid rgba(0, 0, 0, .30);
+  border-radius:16px;
+  background:linear-gradient(135deg,rgba(247,253,251,.98),rgba(255,255,255,.98));
+  box-shadow:0 7px 22px rgba(0, 0, 0, .06);
+}
+.section-company-check{
+  flex:0 0 36px;
+  width:36px;
+  height:36px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#000000;
+  color:#fff;
+  font-size:22px;
+  font-weight:900;
+  line-height:1;
+}
+.section-company-copy{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+.section-company-copy strong{
+  display:block;
+  color:#000000;
+  font-size:14px;
+  font-weight:900;
+  line-height:1.25;
+  text-transform:uppercase;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.section-company-copy small{
+  color:#475569;
+  font-size:12px;
+  font-weight:600;
+}
+.section-company-card.is-warning{
+  border-color:rgba(217,119,6,.32);
+  background:#fffaf0;
+}
+.section-company-card.is-warning .section-company-check{background:#d97706}
+.section-company-card.is-warning .section-company-copy strong{color:#9a5a00}
+
+body.dark .section-company-card{
+  background:linear-gradient(135deg,rgba(0, 0, 0, .96),rgba(0, 0, 0, .96));
+  border-color:rgba(0, 0, 0, .28);
+}
+body.dark .section-company-copy strong{color:#000000}
+body.dark .section-company-copy small{color:#c5c5c5}
+
+@media (max-width:680px){
+  .section-company-card{
+    width:100%;
+    margin-bottom:14px;
+    padding:12px 13px;
+  }
+  .section-company-check{
+    flex-basis:32px;
+    width:32px;
+    height:32px;
+    font-size:19px;
+  }
+  .section-company-copy strong{font-size:13px}
+  .section-company-copy small{font-size:11.5px}
+}
+
+
+/* =========================================================
+   SGF 4.3.44 · REPORTES ESTABLES
+   Blindaje visual para dashboard ejecutivo interactivo.
+   ========================================================= */
+.modulo-reportes .report-executive-dashboard,
+.modulo-reportes .report-executive-dashboard *{
+  box-sizing:border-box;
+}
+.modulo-reportes .report-executive-dashboard{
+  display:grid!important;
+  gap:16px!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  margin:0 0 18px!important;
+  user-select:none!important;
+  -webkit-user-select:none!important;
+  -webkit-touch-callout:none!important;
+}
+.modulo-reportes .report-dashboard-heading{
+  display:flex!important;
+  align-items:flex-start!important;
+  justify-content:space-between!important;
+  gap:16px!important;
+  padding:18px 20px!important;
+  border:1px solid var(--line,#d8e1e5)!important;
+  border-radius:18px!important;
+  background:linear-gradient(135deg,var(--surface,#fff),var(--surface-2,#f7fbfb))!important;
+  box-shadow:var(--shadow,0 10px 26px rgba(8,38,52,.07))!important;
+}
+.modulo-reportes .report-dashboard-heading>div{min-width:0!important}
+.modulo-reportes .report-dashboard-heading h3{margin:3px 0 4px!important;font-size:20px!important;line-height:1.25!important}
+.modulo-reportes .report-dashboard-heading p{margin:0!important;color:var(--muted,#59656d)!important}
+.modulo-reportes .report-gauge-grid{
+  display:grid!important;
+  grid-template-columns:repeat(5,minmax(0,1fr))!important;
+  gap:12px!important;
+  width:100%!important;
+  min-width:0!important;
+}
+.modulo-reportes button.report-gauge-card{
+  appearance:none!important;
+  -webkit-appearance:none!important;
+  width:100%!important;
+  min-width:0!important;
+  min-height:106px!important;
+  padding:14px 12px!important;
+  display:grid!important;
+  grid-template-columns:78px minmax(0,1fr)!important;
+  gap:12px!important;
+  align-items:center!important;
+  text-align:left!important;
+  border:1px solid var(--line,#d8e1e5)!important;
+  border-radius:18px!important;
+  background:var(--surface,#fff)!important;
+  color:var(--text,#15191c)!important;
+  box-shadow:0 8px 22px rgba(8,38,52,.06)!important;
+  overflow:hidden!important;
+  cursor:pointer!important;
+  user-select:none!important;
+  -webkit-user-select:none!important;
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease,background .2s ease!important;
+}
+.modulo-reportes button.report-gauge-card:hover,
+.modulo-reportes button.report-gauge-card:focus-visible,
+.modulo-reportes button.report-gauge-card.is-active{
+  transform:translateY(-2px)!important;
+  border-color:var(--primary,#000000)!important;
+  background:linear-gradient(145deg,var(--surface,#fff),var(--primary-soft,#edf9f6))!important;
+  box-shadow:0 14px 30px rgba(8,38,52,.12)!important;
+  outline:none!important;
+}
+.modulo-reportes .report-gauge-ring{
+  --report-accent:var(--primary,#000000);
+  position:relative!important;
+  display:grid!important;
+  place-items:center!important;
+  width:78px!important;
+  height:78px!important;
+  min-width:78px!important;
+  min-height:78px!important;
+  border-radius:50%!important;
+  background:conic-gradient(var(--report-accent) calc(var(--report-pct)*1%),var(--surface-3,#eef3f4) 0)!important;
+  overflow:hidden!important;
+}
+.modulo-reportes .report-gauge-ring:after{
+  content:""!important;
+  position:absolute!important;
+  inset:9px!important;
+  border-radius:50%!important;
+  background:var(--surface,#fff)!important;
+  box-shadow:inset 0 0 0 1px var(--line,#d8e1e5)!important;
+}
+.modulo-reportes .report-gauge-ring strong{
+  position:relative!important;
+  z-index:2!important;
+  font-size:18px!important;
+  font-weight:900!important;
+}
+.modulo-reportes .report-gauge-copy{
+  min-width:0!important;
+  display:flex!important;
+  flex-direction:column!important;
+  gap:2px!important;
+  background:transparent!important;
+}
+.modulo-reportes .report-gauge-copy small,
+.modulo-reportes .report-gauge-copy b,
+.modulo-reportes .report-gauge-copy em{
+  background:transparent!important;
+  user-select:none!important;
+  -webkit-user-select:none!important;
+}
+.modulo-reportes .report-gauge-copy small{font-size:16px!important;line-height:1!important}
+.modulo-reportes .report-gauge-copy b{font-size:12px!important;line-height:1.25!important;font-weight:800!important;overflow-wrap:anywhere!important}
+.modulo-reportes .report-gauge-copy em{font-style:normal!important;font-size:10px!important;color:var(--muted,#59656d)!important;overflow-wrap:anywhere!important}
+.modulo-reportes .report-visual-grid{
+  display:grid!important;
+  grid-template-columns:minmax(0,1.45fr) minmax(340px,.85fr)!important;
+  grid-template-areas:"trend donut" "trend bars"!important;
+  gap:16px!important;
+  width:100%!important;
+  min-width:0!important;
+  align-items:start!important;
+}
+.modulo-reportes .report-chart-card{
+  min-width:0!important;
+  width:100%!important;
+  overflow:hidden!important;
+  display:flex!important;
+  flex-direction:column!important;
+  border:1px solid var(--line,#d8e1e5)!important;
+  border-radius:18px!important;
+  background:var(--surface,#fff)!important;
+  box-shadow:var(--shadow,0 10px 26px rgba(8,38,52,.07))!important;
+}
+.modulo-reportes .report-chart-wide{grid-area:trend!important}
+.modulo-reportes .report-chart-donut{grid-area:donut!important}
+.modulo-reportes .report-chart-bars{grid-area:bars!important}
+.modulo-reportes .report-chart-card .card-header{
+  display:flex!important;
+  align-items:flex-start!important;
+  justify-content:space-between!important;
+  gap:10px!important;
+  flex-wrap:wrap!important;
+}
+.modulo-reportes .report-chart-card .card-header>div{min-width:0!important;flex:1 1 210px!important}
+.modulo-reportes .report-chart-badge{
+  flex:0 0 auto!important;
+  border:1px solid var(--line,#d8e1e5)!important;
+  border-radius:999px!important;
+  padding:5px 9px!important;
+  background:var(--surface,#fff)!important;
+  color:var(--text,#15191c)!important;
+  font-size:10px!important;
+  font-weight:800!important;
+  white-space:nowrap!important;
+  user-select:none!important;
+  -webkit-user-select:none!important;
+}
+@media(max-width:1100px){
+  .modulo-reportes .report-gauge-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .modulo-reportes .report-visual-grid{grid-template-columns:1fr!important;grid-template-areas:"trend" "donut" "bars"!important}
+}
+@media(max-width:620px){
+  .modulo-reportes .report-gauge-grid{grid-template-columns:1fr!important}
+  .modulo-reportes .report-dashboard-heading{padding:15px!important;flex-direction:column!important}
+}
+
+/* SGF Web 4.3.56 · Empresa conectada visible sobre el saludo */
+.dashboard-company-connected{display:block;margin-bottom:5px;font-size:12px;line-height:1.25;font-weight:800;letter-spacing:.02em;color:#000000;text-transform:none}

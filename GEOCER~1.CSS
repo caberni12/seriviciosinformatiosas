@@ -1,0 +1,41 @@
+/* E-fleet Web 4.4.15 · Geocerca KPI */
+.geocerca-analytics{display:grid;gap:16px;margin:16px 0}
+.geocerca-analytics-heading{display:flex;justify-content:space-between;gap:14px;align-items:end}
+.geocerca-analytics-heading h3{margin:4px 0 5px;color:#17456b;font-size:22px}
+.geocerca-analytics-heading p{margin:0;color:#64748b}
+.geocerca-kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.geocerca-kpi-circular{background:#fff;border:1px solid #cfe8f7;border-radius:18px;padding:16px;box-shadow:0 8px 26px rgba(21,94,117,.07);display:flex;align-items:center;gap:14px;min-width:0}
+.geocerca-kpi-circular p{margin:0;color:#64748b;font-size:12px;line-height:1.35}
+.geocerca-donut{--p:0;width:116px;height:116px;min-width:116px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#38a6e6 calc(var(--p)*1%),#e9f6fd 0);position:relative}
+.geocerca-donut:after{content:"";position:absolute;inset:11px;border-radius:50%;background:white;border:1px solid #d8edf8}
+.geocerca-donut>div{position:relative;z-index:1;text-align:center;display:flex;flex-direction:column;max-width:90px}
+.geocerca-donut strong{font-size:22px;color:#0b4f79;line-height:1.05}
+.geocerca-donut span{font-size:10px;color:#64748b;margin-top:4px;line-height:1.15}
+.geocerca-donut.numero{background:linear-gradient(145deg,#def3ff,#f8fcff)}
+.geocerca-donut.numero:after{inset:0;background:transparent;border:none}
+.geocerca-donut.numero>div{max-width:100px}
+.geocerca-donut.numero strong{font-size:18px}
+.geocerca-chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.geocerca-bars{display:grid;gap:12px;padding:4px 0}
+.geocerca-bar-row{display:grid;gap:6px}
+.geocerca-bar-label{display:flex;justify-content:space-between;gap:8px;align-items:center;font-size:12px}
+.geocerca-bar-label b{color:#164e73;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.geocerca-bar-label span{color:#64748b;white-space:nowrap}
+.geocerca-bar-track{height:11px;border-radius:999px;background:#eaf6fd;overflow:hidden;border:1px solid #d7edf8}
+.geocerca-bar-track i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#42b5ed,#7ccbf1)}
+.geocerca-chart-empty{padding:28px 10px;text-align:center;color:#64748b}
+.geocerca-rank{width:28px;height:28px;border-radius:50%;display:inline-grid;place-items:center;background:#eaf6ff;color:#0d6da2;font-weight:800}
+.geocerca-ranking-card .table-wrapper{max-height:430px;overflow:auto}
+.geocerca-filter-grid{grid-template-columns:repeat(4,minmax(160px,1fr))}
+.geocerca-eventos-inferiores{margin-top:16px}
+@media(max-width:1100px){.geocerca-kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.geocerca-filter-grid{grid-template-columns:repeat(2,minmax(160px,1fr))}}
+@media(max-width:760px){.geocerca-kpi-grid,.geocerca-chart-grid,.geocerca-filter-grid{grid-template-columns:1fr}.geocerca-kpi-circular{align-items:center}.geocerca-donut{width:104px;height:104px;min-width:104px}}
+
+/* R8.2.68 · feedback visual al usar "Ver mapa" */
+.geocerca-map-principal.geocerca-map-focus{
+  outline:3px solid rgba(56,166,230,.38);
+  outline-offset:3px;
+  box-shadow:0 0 0 7px rgba(56,166,230,.08),0 10px 32px rgba(30,126,174,.12);
+  transition:outline-color .25s ease,box-shadow .25s ease;
+}
+[data-geocerca-focus][disabled]{opacity:.72;cursor:progress}

@@ -1,0 +1,626 @@
+/* E-fleet R8.2.27 · capa final monocromática negro/blanco. */
+:root{
+  --primary:#000000!important;--primary-dark:#111111!important;--accent:#000000!important;
+  --success:#000000!important;--success-dark:#111111!important;--active-green:#000000!important;
+  --active-green-soft:#f2f2f2!important;--geo-primary:#000000!important;--geo-primary-2:#111111!important;
+  --geo-ok:#000000!important;--menu:#000000!important;--menu-2:#111111!important;
+}
+.btn.primary,.boton-principal,.button-primary,.geo-btn.primary,.geo-primary,.action-primary,
+button[data-primary],.theme-preview-button{background:#3B82F6!important;color:#fff!important;border-color:#3B82F6!important;}
+.btn.primary:hover,.boton-principal:hover,.button-primary:hover,.geo-btn.primary:hover{background:#2563EB!important;color:#fff!important;}
+.tracking-notice.active,.document-auto-approved,.efleet-driver-autofill{border-color:#000!important;background:#f4f4f4!important;color:#000!important;}
+.tracking-notice.active i,.efleet-driver-autofill i{background:#000!important;color:#fff!important;border-color:#000!important;}
+.status.active,.badge.success,.chip.success,.state.success,.geo-status.ok{background:#000!important;color:#fff!important;border-color:#000!important;}
+a,.link-primary{color:#000;}
+body.dark{background:#000!important;color:#fff!important;}
+body.dark .card,body.dark .modal-card,body.dark .panel,body.dark .form-grid,body.dark .tracking-notice,
+body.dark .document-review-panel,body.dark .info-item,body.dark .table-wrap,body.dark .geo-card,
+html.tema-oscuro-inicial body .card{background:#0b0b0b!important;color:#fff!important;border-color:#333!important;}
+body.dark input,body.dark select,body.dark textarea{background:#0b0b0b!important;color:#fff!important;border-color:#444!important;}
+body.dark .btn.primary,body.dark .boton-principal,body.dark .button-primary,body.dark .geo-btn.primary{background:#60A5FA!important;color:#fff!important;border:1px solid #78C5F3!important;}
+body.dark .tracking-notice.active,body.dark .efleet-driver-autofill{background:#111!important;color:#fff!important;border-color:#666!important;}
+body.dark .tracking-notice.active i,body.dark .efleet-driver-autofill i{background:#fff!important;color:#000!important;border-color:#fff!important;}
+body.dark a,body.dark .link-primary{color:#fff;}
+/* WhatsApp y estados positivos también siguen la identidad monocromática. */
+.btn.whatsapp,.whatsapp-button,[data-whatsapp]{background:#0B8F6A!important;color:#fff!important;border-color:#0B8F6A!important;}
+
+
+/* E-fleet R8.2.28 · HOTFIX UI: marca visible, hamburguesa con contraste, modales Geo sin botones ocultos. */
+.efleet-shell-mark{
+  width:42px!important;height:42px!important;flex:0 0 42px!important;object-fit:contain!important;
+  border-radius:11px!important;background:#fff!important;box-shadow:0 0 0 1px rgba(0,0,0,.18)!important;
+}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .barra-modular{
+  background:#fff!important;color:#000!important;border-bottom-color:#d9d9d9!important;
+}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .barra-modular .titulo-modular,
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .barra-modular .titulo-modular h1,
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .barra-modular .titulo-modular span{color:#000!important;}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .abrir-menu,
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .barra-modular .boton-icono{
+  background:#fff!important;color:#000!important;border:1px solid #cfcfcf!important;text-shadow:none!important;
+}
+body.dark .barra-modular,body.oscuro .barra-modular,html.tema-oscuro-inicial body:not(.dark):not(.oscuro) .barra-modular{
+  background:#000!important;color:#fff!important;border-bottom-color:#2c2c2c!important;
+}
+body.dark .barra-modular .titulo-modular h1,body.dark .barra-modular .titulo-modular span,
+body.oscuro .barra-modular .titulo-modular h1,body.oscuro .barra-modular .titulo-modular span,
+html.tema-oscuro-inicial body:not(.dark):not(.oscuro) .barra-modular .titulo-modular h1,
+html.tema-oscuro-inicial body:not(.dark):not(.oscuro) .barra-modular .titulo-modular span{color:#fff!important;}
+body.dark .abrir-menu,body.dark .barra-modular .boton-icono,
+body.oscuro .abrir-menu,body.oscuro .barra-modular .boton-icono,
+html.tema-oscuro-inicial body:not(.dark):not(.oscuro) .abrir-menu,
+html.tema-oscuro-inicial body:not(.dark):not(.oscuro) .barra-modular .boton-icono{
+  background:#123D5D!important;color:#fff!important;border:1px solid #2A5371!important;text-shadow:none!important;
+}
+.estado-modular.listo i{background:#000!important;box-shadow:0 0 0 4px rgba(0,0,0,.12)!important;}
+body.dark .estado-modular.listo i,body.oscuro .estado-modular.listo i{background:#fff!important;box-shadow:0 0 0 4px rgba(255,255,255,.14)!important;}
+.marca-menu img,.brand img,.login-brand img,#authCompanyLogo,#loginCompanyLogo,#sidebarCompanyLogo{
+  object-fit:contain!important;background:#fff!important;
+}
+
+/* Geo: marca E visible también al abrir módulos independientes de forma directa. */
+.geo-hero-brand{display:flex;align-items:center;gap:15px;min-width:0}.geo-efleet-mark{width:56px;height:56px;flex:0 0 56px;object-fit:contain;border-radius:14px;background:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.26),0 8px 20px rgba(0,0,0,.18)}
+
+/* Geo: el contenedor completo nunca scrollea por encima del footer; solo el cuerpo. */
+.geo-forced-overlay,.geo-modal{overflow:hidden!important;overscroll-behavior:none!important;}
+.geo-forced-card,.geo-modal-box{
+  display:flex!important;flex-direction:column!important;width:min(760px,100%)!important;
+  max-height:calc(100dvh - 36px)!important;overflow:hidden!important;padding:0!important;
+}
+.geo-forced-card>.geo-dialog-head,.geo-modal-box>.geo-dialog-head{flex:0 0 auto!important;}
+.geo-forced-card>.geo-dialog-body,.geo-modal-box>.geo-dialog-body{
+  flex:1 1 auto!important;min-height:0!important;max-height:none!important;overflow-y:auto!important;overflow-x:hidden!important;
+  overscroll-behavior:contain!important;scrollbar-gutter:stable!important;
+}
+.geo-forced-card>.buttons,.geo-modal-box>.buttons{
+  flex:0 0 auto!important;position:relative!important;inset:auto!important;margin:0!important;
+  display:flex!important;visibility:visible!important;opacity:1!important;z-index:5!important;
+  padding:14px 24px calc(14px + env(safe-area-inset-bottom))!important;background:#fff!important;
+  border-top:1px solid #dfe4e8!important;box-shadow:0 -8px 22px rgba(0,0,0,.07)!important;
+}
+.geo-forced-card>.buttons .geo-btn,.geo-modal-box>.buttons .geo-btn{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:46px!important;}
+
+/* Los toast del Geo deben quedar por encima del overlay modal, nunca detrás de él. */
+.geo-toast{
+  position:fixed!important;top:max(18px,env(safe-area-inset-top))!important;right:max(18px,env(safe-area-inset-right))!important;
+  bottom:auto!important;z-index:2147483647!important;background:#000!important;color:#fff!important;border:1px solid #555!important;
+}
+
+@media(max-width:720px){
+  .efleet-shell-mark{width:36px!important;height:36px!important;flex-basis:36px!important}.titulo-modular{gap:7px!important}
+  .geo-hero-brand{align-items:flex-start}.geo-efleet-mark{width:48px;height:48px;flex-basis:48px}
+  .geo-forced-card,.geo-modal-box{max-height:calc(100dvh - 16px)!important;}
+  .geo-forced-card>.buttons,.geo-modal-box>.buttons{padding:11px 17px calc(11px + env(safe-area-inset-bottom))!important;}
+  .geo-toast{left:10px!important;right:10px!important;max-width:none!important;}
+}
+
+/* R8.2.28 · cierre visual Geo y contraste total */
+.geo-dialog-icon{background:#000!important;color:#fff!important;border:1px solid #000!important;box-shadow:none!important}
+.geo-dialog-head{background:#fff!important;color:#000!important;border-bottom-color:#dedede!important}
+.geo-dialog-head .geo-eyebrow,.geo-dialog-head h2{color:#000!important}
+.geo-dialog-head p{color:#555!important}
+.geo-dialog-alert:not(.warn){background:#f5f5f5!important;border-color:#d7d7d7!important;color:#111!important}
+.geo-mobility{background:#f7f7f7!important;border-color:#d7d7d7!important}
+.geo-mobility span,.geo-mobility b{color:#111!important}
+.geo-checkin.approved{background:#000!important;color:#fff!important;border-color:#000!important}
+.geo-checkin.pending{background:#fff7ed!important;color:#9a3412!important;border-color:#fed7aa!important}
+.geo-section-icon{background:#f2f2f2!important;color:#000!important;border-color:#d7d7d7!important}
+.geo-badge.info{background:#f3f3f3!important;color:#111!important;border-color:#d8d8d8!important}
+
+/* El pie de cualquier modal Geo es una zona independiente y siempre visible. */
+.geo-forced-card,.geo-modal-box{height:auto!important;min-height:0!important}
+.geo-forced-card>.geo-dialog-body,.geo-modal-box>.geo-dialog-body{padding-bottom:22px!important}
+.geo-forced-card>.buttons,.geo-modal-box>.buttons{min-height:74px!important;align-items:center!important;justify-content:flex-end!important}
+
+/* Tema oscuro Geo completo: negro y blanco, manteniendo naranja/rojo sólo para advertencia/error. */
+body.dark .geo-forced-card,body.dark .geo-modal-box,
+body.oscuro .geo-forced-card,body.oscuro .geo-modal-box,
+html.tema-oscuro-inicial body .geo-forced-card,html.tema-oscuro-inicial body .geo-modal-box{background:#080808!important;color:#fff!important;border-color:#333!important}
+body.dark .geo-dialog-head,body.oscuro .geo-dialog-head,html.tema-oscuro-inicial body .geo-dialog-head{background:#050505!important;border-bottom-color:#333!important}
+body.dark .geo-dialog-head .geo-eyebrow,body.dark .geo-dialog-head h2,body.oscuro .geo-dialog-head .geo-eyebrow,body.oscuro .geo-dialog-head h2,html.tema-oscuro-inicial body .geo-dialog-head .geo-eyebrow,html.tema-oscuro-inicial body .geo-dialog-head h2{color:#fff!important}
+body.dark .geo-dialog-head p,body.oscuro .geo-dialog-head p,html.tema-oscuro-inicial body .geo-dialog-head p{color:#cfcfcf!important}
+body.dark .geo-dialog-icon,body.oscuro .geo-dialog-icon,html.tema-oscuro-inicial body .geo-dialog-icon{background:#fff!important;color:#000!important;border-color:#fff!important}
+body.dark .geo-forced-card>.buttons,body.dark .geo-modal-box>.buttons,body.oscuro .geo-forced-card>.buttons,body.oscuro .geo-modal-box>.buttons,html.tema-oscuro-inicial body .geo-forced-card>.buttons,html.tema-oscuro-inicial body .geo-modal-box>.buttons{background:#050505!important;border-top-color:#333!important;box-shadow:0 -8px 22px rgba(255,255,255,.035)!important}
+body.dark .geo-dialog-alert:not(.warn),body.oscuro .geo-dialog-alert:not(.warn),html.tema-oscuro-inicial body .geo-dialog-alert:not(.warn){background:#111!important;border-color:#3b3b3b!important;color:#fff!important}
+body.dark .geo-mobility,body.oscuro .geo-mobility,html.tema-oscuro-inicial body .geo-mobility{background:#111!important;border-color:#333!important}
+body.dark .geo-mobility span,body.dark .geo-mobility b,body.oscuro .geo-mobility span,body.oscuro .geo-mobility b,html.tema-oscuro-inicial body .geo-mobility span,html.tema-oscuro-inicial body .geo-mobility b{color:#fff!important}
+body.dark .geo-field span,body.oscuro .geo-field span,html.tema-oscuro-inicial body .geo-field span{color:#e5e5e5!important}
+body.dark .geo-forced-overlay input,body.dark .geo-forced-overlay textarea,body.dark .geo-forced-overlay select,
+body.oscuro .geo-forced-overlay input,body.oscuro .geo-forced-overlay textarea,body.oscuro .geo-forced-overlay select,
+html.tema-oscuro-inicial body .geo-forced-overlay input,html.tema-oscuro-inicial body .geo-forced-overlay textarea,html.tema-oscuro-inicial body .geo-forced-overlay select{background-color:#0a0a0a!important;color:#fff!important;border-color:#444!important}
+
+/* El símbolo de menú nunca hereda color blanco en tema claro. */
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) #abrirMenu{color:#000!important;-webkit-text-fill-color:#000!important;font-weight:900!important}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) #abrirMenu *{color:#000!important;stroke:#000!important;fill:#000!important}
+
+/* R8.2.28 · menú hamburguesa: tema claro = fondo blanco/letra negra; oscuro = negro/blanco. */
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .menu-lateral{background:#fff!important;color:#000!important;border-right:1px solid #d8d8d8!important;box-shadow:18px 0 45px rgba(0,0,0,.12)!important}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .marca-menu{border-bottom-color:#dedede!important}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .marca-menu strong,
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .marca-menu span,
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .etiqueta-menu,
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .boton-modulo,
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .usuario-menu b,
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .usuario-menu small,
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .boton-menu-secundario,
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .preferencias-rapidas-menu summary b,
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .preferencias-rapidas-menu summary small,
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .modo-auto-oficina-menu b,
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .modo-auto-oficina-menu small{color:#000!important}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .boton-modulo i{background:#f0f0f0!important;color:#000!important}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .boton-modulo:hover{background:#f2f2f2!important;color:#000!important}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .boton-modulo.activo{background:#3B82F6!important;color:#fff!important}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .boton-modulo.activo i{background:#fff!important;color:#000!important}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .cerrar-menu{background:#fff!important;color:#000!important;border-color:#d0d0d0!important}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .pie-menu{background:#fafafa!important;border-top-color:#dedede!important;color:#000!important}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .preferencias-rapidas-menu{background:#fff!important;border-color:#dedede!important}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .preferencias-rapidas-cuerpo,
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .modo-auto-oficina-menu{border-color:#e6e6e6!important}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .preferencias-rapidas-menu summary>i{background:#f0f0f0!important;color:#000!important}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) .cerrar-sesion{background:#fff1f1!important;color:#a11!important}
+body.dark .menu-lateral,body.oscuro .menu-lateral,html.tema-oscuro-inicial body .menu-lateral{background:#000!important;color:#fff!important}
+
+
+/* =====================================================================
+   E-fleet R8.2.34 · PALETA OPERACIONAL LOGÍSTICA
+   Azul marino = identidad / estructura
+   Azul eléctrico = CTA / selección
+   Verde = operativo / correcto
+   Ámbar = advertencia / seguimiento
+   Rojo = crítico / error
+   Gris = inactivo / sin señal
+   ===================================================================== */
+:root{
+  --ef-brand:#0B1F33!important;--ef-brand-2:#102A43!important;--ef-cta:#2563EB!important;--ef-cyan:#0EA5E9!important;
+  --ef-success:#047857!important;--ef-warning:#F59E0B!important;--ef-danger:#DC2626!important;--ef-neutral:#64748B!important;
+  --ef-bg:#F4F7FB!important;--ef-surface:#FFFFFF!important;--ef-surface-soft:#EEF3F8!important;--ef-text:#142033!important;--ef-muted:#64748B!important;--ef-border:#D8E1EA!important;
+  --ef-dark-bg:#06111F!important;--ef-dark-surface:#0D1B2A!important;--ef-dark-soft:#13283D!important;--ef-dark-muted:#B7C4D1!important;--ef-dark-border:#27415B!important;
+  --primary:var(--ef-brand)!important;--primary-dark:var(--ef-brand-2)!important;--accent:var(--ef-cta)!important;
+  --success:var(--ef-success)!important;--active-green:var(--ef-success)!important;--active-green-soft:#ECFDF5!important;
+  --amber:var(--ef-warning)!important;--danger:var(--ef-danger)!important;--red:var(--ef-danger)!important;
+  --menu-fondo:var(--ef-brand)!important;--menu-fondo-2:var(--ef-brand-2)!important;
+  --geo-primary:var(--ef-brand)!important;--geo-primary-2:var(--ef-brand-2)!important;--geo-ok:var(--ef-success)!important;--geo-warn:var(--ef-warning)!important;--geo-bad:var(--ef-danger)!important;--geo-info:var(--ef-cta)!important;
+}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro){
+  --ui-bg:var(--ef-bg)!important;--ui-surface:var(--ef-surface)!important;--ui-surface-soft:var(--ef-surface-soft)!important;--ui-surface-muted:#E8EEF5!important;
+  --ui-text:var(--ef-text)!important;--ui-text-soft:var(--ef-muted)!important;--ui-border:var(--ef-border)!important;
+  --ui-primary:var(--ef-brand)!important;--ui-primary-strong:var(--ef-brand-2)!important;--ui-primary-soft:#E7EEF6!important;
+  --ui-success:var(--ef-success)!important;--ui-warning:var(--ef-warning)!important;--ui-danger:var(--ef-danger)!important;--ui-info:var(--ef-cta)!important;
+  --bg:var(--ef-bg)!important;--fondo:var(--ef-bg)!important;--surface:#fff!important;--superficie:#fff!important;--text:var(--ef-text)!important;--texto:var(--ef-text)!important;--muted:var(--ef-muted)!important;--border:var(--ef-border)!important;--line:var(--ef-border)!important;
+  background:var(--ef-bg)!important;color:var(--ef-text)!important;
+}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) :where(.sidebar,.menu-lateral,.topbar,.barra-superior){background:var(--ef-brand)!important;color:#fff!important;border-color:var(--ef-brand-2)!important}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) :where(.sidebar a,.menu-lateral a,.sidebar button,.menu-lateral button,.topbar a,.topbar button){color:#fff!important}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) :where(.barra-modular){background:#fff!important;color:var(--ef-text)!important;border-bottom-color:var(--ef-border)!important}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) :where(.barra-modular .titulo-modular,.barra-modular .titulo-modular h1,.barra-modular .titulo-modular span){color:var(--ef-text)!important}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) :where(.abrir-menu,.barra-modular .boton-icono){background:#fff!important;color:var(--ef-brand)!important;border-color:#B9C7D6!important}
+:where(.btn.primary,.boton-principal,.button-primary,.geo-btn.primary,.geo-primary,.action-primary,button[data-primary],.theme-preview-button){background:var(--ef-cta)!important;color:#fff!important;border-color:var(--ef-cta)!important;box-shadow:0 8px 18px rgba(37,99,235,.18)!important}
+:where(.btn.primary,.boton-principal,.button-primary,.geo-btn.primary,.action-primary):hover{background:#1D4ED8!important;color:#fff!important;border-color:#1D4ED8!important}
+a,.link-primary{color:#1D4ED8}
+:where(.status.active,.badge.success,.chip.success,.state.success,.geo-status.ok,.tracking-notice.active,.document-auto-approved,.efleet-driver-autofill){border-color:var(--ef-success)!important;background:#ECFDF5!important;color:#065F46!important}
+:where(.tracking-notice.active i,.efleet-driver-autofill i){background:var(--ef-success)!important;color:#fff!important;border-color:var(--ef-success)!important}
+:where(.badge.warning,.chip.warning,.state.warning,.geo-status.warn){border-color:#F6C453!important;background:#FFF7E6!important;color:#92400E!important}
+:where(.badge.danger,.chip.danger,.state.danger,.geo-status.bad){border-color:#F6B4B4!important;background:#FEF2F2!important;color:#991B1B!important}
+:where(.badge.neutral,.chip.neutral,.state.neutral,.status.offline){border-color:#CBD5E1!important;background:#F1F5F9!important;color:#475569!important}
+.btn.whatsapp,.whatsapp-button,[data-whatsapp]{background:#047857!important;color:#fff!important;border-color:#047857!important}
+.geo-hero{background:linear-gradient(135deg,var(--ef-brand),var(--ef-brand-2) 62%,#163A5F)!important}
+.geo-btn{color:var(--ef-brand)!important}.geo-btn.primary{color:#fff!important}.geo-btn.dark{background:var(--ef-brand)!important;color:#fff!important}
+.geo-btn.ok{background:#ECFDF5!important;color:#065F46!important}.geo-btn.warn{background:#FFF7E6!important;color:#92400E!important}.geo-btn.danger{background:#FEF2F2!important;color:#991B1B!important}
+.geo-order,.geo-section-icon{background:#E7EEF6!important;color:var(--ef-brand)!important;border-color:#CBD6E2!important}
+.geo-badge.ok{background:#ECFDF5!important;color:#065F46!important}.geo-badge.info{background:#EAF1FF!important;color:#1D4ED8!important;border-color:#C7D7FE!important}.geo-badge.warn{background:#FFF7E6!important;color:#92400E!important}.geo-badge.bad{background:#FEF2F2!important;color:#991B1B!important}
+.geo-map .mapa-marcador.activo>i,.geo-map-legend i.ok{background:var(--ef-success)!important}.geo-map .mapa-marcador.antiguo>i,.geo-map-legend i.bad{background:var(--ef-danger)!important}.geo-map .mapa-rastros .geo-local-rastro{stroke:var(--ef-cta)!important}
+.geo-field input:focus,.geo-field select:focus,.geo-field textarea:focus,.geo-page select:focus,.geo-modal select:focus,.geo-forced-overlay select:focus{border-color:var(--ef-cta)!important;box-shadow:0 0 0 3px rgba(37,99,235,.16)!important}
+.geo-bar-fill{background:linear-gradient(90deg,var(--ef-brand),var(--ef-cta))!important}.geo-ring{--tone:var(--ef-cta)}
+.geo-toast{background:var(--ef-brand)!important;color:#fff!important;border:1px solid #27415B!important}
+.geo-dialog-icon{background:var(--ef-brand)!important;color:#fff!important;border-color:var(--ef-brand)!important}.geo-checkin.approved{background:var(--ef-success)!important;color:#fff!important;border-color:var(--ef-success)!important}
+.estado-modular.listo i{background:var(--ef-success)!important;box-shadow:0 0 0 4px rgba(4,120,87,.14)!important}
+body.dark,body.oscuro,html.tema-oscuro-inicial body:not(.dark):not(.oscuro){
+  --ui-bg:var(--ef-dark-bg)!important;--ui-surface:var(--ef-dark-surface)!important;--ui-surface-soft:var(--ef-dark-soft)!important;--ui-surface-muted:#18324A!important;
+  --ui-text:#F8FAFC!important;--ui-text-soft:var(--ef-dark-muted)!important;--ui-border:var(--ef-dark-border)!important;--ui-primary:#60A5FA!important;--ui-primary-strong:#2563EB!important;--ui-primary-soft:#132B49!important;
+  --bg:var(--ef-dark-bg)!important;--fondo:var(--ef-dark-bg)!important;--surface:var(--ef-dark-surface)!important;--superficie:var(--ef-dark-surface)!important;--text:#F8FAFC!important;--texto:#F8FAFC!important;--muted:var(--ef-dark-muted)!important;--border:var(--ef-dark-border)!important;--line:var(--ef-dark-border)!important;
+  --menu-fondo:#081827!important;--menu-fondo-2:#0D2438!important;background:var(--ef-dark-bg)!important;color:#F8FAFC!important;
+}
+body.dark :where(.card,.modal,.modal-content,.modal-card,.panel,.form-grid,.tracking-notice,.document-review-panel,.info-item,.table-wrap,.geo-card,input,select,textarea),body.oscuro :where(.card,.modal,.modal-content,.modal-card,.panel,.form-grid,.tracking-notice,.document-review-panel,.info-item,.table-wrap,.geo-card,input,select,textarea),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.card,.modal,.modal-content,.modal-card,.panel,.form-grid,.tracking-notice,.document-review-panel,.info-item,.table-wrap,.geo-card,input,select,textarea){background-color:var(--ef-dark-surface)!important;color:#F8FAFC!important;border-color:var(--ef-dark-border)!important}
+body.dark :where(.sidebar,.menu-lateral,.topbar,.barra-superior,.barra-modular),body.oscuro :where(.sidebar,.menu-lateral,.topbar,.barra-superior,.barra-modular){background:#081827!important;color:#fff!important;border-color:#27415B!important}
+body.dark :where(.abrir-menu,.barra-modular .boton-icono),body.oscuro :where(.abrir-menu,.barra-modular .boton-icono){background:#102A43!important;color:#fff!important;border-color:#365874!important}
+body.dark :where(.btn.primary,.boton-principal,.button-primary,.geo-btn.primary),body.oscuro :where(.btn.primary,.boton-principal,.button-primary,.geo-btn.primary){background:var(--ef-cta)!important;color:#fff!important;border-color:#60A5FA!important;box-shadow:none!important}
+body.dark a,body.oscuro a{color:#60A5FA}
+body.dark .tracking-notice.active,body.dark .efleet-driver-autofill,body.oscuro .tracking-notice.active,body.oscuro .efleet-driver-autofill{background:#083A31!important;color:#D1FAE5!important;border-color:#0E7C61!important}
+body.dark .tracking-notice.active i,body.dark .efleet-driver-autofill i,body.oscuro .tracking-notice.active i,body.oscuro .efleet-driver-autofill i{background:#0E7C61!important;color:#fff!important;border-color:#34D399!important}
+body.dark .geo-dialog-head,body.oscuro .geo-dialog-head,html.tema-oscuro-inicial body .geo-dialog-head{background:#0A1928!important;border-bottom-color:#27415B!important}
+body.dark .geo-dialog-head .geo-eyebrow,body.oscuro .geo-dialog-head .geo-eyebrow,html.tema-oscuro-inicial body .geo-dialog-head .geo-eyebrow{color:#60A5FA!important}
+body.dark .geo-forced-card>.buttons,body.dark .geo-modal-box>.buttons,body.oscuro .geo-forced-card>.buttons,body.oscuro .geo-modal-box>.buttons{background:#0D1B2A!important;border-top-color:#27415B!important}
+
+/* R8.2.34 · cierre de coherencia para modales Geo en modo oscuro */
+body.dark .geo-forced-card,body.dark .geo-modal-box,
+body.oscuro .geo-forced-card,body.oscuro .geo-modal-box,
+html.tema-oscuro-inicial body .geo-forced-card,html.tema-oscuro-inicial body .geo-modal-box{
+  background:#0D1B2A!important;color:#F8FAFC!important;border-color:#27415B!important;
+}
+body.dark .geo-dialog-alert:not(.warn),body.oscuro .geo-dialog-alert:not(.warn),html.tema-oscuro-inicial body .geo-dialog-alert:not(.warn){background:#13283D!important;border-color:#365874!important;color:#F8FAFC!important}
+body.dark .geo-mobility,body.oscuro .geo-mobility,html.tema-oscuro-inicial body .geo-mobility{background:#13283D!important;border-color:#365874!important}
+body.dark .geo-section-icon,body.oscuro .geo-section-icon,html.tema-oscuro-inicial body .geo-section-icon{background:#18324A!important;color:#60A5FA!important;border-color:#365874!important}
+body.dark .geo-toast,body.oscuro .geo-toast{background:#0B1F33!important;color:#fff!important;border-color:#365874!important}
+
+
+/* =====================================================================
+   E-fleet R8.2.38 · PALETA AZUL CLARA OPERACIONAL
+   Superficies claras y aireadas; azul brillante para acciones.
+   Los colores semánticos (verde/ámbar/rojo/gris) se reservan a estados.
+   ===================================================================== */
+:root{
+  --ef-brand:#1F6FAE!important;--ef-brand-2:#2D8BCB!important;--ef-cta:#1677FF!important;--ef-cyan:#38BDF8!important;
+  --ef-success:#0B8F6A!important;--ef-warning:#E69A12!important;--ef-danger:#D93B45!important;--ef-neutral:#71869A!important;
+  --ef-bg:#F5FBFF!important;--ef-surface:#FFFFFF!important;--ef-surface-soft:#EAF6FF!important;--ef-surface-blue:#DCEFFF!important;
+  --ef-text:#17324D!important;--ef-muted:#5E7890!important;--ef-border:#CDE6F7!important;
+  --ef-dark-bg:#071827!important;--ef-dark-surface:#0B2238!important;--ef-dark-soft:#10304B!important;--ef-dark-muted:#B8D2E5!important;--ef-dark-border:#2A5371!important;
+  --primary:var(--ef-brand)!important;--primary-dark:var(--ef-brand-2)!important;--accent:var(--ef-cta)!important;
+  --menu-fondo:#EAF6FF!important;--menu-fondo-2:#DCEFFF!important;
+  --geo-primary:var(--ef-brand)!important;--geo-primary-2:var(--ef-brand-2)!important;--geo-info:var(--ef-cta)!important;
+}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro){
+  --ui-bg:var(--ef-bg)!important;--ui-surface:#fff!important;--ui-surface-soft:var(--ef-surface-soft)!important;--ui-surface-muted:#E4F2FC!important;
+  --ui-text:var(--ef-text)!important;--ui-text-soft:var(--ef-muted)!important;--ui-border:var(--ef-border)!important;
+  --ui-primary:var(--ef-brand)!important;--ui-primary-strong:var(--ef-brand-2)!important;--ui-primary-soft:var(--ef-surface-blue)!important;
+  --bg:var(--ef-bg)!important;--fondo:var(--ef-bg)!important;--surface:#fff!important;--superficie:#fff!important;--text:var(--ef-text)!important;--texto:var(--ef-text)!important;--muted:var(--ef-muted)!important;--border:var(--ef-border)!important;--line:var(--ef-border)!important;
+  background:var(--ef-bg)!important;color:var(--ef-text)!important;
+}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) :where(.sidebar,.menu-lateral,.topbar,.barra-superior){
+  background:linear-gradient(180deg,#F7FCFF 0%,#EAF6FF 100%)!important;color:var(--ef-text)!important;border-color:var(--ef-border)!important;
+}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) :where(.sidebar a,.menu-lateral a,.sidebar button,.menu-lateral button,.topbar a,.topbar button){color:var(--ef-text)!important}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) :where(.sidebar .active,.menu-lateral .active,.nav-item.active,.menu-item.active,[aria-current="page"]){background:#DCEFFF!important;color:#0F5FA5!important;border-color:#B9DDF6!important}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) :where(.barra-modular){background:rgba(255,255,255,.98)!important;color:var(--ef-text)!important;border-bottom-color:var(--ef-border)!important;box-shadow:0 2px 12px rgba(31,111,174,.07)!important}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) :where(.abrir-menu,.barra-modular .boton-icono){background:#fff!important;color:#125F96!important;border-color:#C1DDF0!important}
+html:not(.tema-oscuro-inicial) body:not(.dark):not(.oscuro) :where(.card,.panel,.modal-card,.modal-content,.table-wrap,.info-item,.form-grid,.geo-card){background:#fff!important;border-color:var(--ef-border)!important;box-shadow:0 8px 26px rgba(31,111,174,.055)!important}
+:where(.btn.primary,.boton-principal,.button-primary,.geo-btn.primary,.action-primary,button[data-primary]){background:var(--ef-cta)!important;color:#fff!important;border-color:var(--ef-cta)!important;box-shadow:0 8px 18px rgba(22,119,255,.16)!important}
+:where(.btn.primary,.boton-principal,.button-primary,.geo-btn.primary,.action-primary):hover{background:#0F68E8!important;border-color:#0F68E8!important}
+:where(.btn.soft,.button-secondary,.geo-btn:not(.primary):not(.danger):not(.warn):not(.ok)){background:#EFF8FF!important;color:#155E93!important;border-color:#C8E5F8!important}
+:where(input,select,textarea,.input,.select){border-color:#C9E2F5!important}
+:where(input,select,textarea,.input,.select):focus{border-color:#53A9E2!important;box-shadow:0 0 0 3px rgba(56,189,248,.17)!important}
+a,.link-primary{color:#0F6FCC!important}
+.geo-hero{background:linear-gradient(135deg,#F4FBFF 0%,#DCEFFF 58%,#CBEAFF 100%)!important;color:var(--ef-text)!important;border-color:#B9DDF6!important}
+.geo-hero :where(h1,h2,h3,p,span,strong){color:inherit!important}.geo-hero .geo-eyebrow{color:#0F6FCC!important}
+.geo-order,.geo-section-icon{background:#E4F3FE!important;color:#155E93!important;border-color:#C6E2F5!important}
+.geo-badge.info{background:#E7F4FF!important;color:#0F6FCC!important;border-color:#B9DDF6!important}
+.geo-field input:focus,.geo-field select:focus,.geo-field textarea:focus,.geo-page select:focus,.geo-modal select:focus,.geo-forced-overlay select:focus{border-color:#38A6E6!important;box-shadow:0 0 0 3px rgba(56,189,248,.18)!important}
+.geo-bar-fill{background:linear-gradient(90deg,#2D8BCB,#1677FF)!important}.geo-ring{--tone:#1677FF}
+.geo-toast{background:#175985!important;color:#fff!important;border-color:#2E7EAE!important}
+/* Estados: nunca reutilizar el azul como significado operativo. */
+:where(.status.active,.badge.success,.chip.success,.state.success,.geo-status.ok,.tracking-notice.active,.document-auto-approved,.efleet-driver-autofill){background:#ECFDF5!important;color:#05634A!important;border-color:#A6E8D3!important}
+:where(.badge.warning,.chip.warning,.state.warning,.geo-status.warn){background:#FFF8E7!important;color:#8A5800!important;border-color:#F4D38A!important}
+:where(.badge.danger,.chip.danger,.state.danger,.geo-status.bad){background:#FFF0F1!important;color:#9D2029!important;border-color:#F2B8BD!important}
+:where(.badge.neutral,.chip.neutral,.state.neutral,.status.offline){background:#F2F6F9!important;color:#536B80!important;border-color:#D7E1E8!important}
+/* Tema oscuro: conserva estructura profunda pero usa un azul más luminoso como acento. */
+body.dark,body.oscuro,html.tema-oscuro-inicial body:not(.dark):not(.oscuro){
+  --ui-bg:var(--ef-dark-bg)!important;--ui-surface:var(--ef-dark-surface)!important;--ui-surface-soft:var(--ef-dark-soft)!important;--ui-text:#F7FBFF!important;--ui-text-soft:var(--ef-dark-muted)!important;--ui-border:var(--ef-dark-border)!important;
+  --ui-primary:#6EC7F5!important;--ui-primary-strong:#2F8DFF!important;--ui-primary-soft:#123D5D!important;
+  --menu-fondo:#081E31!important;--menu-fondo-2:#0B2941!important;background:var(--ef-dark-bg)!important;color:#F7FBFF!important;
+}
+body.dark :where(.btn.primary,.boton-principal,.button-primary,.geo-btn.primary),body.oscuro :where(.btn.primary,.boton-principal,.button-primary,.geo-btn.primary){background:#2F8DFF!important;border-color:#6EC7F5!important;color:#fff!important}
+body.dark a,body.oscuro a{color:#6EC7F5!important}
+
+/* =====================================================================
+   E-fleet R8.2.38 · TARJETAS COMPACTAS DE ASIGNACIÓN EN CHECK-IN
+   Conductor/Supervisor: una tarjeta propia. Control: todas las vigentes.
+   ===================================================================== */
+.checkin-assignment-section{margin:10px 0 14px;display:grid;gap:8px}
+.checkin-assignment-title{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;color:var(--ef-text,#17324D)}
+.checkin-assignment-title>b{font-size:13px}.checkin-assignment-title>span{font-size:11px;color:var(--ef-muted,#5E7890)}
+.checkin-assignment-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,260px));gap:8px;align-items:stretch}
+.checkin-assignment-mini{position:relative;min-width:0;min-height:86px;padding:10px 10px 9px;display:grid;grid-template-columns:34px minmax(0,1fr);grid-template-rows:auto auto;gap:3px 8px;border:1px solid #C7E2F4;border-radius:13px;background:#F8FCFF;box-shadow:0 4px 14px rgba(31,111,174,.06);overflow:hidden}
+.checkin-assignment-mini.own{max-width:270px;background:#EFF8FF;border-color:#A9D5F2}
+.checkin-assignment-mini.empty{max-width:330px;grid-template-columns:34px minmax(0,1fr)}
+.checkin-assignment-icon{grid-row:1/3;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:#DCEFFF;color:#1268A8;font-weight:900;font-size:17px}
+.checkin-assignment-copy{min-width:0;display:grid;gap:1px}.checkin-assignment-copy>b{font-size:14px;color:#17324D;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.checkin-assignment-copy>span,.checkin-assignment-copy>small{font-size:10.5px;color:#5E7890;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.checkin-assignment-state{justify-self:start;margin-top:3px;padding:3px 7px;border-radius:999px;background:#FFF7E6;color:#8A5800;border:1px solid #F0D18A;font-size:9px;font-weight:850;text-transform:none}
+.checkin-assignment-state.ok{background:#ECFDF5;color:#05634A;border-color:#A6E8D3}
+.checkin-assignment-mini time{position:absolute;right:8px;bottom:6px;font-size:8.5px;color:#7890A3}
+.checkin-assignment-empty{grid-column:1/-1;padding:10px 12px;border:1px dashed #BFDDEF;border-radius:12px;color:#5E7890;font-size:11px;background:#F8FCFF}
+body.dark .checkin-assignment-title,body.oscuro .checkin-assignment-title,html.tema-oscuro-inicial body .checkin-assignment-title{color:#F7FBFF}
+body.dark .checkin-assignment-mini,body.oscuro .checkin-assignment-mini,html.tema-oscuro-inicial body .checkin-assignment-mini{background:#0D2840;border-color:#2A5371;box-shadow:none}
+body.dark .checkin-assignment-mini.own,body.oscuro .checkin-assignment-mini.own,html.tema-oscuro-inicial body .checkin-assignment-mini.own{background:#10304B;border-color:#376887}
+body.dark .checkin-assignment-copy>b,body.oscuro .checkin-assignment-copy>b,html.tema-oscuro-inicial body .checkin-assignment-copy>b{color:#F7FBFF}
+body.dark .checkin-assignment-copy>span,body.dark .checkin-assignment-copy>small,body.oscuro .checkin-assignment-copy>span,body.oscuro .checkin-assignment-copy>small{color:#B8D2E5}
+@media(max-width:640px){.checkin-assignment-grid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}.checkin-assignment-mini.own{max-width:none}.checkin-assignment-mini{min-height:82px}}
+
+/* =====================================================================
+   E-fleet R8.2.41 · CONTROLES AZUL CLARO + BUSCADORES MODERNOS
+   Regla visual final: ningún CTA operativo debe usar negro/negro oscuro.
+   Rojo, ámbar y verde quedan reservados para estados semánticos.
+   ===================================================================== */
+:root{
+  --ef-button:#3B82F6!important;
+  --ef-button-hover:#2563EB!important;
+  --ef-button-soft:#EFF8FF!important;
+  --ef-button-soft-hover:#E0F2FE!important;
+  --ef-button-border:#B9DDF6!important;
+  --ef-search-bg:#F8FCFF!important;
+  --ef-search-border:#B7DDF5!important;
+  --ef-search-focus:#38BDF8!important;
+}
+
+/* CTA globales: azul claro/eléctrico, nunca negro. */
+:where(.btn.primary,.boton-principal,.button-primary,.action-primary,.geo-btn.primary,
+       button[data-primary],.theme-preview-button,.alerta-asignacion-menu>footer .aceptar,
+       .aceptar-aviso-menu,.alerta-velocidad-menu footer button:last-child,
+       .boton-modulo.activo,.modo-auto-oficina-menu input:checked+i){
+  background:linear-gradient(180deg,#4C9BFF 0%,var(--ef-button) 100%)!important;
+  color:#fff!important;
+  border-color:var(--ef-button)!important;
+  box-shadow:0 7px 16px rgba(59,130,246,.18)!important;
+}
+:where(.btn.primary,.boton-principal,.button-primary,.action-primary,.geo-btn.primary,
+       button[data-primary],.theme-preview-button,.alerta-asignacion-menu>footer .aceptar,
+       .aceptar-aviso-menu,.alerta-velocidad-menu footer button:last-child):hover{
+  background:linear-gradient(180deg,#3F8FF8 0%,var(--ef-button-hover) 100%)!important;
+  border-color:var(--ef-button-hover)!important;
+  box-shadow:0 9px 18px rgba(37,99,235,.20)!important;
+}
+
+/* Acciones secundarias: azul muy suave en lugar de bloques oscuros. */
+:where(.btn.soft,.btn.secondary,.button-secondary,.boton-secundario,
+       .geo-btn:not(.primary):not(.danger):not(.warn):not(.ok),
+       .row-actions button,.icon-button){
+  background:var(--ef-button-soft)!important;
+  color:#155E93!important;
+  border-color:var(--ef-button-border)!important;
+  box-shadow:none!important;
+}
+:where(.btn.soft,.btn.secondary,.button-secondary,.boton-secundario,
+       .geo-btn:not(.primary):not(.danger):not(.warn):not(.ok),
+       .row-actions button,.icon-button):hover{
+  background:var(--ef-button-soft-hover)!important;
+  color:#0F5FA5!important;
+  border-color:#8EC8ED!important;
+}
+
+/* WhatsApp conserva significado funcional positivo. */
+.btn.whatsapp,.whatsapp-button,[data-whatsapp]{background:#0B8F6A!important;color:#fff!important;border-color:#0B8F6A!important}
+
+/* Buscadores globales: misma familia visual en tablas y toolbars. */
+:where(.search-box,.table-search){
+  display:flex!important;
+  align-items:center!important;
+  gap:8px!important;
+  min-width:min(320px,100%)!important;
+  min-height:42px!important;
+  padding:3px 11px!important;
+  border:1px solid var(--ef-search-border)!important;
+  border-radius:13px!important;
+  background:linear-gradient(180deg,#FFFFFF 0%,var(--ef-search-bg) 100%)!important;
+  box-shadow:0 4px 12px rgba(31,111,174,.055)!important;
+  transition:border-color .16s ease,box-shadow .16s ease,background .16s ease!important;
+  overflow:hidden!important;
+}
+:where(.search-box,.table-search)>span{
+  width:28px!important;height:28px!important;flex:0 0 28px!important;
+  display:grid!important;place-items:center!important;
+  border-radius:9px!important;
+  background:#E7F4FF!important;color:#1268A8!important;
+  font-size:14px!important;font-weight:900!important;
+}
+:where(.search-box,.table-search) input{
+  width:100%!important;min-width:0!important;height:36px!important;
+  padding:0!important;margin:0!important;
+  border:0!important;outline:0!important;background:transparent!important;
+  color:#17324D!important;box-shadow:none!important;font:inherit!important;
+}
+:where(.search-box,.table-search) input::placeholder{color:#7890A3!important;opacity:1!important}
+:where(.search-box,.table-search):focus-within{
+  border-color:var(--ef-search-focus)!important;
+  background:#fff!important;
+  box-shadow:0 0 0 3px rgba(56,189,248,.16),0 6px 16px rgba(31,111,174,.07)!important;
+}
+:where(.search-box,.table-search):focus-within>span{background:#DCEFFF!important;color:#0F6FCC!important}
+
+/* Botones compactos dentro de cabeceras/tablas conservan aire visual. */
+.card-header :where(.btn,.table-search),.toolbar :where(.btn,.search-box){min-height:42px}
+
+/* Tema oscuro: los botones siguen siendo azules; nunca vuelven a negro. */
+body.dark :where(.btn.primary,.boton-principal,.button-primary,.action-primary,.geo-btn.primary,
+                 button[data-primary],.alerta-asignacion-menu>footer .aceptar,.aceptar-aviso-menu),
+body.oscuro :where(.btn.primary,.boton-principal,.button-primary,.action-primary,.geo-btn.primary,
+                   button[data-primary],.alerta-asignacion-menu>footer .aceptar,.aceptar-aviso-menu),
+html.tema-oscuro-inicial body :where(.btn.primary,.boton-principal,.button-primary,.action-primary,.geo-btn.primary,
+                                     button[data-primary],.alerta-asignacion-menu>footer .aceptar,.aceptar-aviso-menu){
+  background:linear-gradient(180deg,#60A5FA 0%,#2F8DFF 100%)!important;
+  color:#fff!important;border-color:#78C5F3!important;box-shadow:none!important;
+}
+body.dark :where(.search-box,.table-search),body.oscuro :where(.search-box,.table-search),html.tema-oscuro-inicial body :where(.search-box,.table-search){
+  background:#0D2840!important;border-color:#2A5371!important;box-shadow:none!important;
+}
+body.dark :where(.search-box,.table-search)>span,body.oscuro :where(.search-box,.table-search)>span,html.tema-oscuro-inicial body :where(.search-box,.table-search)>span{background:#123D5D!important;color:#8CD3FF!important}
+body.dark :where(.search-box,.table-search) input,body.oscuro :where(.search-box,.table-search) input,html.tema-oscuro-inicial body :where(.search-box,.table-search) input{color:#F7FBFF!important;background:transparent!important}
+body.dark :where(.search-box,.table-search) input::placeholder,body.oscuro :where(.search-box,.table-search) input::placeholder,html.tema-oscuro-inicial body :where(.search-box,.table-search) input::placeholder{color:#9BBBD1!important}
+
+@media(max-width:720px){
+  :where(.search-box,.table-search){width:100%!important;min-width:0!important}
+  .card-header>.table-search{margin-top:8px!important}
+}
+
+/* R8.2.41 · Usuarios · geocodificación de domicilio */
+.efleet-user-home-geocode{align-items:center!important;gap:12px!important}
+.efleet-user-home-geocode>div{flex:1;min-width:0}
+.efleet-user-home-geocode [data-user-geocode-home]{margin-left:auto;flex:0 0 auto}
+.efleet-user-home-geocode [data-domicilio-geo-estado].ok{color:#05634A!important;font-weight:700}
+@media(max-width:640px){.efleet-user-home-geocode{flex-wrap:wrap}.efleet-user-home-geocode [data-user-geocode-home]{width:100%;margin-left:0}}
+
+/* =====================================================================
+   E-fleet R8.2.42 · HOTFIX VISUAL TEMA OSCURO / LOGIN / INDICADORES
+   Reduce negro puro, mejora contraste y unifica azul claro operativo.
+   ===================================================================== */
+:root{
+  --ef-night-bg-2:#081725!important;
+  --ef-night-surface-2:#0E2438!important;
+  --ef-night-surface-3:#13304A!important;
+  --ef-night-topbar:#1F6FAE!important;
+  --ef-night-topbar-2:#2B8AC6!important;
+  --ef-night-border-2:#3E6B8E!important;
+  --ef-night-text-2:#F8FBFF!important;
+  --ef-night-muted-2:#C6D7E6!important;
+  --ef-online:#22C55E!important;
+}
+body.dark,body.oscuro,html.tema-oscuro-inicial body:not(.dark):not(.oscuro){
+  background:var(--ef-night-bg-2)!important;
+  color:var(--ef-night-text-2)!important;
+  --ui-bg:var(--ef-night-bg-2)!important;
+  --ui-surface:var(--ef-night-surface-2)!important;
+  --ui-surface-soft:var(--ef-night-surface-3)!important;
+  --ui-surface-muted:#173852!important;
+  --ui-text:var(--ef-night-text-2)!important;
+  --ui-text-soft:var(--ef-night-muted-2)!important;
+  --ui-border:var(--ef-night-border-2)!important;
+  --ui-primary:#60A5FA!important;
+  --ui-primary-strong:#2B8AC6!important;
+  --ui-primary-soft:#173A5A!important;
+}
+body.dark :where(.card,.panel,.table-wrap,.modal,.modal-content,.form-grid,.content,.module-content,.tarjeta-acceso,.panel-acceso,.geo-card,.info-item,.toolbar,.filters-card,.connection-test-item,.connection-test-placeholder),
+body.oscuro :where(.card,.panel,.table-wrap,.modal,.modal-content,.form-grid,.content,.module-content,.tarjeta-acceso,.panel-acceso,.geo-card,.info-item,.toolbar,.filters-card,.connection-test-item,.connection-test-placeholder),
+html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.card,.panel,.table-wrap,.modal,.modal-content,.form-grid,.content,.module-content,.tarjeta-acceso,.panel-acceso,.geo-card,.info-item,.toolbar,.filters-card,.connection-test-item,.connection-test-placeholder){
+  background:var(--ef-night-surface-2)!important;
+  color:var(--ef-night-text-2)!important;
+  border-color:var(--ef-night-border-2)!important;
+  box-shadow:none!important;
+}
+body.dark :where(input,select,textarea,.field input,.field select,.field textarea,.toolbar input,.toolbar select,.manual-code input,.scanner-controls select),
+body.oscuro :where(input,select,textarea,.field input,.field select,.field textarea,.toolbar input,.toolbar select,.manual-code input,.scanner-controls select),
+html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(input,select,textarea,.field input,.field select,.field textarea,.toolbar input,.toolbar select,.manual-code input,.scanner-controls select){
+  background:#112C45!important;
+  color:#FFFFFF!important;
+  border-color:#4B7A9D!important;
+}
+body.dark :where(input::placeholder,textarea::placeholder),body.oscuro :where(input::placeholder,textarea::placeholder),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(input::placeholder,textarea::placeholder){color:#C9D8E5!important;opacity:1!important}
+body.dark :where(.barra-modular,.topbar,.barra-superior,.topbar-shell),
+body.oscuro :where(.barra-modular,.topbar,.barra-superior,.topbar-shell),
+html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.barra-modular,.topbar,.barra-superior,.topbar-shell){
+  background:linear-gradient(135deg,var(--ef-night-topbar),var(--ef-night-topbar-2))!important;
+  color:#fff!important;
+  border-bottom-color:#6FB0DA!important;
+}
+body.dark :where(.barra-modular .titulo-modular h1,.barra-modular .titulo-modular span,.topbar-title h2,.topbar-title p,.heading h1,.heading p,.card-header h3,.card-header p,.estado-rapido h3,.estado-rapido p,.field>span,.helper,.topbar small,.backend-pill,.connection-config-meta,.connection-test-item span,.table-wrap td,.table-wrap th,.table-wrap b,.table-wrap span,.info-item,.badge,.chip,.state,.sidebar-brand span,.sidebar-brand strong,.brand span,.brand strong,.hero-copy p,.mensaje-acceso p,.mensaje-acceso .etiqueta,.empresa-conectada-acceso span,.estado-empresa-pendiente span),
+body.oscuro :where(.barra-modular .titulo-modular h1,.barra-modular .titulo-modular span,.topbar-title h2,.topbar-title p,.heading h1,.heading p,.card-header h3,.card-header p,.estado-rapido h3,.estado-rapido p,.field>span,.helper,.topbar small,.backend-pill,.connection-config-meta,.connection-test-item span,.table-wrap td,.table-wrap th,.table-wrap b,.table-wrap span,.info-item,.badge,.chip,.state,.sidebar-brand span,.sidebar-brand strong,.brand span,.brand strong,.hero-copy p,.mensaje-acceso p,.mensaje-acceso .etiqueta,.empresa-conectada-acceso span,.estado-empresa-pendiente span),
+html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.barra-modular .titulo-modular h1,.barra-modular .titulo-modular span,.topbar-title h2,.topbar-title p,.heading h1,.heading p,.card-header h3,.card-header p,.estado-rapido h3,.estado-rapido p,.field>span,.helper,.topbar small,.backend-pill,.connection-config-meta,.connection-test-item span,.table-wrap td,.table-wrap th,.table-wrap b,.table-wrap span,.info-item,.badge,.chip,.state,.sidebar-brand span,.sidebar-brand strong,.brand span,.brand strong,.hero-copy p,.mensaje-acceso p,.mensaje-acceso .etiqueta,.empresa-conectada-acceso span,.estado-empresa-pendiente span){
+  color:var(--ef-night-text-2)!important;
+}
+body.dark :where(.heading p,.card-header p,.helper,.topbar small,.backend-pill,.connection-test-item span,.estado-rapido small,.empresa-conectada-acceso span,.estado-empresa-pendiente span,.hero-copy p,.mensaje-acceso p),
+body.oscuro :where(.heading p,.card-header p,.helper,.topbar small,.backend-pill,.connection-test-item span,.estado-rapido small,.empresa-conectada-acceso span,.estado-empresa-pendiente span,.hero-copy p,.mensaje-acceso p),
+html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.heading p,.card-header p,.helper,.topbar small,.backend-pill,.connection-test-item span,.estado-rapido small,.empresa-conectada-acceso span,.estado-empresa-pendiente span,.hero-copy p,.mensaje-acceso p){
+  color:var(--ef-night-muted-2)!important;
+}
+body.dark :where(.estado-modular i,.estado-modular.listo i,.backend-pill i,.empresa-conectada-acceso>i,.estado-empresa-pendiente>i,.punto-estado,.status-dot,.status-indicator,.online-indicator,.chip-online i,.chip-activo i,.en-linea i,.estado-rapido .dot,.estado-rapido .status-dot,.connection-status-dot,.estado-conexion i,.estado-empresa i),
+body.oscuro :where(.estado-modular i,.estado-modular.listo i,.backend-pill i,.empresa-conectada-acceso>i,.estado-empresa-pendiente>i,.punto-estado,.status-dot,.status-indicator,.online-indicator,.chip-online i,.chip-activo i,.en-linea i,.estado-rapido .dot,.estado-rapido .status-dot,.connection-status-dot,.estado-conexion i,.estado-empresa i),
+html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.estado-modular i,.estado-modular.listo i,.backend-pill i,.empresa-conectada-acceso>i,.estado-empresa-pendiente>i,.punto-estado,.status-dot,.status-indicator,.online-indicator,.chip-online i,.chip-activo i,.en-linea i,.estado-rapido .dot,.estado-rapido .status-dot,.connection-status-dot,.estado-conexion i,.estado-empresa i){
+  background:var(--ef-online)!important;
+  color:#FFFFFF!important;
+  box-shadow:0 0 0 4px rgba(34,197,94,.18)!important;
+}
+body.dark :where(.table-wrap thead th,.modulo-tabla thead th,.table thead th),body.oscuro :where(.table-wrap thead th,.modulo-tabla thead th,.table thead th),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.table-wrap thead th,.modulo-tabla thead th,.table thead th){background:#12304B!important;color:#F8FBFF!important;border-bottom-color:#4B7A9D!important}
+body.dark :where(.btn,.boton-principal,.button-primary,.btn.soft,.boton-icono,.abrir-menu,.search-box,.search-input-wrap),body.oscuro :where(.btn,.boton-principal,.button-primary,.btn.soft,.boton-icono,.abrir-menu,.search-box,.search-input-wrap),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.btn,.boton-principal,.button-primary,.btn.soft,.boton-icono,.abrir-menu,.search-box,.search-input-wrap){border-color:#6FAED8!important}
+body.dark :where(.presentacion-acceso,.auth-screen),body.oscuro :where(.presentacion-acceso,.auth-screen),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.presentacion-acceso,.auth-screen){
+  background:linear-gradient(145deg,#0B2338 0%,#123A5C 52%,#1F6FAE 100%)!important;
+}
+body.dark :where(.presentacion-acceso:before,.presentacion-acceso:after,.auth-screen:before,.auth-screen:after),body.oscuro :where(.presentacion-acceso:before,.presentacion-acceso:after,.auth-screen:before,.auth-screen:after),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.presentacion-acceso:before,.presentacion-acceso:after,.auth-screen:before,.auth-screen:after){background:rgba(255,255,255,.10)!important}
+body.dark :where(.resumen-acceso article,.hero-preview div),body.oscuro :where(.resumen-acceso article,.hero-preview div),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.resumen-acceso article,.hero-preview div){background:rgba(255,255,255,.10)!important;border-color:rgba(255,255,255,.20)!important}
+body.dark :where(.panel-acceso,.auth-panel),body.oscuro :where(.panel-acceso,.auth-panel),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.panel-acceso,.auth-panel){background:linear-gradient(180deg,#EAF5FF 0%,#DDF0FF 100%)!important;color:#173047!important}
+body.dark :where(.tarjeta-acceso,.auth-card),body.oscuro :where(.tarjeta-acceso,.auth-card),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.tarjeta-acceso,.auth-card){background:#FFFFFF!important;color:#173047!important;border-color:#CDE0EF!important;box-shadow:0 20px 55px rgba(16,49,75,.16)!important}
+body.dark :where(.auth-heading h2,.encabezado-formulario h2,.empresa-conectada-acceso b,.estado-empresa-pendiente b,.auth-card .field>span,.tarjeta-acceso .field>span),body.oscuro :where(.auth-heading h2,.encabezado-formulario h2,.empresa-conectada-acceso b,.estado-empresa-pendiente b,.auth-card .field>span,.tarjeta-acceso .field>span),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.auth-heading h2,.encabezado-formulario h2,.empresa-conectada-acceso b,.estado-empresa-pendiente b,.auth-card .field>span,.tarjeta-acceso .field>span){color:#173047!important}
+body.dark :where(.auth-heading p,.descripcion-conexion-inicial,.empresa-conectada-acceso span,.estado-empresa-pendiente span,.helper,.tarjeta-acceso .helper),body.oscuro :where(.auth-heading p,.descripcion-conexion-inicial,.empresa-conectada-acceso span,.estado-empresa-pendiente span,.helper,.tarjeta-acceso .helper),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.auth-heading p,.descripcion-conexion-inicial,.empresa-conectada-acceso span,.estado-empresa-pendiente span,.helper,.tarjeta-acceso .helper){color:#5F7285!important}
+body.dark :where(.auth-card input,.auth-card select,.tarjeta-acceso input,.tarjeta-acceso select,.tarjeta-acceso textarea),body.oscuro :where(.auth-card input,.auth-card select,.tarjeta-acceso input,.tarjeta-acceso select,.tarjeta-acceso textarea),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.auth-card input,.auth-card select,.tarjeta-acceso input,.tarjeta-acceso select,.tarjeta-acceso textarea){background:#F4F9FF!important;color:#173047!important;border-color:#B9D4E7!important}
+body.dark :where(.backend-pill),body.oscuro :where(.backend-pill),html.tema-oscuro-inicial body:not(.dark):not(.oscuro) :where(.backend-pill){background:#EFF8FF!important;color:#24506E!important;border-color:#CDE3F2!important}
+
+/* =====================================================================
+   E-fleet R8.2.43 · HOTFIX visual conexiones en línea / tarjeta estado rápido
+   Evita desborde del estado y resalta GPS activo en verde.
+   ===================================================================== */
+.device-card .device-title{align-items:flex-start!important;gap:8px!important;flex-wrap:wrap!important}
+.device-card .device-title>b{min-width:0;flex:1 1 150px!important;line-height:1.2!important}
+.device-card .device-title .status,
+.device-card .device-title .badge,
+.device-card .device-title [class*="status"]{
+  flex:0 1 auto!important;
+  max-width:100%!important;
+  white-space:nowrap!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+  font-size:10px!important;
+  line-height:1.2!important;
+  padding:5px 10px!important;
+  border-radius:999px!important;
+}
+.device-card.online .device-title .status,
+.device-card.online .device-title .badge{background:#ECFDF5!important;color:#166534!important;border:1px solid #86EFAC!important}
+.device-card.offline .device-title .status,
+.device-card.offline .device-title .badge{background:#FEF2F2!important;color:#991B1B!important;border:1px solid #FECACA!important}
+.device-card .session-facts{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+.device-card .session-facts>span{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;line-height:1.35!important;word-break:break-word!important}
+.device-card .session-facts>span b{display:block!important;margin-bottom:3px!important}
+.device-card .session-facts .gps-state.gps-on{background:#ECFDF5!important;border:1px solid #86EFAC!important;color:#166534!important;font-weight:800!important}
+.device-card .session-facts .gps-state.gps-off{background:#FEF2F2!important;border:1px solid #FECACA!important;color:#991B1B!important;font-weight:800!important}
+.device-card.online .device-dot{background:#22C55E!important;box-shadow:0 0 0 5px rgba(34,197,94,.18)!important}
+.connection-quick-item.online>i,.connection-state.online>i{background:#22C55E!important;box-shadow:0 0 0 4px rgba(34,197,94,.18)!important}
+.connection-quick-item.online em,.connection-state.online{color:#166534!important}
+@media(max-width:720px){
+  .device-card .session-facts{grid-template-columns:1fr!important}
+  .device-card .device-title .status,.device-card .device-title .badge{max-width:100%!important}
+}
+
+
+/* =====================================================================
+   E-fleet R8.2.44 · WEB LIGHT ONLY
+   El tema oscuro fue retirado de Web por decisión de producto.
+   ===================================================================== */
+html{color-scheme:light!important;background:#F5FBFF!important}
+html.tema-oscuro-inicial,html:has(body.dark),html:has(body.oscuro){color-scheme:light!important;background:#F5FBFF!important}
+body,body.dark,body.oscuro,html.tema-oscuro-inicial body{
+  --ui-bg:#F5FBFF!important;--ui-surface:#FFFFFF!important;--ui-surface-soft:#EFF8FF!important;--ui-surface-muted:#EAF4FC!important;
+  --ui-text:#142033!important;--ui-text-soft:#60768A!important;--ui-border:#CDE6F7!important;--ui-primary:#1F6FAE!important;--ui-primary-strong:#155A8A!important;--ui-primary-soft:#E8F5FD!important;
+  --bg:#F5FBFF!important;--surface:#FFFFFF!important;--surface-2:#F8FCFF!important;--surface-3:#EEF7FD!important;--surface-soft:#EFF8FF!important;
+  --text:#142033!important;--muted:#60768A!important;--line:#CDE6F7!important;--border:#CDE6F7!important;
+  background:#F5FBFF!important;color:#142033!important;
+}
+body.dark :where(.card,.panel,.table-wrap,.modal,.modal-content,.form-grid,.content,.module-content,.tarjeta-acceso,.panel-acceso,.geo-card,.info-item,.toolbar,.filters-card,input,select,textarea),
+body.oscuro :where(.card,.panel,.table-wrap,.modal,.modal-content,.form-grid,.content,.module-content,.tarjeta-acceso,.panel-acceso,.geo-card,.info-item,.toolbar,.filters-card,input,select,textarea),
+html.tema-oscuro-inicial body :where(.card,.panel,.table-wrap,.modal,.modal-content,.form-grid,.content,.module-content,.tarjeta-acceso,.panel-acceso,.geo-card,.info-item,.toolbar,.filters-card,input,select,textarea){
+  background:#FFFFFF!important;color:#142033!important;border-color:#CDE6F7!important;
+}
+#themeButton,#cambiarTemaMenu,#darkSwitch{display:none!important}
+/* Estado EN LÍNEA / GPS ACTIVO: nunca negro. */
+.device-card.online .device-dot,
+.connection-quick-item.online>i,
+.connection-state.online>i,
+.live-stat.online>i,
+.estado-modular.listo i,
+.backend-pill i,
+.status-indicator.online,
+.online-indicator,
+.punto-estado.online{
+  background:#16A34A!important;
+  box-shadow:0 0 0 4px rgba(22,163,74,.16)!important;
+}
+.connection-state.online,.connection-quick-item.online em,.status.ok,.status.active,.device-card.online .device-title .status{
+  color:#166534!important;
+}
+.device-card.online .device-title .status,.device-card.online .device-title .badge{
+  background:#ECFDF5!important;border:1px solid #86EFAC!important;color:#166534!important;
+}
+/* Tarjetas de sesiones: etiqueta corta y contenida. */
+.dashboard-session-list .device-card{min-width:0!important;overflow:hidden!important}
+.dashboard-session-list .device-card>div{min-width:0!important;max-width:100%!important}
+.dashboard-session-list .device-title{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;align-items:start!important;gap:8px!important;min-width:0!important}
+.dashboard-session-list .device-title>b{min-width:0!important;overflow-wrap:anywhere!important}
+.dashboard-session-list .device-title .status{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  max-width:118px!important;width:auto!important;min-width:0!important;white-space:nowrap!important;
+  overflow:hidden!important;text-overflow:ellipsis!important;padding:5px 9px!important;font-size:9px!important;
+}
+.dashboard-session-list .session-facts>span{min-width:0!important;white-space:normal!important;overflow-wrap:anywhere!important}
+.dashboard-session-list .device-card small{overflow-wrap:anywhere!important;word-break:break-word!important}
+/* Tabla conexiones: punto y texto de estado claros. */
+.connections-table-wrap .connection-state.online>i{background:#16A34A!important}
+.connections-table-wrap .connection-state.online{color:#166534!important}
+@media(max-width:900px){
+  .dashboard-session-list .device-title{grid-template-columns:1fr!important}
+  .dashboard-session-list .device-title .status{justify-self:start!important;max-width:100%!important}
+}

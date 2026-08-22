@@ -1,0 +1,154 @@
+/* ============================================================================
+   SGF · MÓDULO REPORTES WEB 4.3.27
+   Capa final EXCLUSIVA de Reportes.
+   Objetivo: gráficos contenidos, sin estilos montados y KPI reactivos a filtros.
+   ============================================================================ */
+body.modulo-reportes{overflow-x:hidden!important}
+.modulo-reportes,.modulo-reportes *{box-sizing:border-box}
+.modulo-reportes #content,.modulo-reportes .content,.modulo-reportes #kpiReportResults{
+  min-width:0!important;max-width:100%!important;overflow:visible!important
+}
+.modulo-reportes .card,.modulo-reportes .metric-card{min-width:0!important;max-width:100%!important}
+
+/* FILTROS */
+.modulo-reportes .kpi-filter-form{
+  display:grid!important;grid-template-columns:repeat(4,minmax(150px,1fr))!important;
+  gap:12px!important;align-items:end!important;width:100%!important;min-width:0!important
+}
+.modulo-reportes .kpi-filter-form>.field{min-width:0!important}
+.modulo-reportes .kpi-filter-form .form-actions{
+  grid-column:1/-1!important;display:flex!important;flex-wrap:wrap!important;gap:8px!important;align-items:center!important
+}
+.modulo-reportes .kpi-filter-status{
+  grid-column:1/-1!important;display:flex!important;align-items:center!important;gap:10px!important;
+  min-width:0!important;padding:10px 12px!important;border:1px solid var(--line)!important;
+  border-radius:12px!important;background:var(--surface-2)!important
+}
+.modulo-reportes .kpi-filter-status>i{
+  display:grid!important;place-items:center!important;width:28px!important;height:28px!important;min-width:28px!important;
+  border-radius:50%!important;background:var(--primary-soft)!important;color:var(--primary)!important;font-style:normal!important;font-weight:900!important
+}
+.modulo-reportes .kpi-filter-status>span{display:grid!important;gap:1px!important;min-width:0!important}
+.modulo-reportes .kpi-filter-status b{font-size:12px!important}
+.modulo-reportes .kpi-filter-status small{font-size:10px!important;color:var(--muted)!important;white-space:normal!important;overflow-wrap:anywhere!important}
+.modulo-reportes .kpi-filter-status.is-loading>i{animation:sgfReportSpin .8s linear infinite}
+@keyframes sgfReportSpin{to{transform:rotate(360deg)}}
+
+/* KPI CIRCULARES */
+.modulo-reportes .report-gauge-grid{
+  display:grid!important;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr))!important;
+  gap:12px!important;width:100%!important;align-items:stretch!important
+}
+.modulo-reportes .report-gauge-card{
+  width:100%!important;min-width:0!important;overflow:hidden!important;display:grid!important;
+  grid-template-columns:78px minmax(0,1fr)!important;align-items:center!important
+}
+.modulo-reportes .report-gauge-ring{
+  width:78px!important;height:78px!important;min-width:78px!important;min-height:78px!important;
+  max-width:78px!important;max-height:78px!important;aspect-ratio:1/1!important;border-radius:50%!important;flex:none!important
+}
+
+/* DASHBOARD VISUAL */
+.modulo-reportes .report-executive-dashboard,.modulo-reportes .report-executive-dashboard>*{min-width:0!important;max-width:100%!important}
+.modulo-reportes .report-visual-grid{
+  display:grid!important;grid-template-columns:minmax(0,1.45fr) minmax(340px,.85fr)!important;
+  grid-template-areas:"trend donut" "trend bars"!important;gap:16px!important;
+  width:100%!important;max-width:100%!important;align-items:start!important
+}
+.modulo-reportes .report-visual-grid>*{min-width:0!important;max-width:100%!important;width:100%!important}
+.modulo-reportes .report-chart-card{
+  display:flex!important;flex-direction:column!important;height:auto!important;min-height:0!important;
+  overflow:hidden!important;isolation:isolate!important;position:relative!important
+}
+.modulo-reportes .report-chart-card .card-header{
+  flex:0 0 auto!important;min-width:0!important;max-width:100%!important;gap:10px!important;flex-wrap:wrap!important
+}
+.modulo-reportes .report-chart-card .card-header>div{min-width:0!important;flex:1 1 210px!important}
+.modulo-reportes .report-chart-wide{grid-area:trend!important;align-self:stretch!important}
+.modulo-reportes .report-chart-donut{grid-area:donut!important;min-height:244px!important}
+.modulo-reportes .report-chart-bars{grid-area:bars!important;min-height:0!important}
+
+/* TENDENCIA */
+.modulo-reportes .report-line-chart{
+  position:relative!important;display:block!important;flex:1 1 auto!important;width:100%!important;
+  height:250px!important;min-height:250px!important;max-width:100%!important;overflow:hidden!important;padding:0!important
+}
+.modulo-reportes .report-line-chart svg{display:block!important;width:100%!important;height:100%!important;max-width:100%!important;overflow:hidden!important}
+.modulo-reportes .report-line-single-guide{stroke:currentColor;stroke-width:2;stroke-dasharray:7 7;opacity:.22;vector-effect:non-scaling-stroke}
+
+/* DONUT AUTOCONTENIDO */
+.modulo-reportes .report-chart-donut .report-donut-layout{
+  position:relative!important;display:grid!important;grid-template-columns:132px minmax(0,1fr)!important;
+  gap:14px!important;align-items:center!important;align-content:center!important;width:100%!important;
+  min-width:0!important;max-width:100%!important;min-height:156px!important;padding:4px 0 2px!important;
+  overflow:hidden!important;flex:1 1 auto!important
+}
+.modulo-reportes .report-chart-donut .report-donut-svg{
+  position:relative!important;display:grid!important;place-items:center!important;width:124px!important;height:124px!important;
+  min-width:124px!important;min-height:124px!important;max-width:124px!important;max-height:124px!important;
+  aspect-ratio:1/1!important;margin:0 auto!important;align-self:center!important;justify-self:center!important;overflow:visible!important
+}
+.modulo-reportes .report-chart-donut .report-donut-svg svg{
+  position:absolute!important;inset:0!important;display:block!important;width:124px!important;height:124px!important;
+  max-width:124px!important;max-height:124px!important;overflow:visible!important
+}
+.modulo-reportes .report-chart-donut .report-donut-svg>span{
+  position:absolute!important;inset:0!important;z-index:2!important;display:grid!important;place-content:center!important;
+  justify-items:center!important;margin:0!important;padding:0!important;text-align:center!important;pointer-events:none!important;line-height:1.08!important
+}
+.modulo-reportes .report-chart-donut .report-donut-svg>span b{display:block!important;font-size:24px!important;line-height:1!important}
+.modulo-reportes .report-chart-donut .report-donut-svg>span small{display:block!important;margin-top:3px!important;font-size:9px!important;color:var(--muted)!important}
+.modulo-reportes .report-chart-donut .report-donut-legends{
+  display:grid!important;gap:5px!important;align-content:center!important;min-width:0!important;max-width:100%!important;overflow:hidden!important
+}
+.modulo-reportes .report-chart-donut .report-donut-legend{
+  width:100%!important;min-width:0!important;max-width:100%!important;display:grid!important;
+  grid-template-columns:9px minmax(0,1fr) auto!important;gap:8px!important;align-items:center!important;padding:6px 7px!important
+}
+.modulo-reportes .report-chart-donut .report-donut-legend span{
+  min-width:0!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important
+}
+
+/* BARRAS */
+.modulo-reportes .report-chart-bars .report-bar-list{
+  display:grid!important;gap:7px!important;width:100%!important;max-width:100%!important;min-width:0!important;
+  max-height:none!important;overflow:visible!important;padding:2px 2px 4px!important;flex:1 1 auto!important
+}
+.modulo-reportes .report-chart-bars .report-bar-row{width:100%!important;max-width:100%!important;min-width:0!important}
+
+/* TABLAS */
+.modulo-reportes .table-wrap{
+  width:100%!important;max-width:100%!important;min-width:0!important;
+  overflow-x:auto!important;overflow-y:visible!important;-webkit-overflow-scrolling:touch
+}
+.modulo-reportes .table-wrap table{min-width:100%!important;max-width:none!important}
+
+/* TRAZABILIDAD REASIGNACION */
+.modulo-reportes .route-reassignment-stage,.route-timeline .route-reassignment-stage{border-radius:14px}
+.route-timeline .route-reassignment-stage i{background:#2563eb!important;box-shadow:0 0 0 3px color-mix(in srgb,#2563eb 22%,transparent)!important}
+.route-timeline .route-reassignment-transfer{display:block;margin-top:2px;color:var(--text);font-size:11px;line-height:1.35;overflow-wrap:anywhere}
+.route-timeline .route-reassignment-reason{display:block;color:var(--muted);overflow-wrap:anywhere}
+.route-timeline.has-reassignment{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))!important}
+
+@media(max-width:1180px){
+  .modulo-reportes .kpi-filter-form{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .modulo-reportes .report-visual-grid{grid-template-columns:1fr 1fr!important;grid-template-areas:"trend trend" "donut bars"!important}
+  .modulo-reportes .report-line-chart{height:240px!important;min-height:240px!important}
+}
+@media(max-width:760px){
+  .modulo-reportes .report-visual-grid{grid-template-columns:1fr!important;grid-template-areas:"trend" "donut" "bars"!important}
+  .modulo-reportes .report-chart-donut{min-height:0!important}
+  .modulo-reportes .report-line-chart{height:225px!important;min-height:225px!important}
+}
+@media(max-width:560px){
+  .modulo-reportes .kpi-filter-form{grid-template-columns:1fr!important}
+  .modulo-reportes .kpi-filter-form .form-actions{display:grid!important;grid-template-columns:1fr!important}
+  .modulo-reportes .kpi-filter-form .form-actions .btn{width:100%!important}
+  .modulo-reportes .report-gauge-card{grid-template-columns:66px minmax(0,1fr)!important;padding:12px!important}
+  .modulo-reportes .report-gauge-ring{width:64px!important;height:64px!important;min-width:64px!important;min-height:64px!important;max-width:64px!important;max-height:64px!important}
+  .modulo-reportes .report-chart-donut .report-donut-layout{grid-template-columns:1fr!important;gap:8px!important;min-height:0!important}
+  .modulo-reportes .report-chart-donut .report-donut-legends{grid-template-columns:repeat(2,minmax(0,1fr))!important;width:100%!important}
+  .modulo-reportes .report-line-chart{height:210px!important;min-height:210px!important}
+}
+@media(max-width:350px){.modulo-reportes .report-chart-donut .report-donut-legends{grid-template-columns:1fr!important}}
+@media(prefers-reduced-motion:reduce){.modulo-reportes .kpi-filter-status.is-loading>i{animation:none!important}}

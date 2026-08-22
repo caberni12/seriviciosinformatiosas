@@ -1,0 +1,86 @@
+/* E-fleet Web 4.4.28 · Autoajuste de pantallas pequeñas + radio Geocerca azul */
+
+/* GEOCERCA: el radio siempre debe ser visible y azul. */
+.mapa-circulos{z-index:3!important;overflow:visible!important}
+.mapa-radio.geocerca-domicilio{
+  border:3px solid #1677ff!important;
+  background:rgba(22,119,255,.13)!important;
+  box-shadow:0 0 0 2px rgba(255,255,255,.88) inset,0 0 0 1px rgba(22,119,255,.28),0 8px 24px rgba(22,119,255,.18)!important;
+  opacity:1!important;
+}
+.mapa-radio.geocerca-domicilio>span{
+  top:6px!important;
+  background:#0b63ce!important;
+  color:#fff!important;
+  border:1px solid rgba(255,255,255,.78)!important;
+  font-size:10px!important;
+  letter-spacing:.01em;
+  box-shadow:0 5px 16px rgba(11,99,206,.25)!important;
+}
+.mapa-radio.geocerca-domicilio.geocerca-dentro{
+  border:4px solid #006dff!important;
+  background:rgba(0,109,255,.24)!important;
+  box-shadow:0 0 0 3px rgba(255,255,255,.92) inset,0 0 0 3px rgba(0,109,255,.16),0 0 24px rgba(0,109,255,.42)!important;
+  animation:efleetGeocercaDentro 1.7s ease-in-out infinite;
+}
+.mapa-radio.geocerca-domicilio.geocerca-dentro>span{
+  background:#005bcc!important;
+  font-size:11px!important;
+  font-weight:900!important;
+}
+@keyframes efleetGeocercaDentro{
+  50%{box-shadow:0 0 0 3px rgba(255,255,255,.92) inset,0 0 0 8px rgba(0,109,255,.09),0 0 32px rgba(0,109,255,.48)}
+}
+.mapa-marcador.geocerca-gps-dentro>i{
+  background:#0676ff!important;color:#fff!important;
+  box-shadow:0 0 0 6px rgba(6,118,255,.18),0 8px 18px rgba(6,118,255,.28)!important;
+}
+.geocerca-estado-dentro{display:block!important;margin-top:5px!important;padding:7px 9px!important;border-radius:10px!important;background:#e9f3ff!important;color:#0757b5!important;border:1px solid #a7cdfc!important;font-weight:700!important}
+.map-status-legend .geofence{border-color:#1677ff!important;background:rgba(22,119,255,.18)!important}
+
+/* AUTOAJUSTE: notebooks y computadores con poca altura/ancho. No usa zoom CSS. */
+@media (max-width:1440px), (max-height:850px){
+  html{font-size:15px}
+  .content{padding:18px 20px!important}
+  .topbar{min-height:64px!important;padding:9px 18px!important}
+  .topbar-title h2{font-size:1.25rem!important}
+  .card{padding:16px!important;border-radius:16px!important}
+  .card-header{gap:10px!important;margin-bottom:12px!important}
+  .metric-card{padding:14px!important}
+  .btn{min-height:40px!important;padding:9px 13px!important}
+  .field input,.field select,.field textarea{min-height:42px!important;padding:9px 11px!important}
+  .fleet-map{min-height:360px!important}
+  table th,table td{padding:10px 9px!important}
+}
+@media (max-width:1280px), (max-height:760px){
+  html{font-size:14px}
+  .content{padding:14px 16px!important}
+  .topbar{min-height:58px!important;padding:7px 14px!important}
+  .sidebar{width:min(245px,82vw)!important}
+  .card{padding:13px!important;border-radius:14px!important}
+  .grid,.dashboard-grid,.kpi-grid,.metrics-grid{gap:12px!important}
+  .btn{min-height:37px!important;padding:7px 11px!important;font-size:.92rem!important}
+  .field input,.field select,.field textarea{min-height:39px!important;font-size:.95rem!important}
+  .fleet-map{min-height:320px!important}
+  .modal{max-height:92vh!important}
+  table th,table td{padding:8px 7px!important;font-size:.9rem!important}
+}
+@media (max-height:680px) and (min-width:900px){
+  html{font-size:13.5px}
+  .content{padding-top:10px!important;padding-bottom:12px!important}
+  .topbar{min-height:54px!important}
+  .fleet-map{min-height:280px!important;max-height:58vh!important}
+  .card{padding:12px!important}
+  .heading,.page-heading{margin-bottom:12px!important}
+}
+
+/* En pantallas realmente móviles conservamos tamaño táctil. */
+@media (max-width:760px){
+  html{font-size:16px}
+  .content{padding:12px!important}
+  .btn{min-height:44px!important}
+  .field input,.field select,.field textarea{min-height:46px!important}
+  .fleet-map{min-height:360px!important}
+  .mapa-radio.geocerca-domicilio>span{font-size:9px!important;max-width:160px;overflow:hidden;text-overflow:ellipsis}
+}
+@media (prefers-reduced-motion:reduce){.mapa-radio.geocerca-domicilio.geocerca-dentro{animation:none!important}}
