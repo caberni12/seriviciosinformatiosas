@@ -1,0 +1,10 @@
+E-FLEET WEB 4.4.18 · R8.2.69
+
+CORRECCIÓN TARJETA DE AVISO
+===========================
+- Si una ruta cancelada deja de existir en la instantánea real del servidor,
+  la tarjeta Aceptar se retira inmediatamente.
+- No espera las lecturas estabilizadas de la campanita.
+- La cola de tarjetas también elimina avisos revocados.
+- Si el usuario toca Aceptar en la carrera de sincronización y API devuelve
+  VENCIDA=true, la Web lo trata como cierre válido, no como error.

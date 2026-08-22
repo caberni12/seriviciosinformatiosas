@@ -1,0 +1,11 @@
+E-FLEET WEB 4.4.19 · R8.2.72
+
+CAMPANITAS
+==========
+- Notificaciones y Alertas quedan disponibles para todo usuario autenticado.
+- La Web deja de esconder avisos por una matriz local de permisos desactualizada.
+- La respuesta de avisosPendientes del servidor es la autoridad.
+- Personal = solo destinatario.
+- Global = usuarios de la misma empresa.
+- El interruptor "Pausar avisos fuera de la app" NO oculta la bandeja interna.
+- Assets 4419 para evitar caché de la versión anterior.
