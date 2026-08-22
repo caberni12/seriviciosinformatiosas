@@ -1,0 +1,15 @@
+E-FLEET WEB 4.4.24 · R8.2.77
+
+MÓDULO CONFIGURACIÓN
+====================
+- Bloqueado por defecto para todos.
+- Administrador/Gerencia/SYSADMIN NO lo obtienen por rol.
+- Solo se muestra si la sesión trae autorización expresa de cPanel.
+- Si cPanel revoca el acceso mientras está abierto, Web actualiza la sesión
+  y vuelve al panel principal.
+- Una navegación directa a settings también se bloquea.
+- El módulo Empresa sigue siendo independiente.
+
+La autorización se recibe mediante:
+PUEDE_ACCEDER_CONFIGURACION /
+CONFIGURACION_CPANEL_AUTORIZADA.

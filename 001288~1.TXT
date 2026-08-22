@@ -1,0 +1,7 @@
+E-FLEET WEB 4.4.25 · R8.2.78 · CONFIGURACIÓN CPANEL LIVE FIX
+
+- Al tocar Configuración, Web consulta miSesion al servidor antes de abrir.
+- Si cPanel habilitó al usuario, abre sin cerrar sesión.
+- Si cPanel lo bloqueó, no abre aunque el navegador tenga una sesión antigua.
+- Nuevo asset físico sgf-shell.4425.js para evitar caché de la versión anterior.
+- sgf-module.4425.js conserva el resto del comportamiento del proyecto.

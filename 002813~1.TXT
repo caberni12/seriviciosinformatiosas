@@ -1,0 +1,23 @@
+E-FLEET WEB 4.4.16 · HOTFIX GEOCERCA
+
+ERROR CORREGIDO
+===============
+"No se pudo cargar el módulo"
+"asegurarEmpresaMapa is not defined"
+
+CAUSA
+=====
+Geocerca llamaba asegurarEmpresaMapa(...) al recibir resumenGeocerca,
+pero sgf-module.4415.js no tenía esa función disponible en su ámbito.
+
+CORRECCIÓN
+==========
+- se agrega asegurarEmpresaMapa(...) dentro de sgf-module;
+- valida empresa_id de la respuesta contra empresa_id de la sesión;
+- si el backend no expone empresaId, deja continuar porque flotas-api ya
+  filtra con ctx.empresa.id;
+- si la respuesta declara otra empresa, bloquea con EMPRESA_ID_NO_COINCIDE;
+- se mantiene KPI, ranking, filtros y mapa de Geocerca;
+- se usa asset nuevo sgf-module.4416.js para evitar caché del JS defectuoso.
+
+No se modifica Android, SQL ni la lógica del KPI.
