@@ -1,0 +1,9 @@
+E-FLEET WEB 4.4.24 · R8.2.77
+
+CONFIGURACIÓN
+=============
+- El menú Configuración NO aparece por rol.
+- Requiere PUEDE_USAR_CONFIGURACION=true emitido por flotas-api/cPanel.
+- Si alguien intenta abrir configuracion.html directamente, vuelve al Panel
+  y muestra "Configuración bloqueada".
+- El módulo Empresa permanece separado y conserva sus permisos normales.
