@@ -1,0 +1,7 @@
+E-FLEET WEB 4.4.26 · R8.2.85
+
+Corrección de avisos administrativos:
+- Administrador y Gerencia vuelven a ver toast normal para nuevas Notificaciones/Alertas.
+- Se conserva la campanita y el Centro de Notificaciones.
+- No se convierten los avisos administrativos en tarjetas emergentes de asignación.
+- Geo Local y Geocerca aparecen como avisos normales y quedan disponibles en bandeja.

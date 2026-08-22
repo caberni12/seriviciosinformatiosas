@@ -1,0 +1,46 @@
+E-FLEET R8.2.85 · GEO LOCAL + GEOCERCA · AVISOS ADMIN/GERENCIA
+
+VALIDACIONES OK
+
+01 OK · flotas-api 4.4.15
+02 OK · TypeScript parse sin errores
+03 OK · destinatarios por rol canónico normalizeRole
+04 OK · destinatarios siempre filtrados por empresa_id
+04B OK · estado de usuario activo normalizado (ACTIVO/ACTIVE), sin depender de mayúsculas/minúsculas
+05 OK · Admin + Gerencia incluidos en Geo Local
+06 OK · SYSADMIN + Admin + Gerencia incluidos en Geocerca
+07 OK · envío por receptor aislado: un receptor no bloquea al resto
+08 OK · Geo Local crea Notificación y Alerta
+09 OK · Geocerca crea Notificación y Alerta
+10 OK · categoría GEOCERCA_DOMICILIO preservada
+11 OK · GPS válido sigue ejecutando processHomeGeofence
+12 OK · SQL conserva transición física FUERA→DENTRO
+13 OK · SQL exige horario/turno laboral antes de contabilizar entrada
+14 OK · SQL conserva ENTRADA_DOMICILIO_EN_TURNO
+15 OK · SQL mantiene empresa_id en conductor/usuario/eventos
+16 OK · Android 3.5.26
+17 OK · Android versionCode 466
+18 OK · Geo Local administrativo reconocido por Android
+19 OK · Geocerca administrativa reconocida por Android
+20 OK · avisos Geo administrativos no se silencian por pausa general
+21 OK · prioridad Android alta para Geo Local/Geocerca administrativos
+22 OK · Admin/Gerencia mantienen polling de avisos sin GPS habilitado
+23 OK · modo solo avisos no solicita ubicación del Admin/Gerencia
+24 OK · foreground service usa dataSync en modo solo avisos
+25 OK · foreground service conserva location si GPS/ruta está activo
+26 OK · reinicio/actualización reactiva avisos Admin/Gerencia sin exigir GPS
+27 OK · MainActivity reactiva servicio para Admin/Gerencia
+28 OK · no quedan llamadas al método antiguo de pausa sin parámetro
+29 OK · AndroidManifest XML válido
+30 OK · Java modificados con estructura de llaves balanceada
+31 OK · Web 4.4.26 carga sgf-shell.4426.js
+32 OK · Web JavaScript parse sin errores
+33 OK · Web ya no bloquea toast por ser Admin/Gerencia
+34 OK · tarjetas emergentes de asignación administrativas siguen bloqueadas
+35 OK · cPanel 2.6.0 no requiere modificación para este hotfix
+36 OK · BDEMPRESAFLOTA 1.4.7 no requiere modificación
+37 OK · no hay SQL destructivo nuevo
+38 OK · correcciones R8.2.84 previas se preservan como base
+
+NOTA DE COMPILACIÓN ANDROID
+Se validaron versionado, Manifest, referencias de métodos y estructura Java. La compilación Gradle completa depende del wrapper/SDK disponible en el equipo de compilación; no se declara aquí como ejecutada hasta completar ese paso.
