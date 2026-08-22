@@ -1,0 +1,29 @@
+E-FLEET WEB 4.4.20 · R8.2.73
+CENTRO DE NOTIFICACIONES · SCROLL CORREGIDO
+
+PROBLEMA
+========
+El Centro de notificaciones tenía scrolls anidados:
+- scroll general del modal;
+- scroll independiente dentro de Notificaciones;
+- scroll independiente dentro de Alertas.
+
+Esto podía impedir llegar visualmente hasta el final y esconder los botones
+"Ver/Abrir notificaciones" y "Ver/Abrir alertas", especialmente en pantallas
+pequeñas.
+
+CORRECCIÓN
+==========
+- Un único scroll vertical: #modalBody.
+- Las listas internas ya NO tienen scroll propio.
+- El scroll llega completamente al final.
+- Espacio inferior compatible con safe-area de teléfonos.
+- Botones "Ver notificaciones" y "Ver alertas" fijos/sticky arriba.
+- Se conservan también accesos al final de cada tarjeta.
+- Altura controlada con dvh/svh para navegador móvil.
+- Scroll suave nativo iOS/Android.
+- Limpieza automática de clases al cerrar el modal.
+- Assets nuevos 4420 para evitar caché.
+
+ESTE HOTFIX ES SOLO WEB.
+No requiere flotas-api, Android ni SQL.

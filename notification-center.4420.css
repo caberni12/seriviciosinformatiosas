@@ -1,0 +1,141 @@
+/* E-fleet Web 4.4.20 · R8.2.73
+   Centro de notificaciones: un solo scroll real + acciones siempre visibles. */
+
+.modal-backdrop.notification-center-open{
+  overflow:hidden!important;
+  padding:clamp(8px,2vw,18px)!important;
+}
+
+.modal-backdrop.notification-center-open .notification-center-modal{
+  display:flex!important;
+  flex-direction:column!important;
+  width:min(980px,100%)!important;
+  max-width:980px!important;
+  height:min(92dvh,900px)!important;
+  max-height:min(92dvh,900px)!important;
+  overflow:hidden!important;
+  padding:0!important;
+}
+
+.modal-backdrop.notification-center-open .notification-center-modal>.modal-header{
+  flex:0 0 auto;
+  margin:0!important;
+  padding:18px 20px!important;
+  position:relative!important;
+  top:auto!important;
+  z-index:8;
+}
+
+.modal-backdrop.notification-center-open .notification-center-modal>#modalBody{
+  flex:1 1 auto;
+  min-height:0!important;
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+  overscroll-behavior-y:contain;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-gutter:stable;
+  padding:16px 20px max(30px,env(safe-area-inset-bottom))!important;
+  scroll-padding-bottom:40px;
+}
+
+/* El problema original eran scrolls anidados. El Centro usa únicamente
+   el scroll de #modalBody. */
+.modal-backdrop.notification-center-open .notification-dashboard .notification-list{
+  max-height:none!important;
+  overflow:visible!important;
+  padding-right:0!important;
+  margin-bottom:12px!important;
+}
+
+.modal-backdrop.notification-center-open .notification-dashboard{
+  align-items:start;
+  margin-bottom:18px!important;
+}
+
+.modal-backdrop.notification-center-open .notification-dashboard>.card{
+  min-width:0;
+  overflow:visible!important;
+}
+
+/* Los accesos principales permanecen siempre visibles aunque haya
+   muchas notificaciones. */
+.notification-center-actions{
+  position:sticky;
+  top:0;
+  z-index:7;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin:-2px 0 14px;
+  padding:2px 0 12px;
+  background:linear-gradient(
+    180deg,
+    var(--surface,#fff) 0%,
+    var(--surface,#fff) 78%,
+    color-mix(in srgb,var(--surface,#fff) 82%,transparent) 100%
+  );
+}
+
+.notification-center-actions .btn{
+  min-height:44px;
+  width:100%;
+  white-space:normal;
+}
+
+.notification-center-bottom-action{
+  margin-top:4px;
+}
+
+/* Dejar espacio real al final para que el último botón pueda pasar por
+   encima de la barra inferior del navegador/teléfono. */
+.modal-backdrop.notification-center-open .notification-dashboard:last-child{
+  padding-bottom:max(18px,env(safe-area-inset-bottom));
+}
+
+@media(max-width:700px){
+  .modal-backdrop.notification-center-open{
+    align-items:flex-end!important;
+    padding:0!important;
+  }
+
+  .modal-backdrop.notification-center-open .notification-center-modal{
+    width:100%!important;
+    height:min(94dvh,94svh)!important;
+    max-height:min(94dvh,94svh)!important;
+    border-radius:20px 20px 0 0!important;
+  }
+
+  .modal-backdrop.notification-center-open .notification-center-modal>.modal-header{
+    padding:14px 14px!important;
+  }
+
+  .modal-backdrop.notification-center-open .notification-center-modal>#modalBody{
+    padding:12px 14px max(42px,calc(env(safe-area-inset-bottom) + 20px))!important;
+  }
+
+  .notification-center-actions{
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin:0 0 12px;
+    padding:0 0 10px;
+  }
+
+  .notification-center-actions .btn{
+    min-height:42px;
+    padding-left:8px;
+    padding-right:8px;
+    font-size:12px;
+  }
+
+  .modal-backdrop.notification-center-open .notification-dashboard{
+    grid-template-columns:1fr!important;
+  }
+}
+
+@media(max-height:560px) and (orientation:landscape){
+  .modal-backdrop.notification-center-open .notification-center-modal{
+    height:100dvh!important;
+    max-height:100dvh!important;
+    border-radius:0!important;
+  }
+}
