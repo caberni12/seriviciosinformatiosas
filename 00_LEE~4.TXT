@@ -1,23 +1,14 @@
-E-FLEET WEB 4.4.15 · R8.2.66
+E-FLEET WEB 4.4.23 · R8.2.76
 
-GEOCERCA
-========
-Debajo del mapa se agrega:
-- KPI circular % personas con visita;
-- KPI circular % actualmente en domicilio;
-- total de visitas;
-- tiempo acumulado + promedio;
-- filtro Desde/Hasta;
-- filtro Persona;
-- filtro Rol;
-- rápidos Día / 7 días / Mes / Año;
-- gráfico visitas por día;
-- gráfico tiempo en domicilio por persona;
-- ranking de permanencia;
-- tabla de eventos de entrada.
+Se corrigió exactamente la tarjeta individual de cada Local de la
+trazabilidad de Geo Admin.
 
-Población:
-todos los roles operativos de la empresa, excluyendo:
-ROL-ADMIN, ROL-GERENCIA, ROL-SYSADMIN.
+CERRADA:
+Local + estado + llegada + salida + Ver información.
 
-Todo se obtiene desde flotas-api con empresa_id de la sesión.
+ABIERTA:
+dirección, permanencia, traslado, cierre fuera de ubicación, coordenadas,
+distancia, evidencia, visitas detectadas, línea de tiempo y acciones.
+
+Una sola tarjeta de Local puede quedar abierta dentro de cada trazabilidad.
+No cambia Android, flotas-api ni SQL.
