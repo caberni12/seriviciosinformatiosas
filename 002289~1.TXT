@@ -1,0 +1,14 @@
+E-FLEET WEB 4.4.23 · R8.2.76
+
+Se corrigió exactamente la tarjeta individual de cada Local de la
+trazabilidad de Geo Admin.
+
+CERRADA:
+Local + estado + llegada + salida + Ver información.
+
+ABIERTA:
+dirección, permanencia, traslado, cierre fuera de ubicación, coordenadas,
+distancia, evidencia, visitas detectadas, línea de tiempo y acciones.
+
+Una sola tarjeta de Local puede quedar abierta dentro de cada trazabilidad.
+No cambia Android, flotas-api ni SQL.

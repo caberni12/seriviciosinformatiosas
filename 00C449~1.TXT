@@ -1,0 +1,16 @@
+E-FLEET WEB 4.4.13 · R8.2.63
+
+GEO / GEOCERCA
+==============
+- Gerencia: los avisos Geo administrativos aparecen como emergentes.
+- Administración: recibe la misma información en campanita/bandeja,
+  pero sin toast/tarjeta emergente.
+- La notificación administrativa normal usa el prefijo:
+  GEO_LOCAL_ADMIN_NOTIFICACION_
+- La notificación emergente de Gerencia usa:
+  GEO_LOCAL_GERENCIA_EMERGENTE_
+
+Se conserva Web 4.4.12:
+- avisos siempre activos;
+- sin switches de bloqueo;
+- Alertas/Notificaciones con botones arriba.

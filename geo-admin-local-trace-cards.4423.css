@@ -1,0 +1,245 @@
+/* E-fleet Web 4.4.23 · R8.2.76
+   Geo Admin: cada Local de la trazabilidad se muestra compacto. */
+
+.geo-route-timeline>div.geo-local-trace-card,
+.geo-route-timeline>div.geo-local-trace-card.geo-trace-autoheight{
+  min-height:0!important;
+  height:auto!important;
+  overflow:visible!important;
+}
+
+/* Tarjeta cerrada = fila pequeña */
+.geo-route-timeline>div.geo-local-trace-card:not(.geo-local-trace-expanded){
+  display:grid!important;
+  grid-template-columns:28px minmax(0,1fr)!important;
+  align-items:center!important;
+  justify-items:stretch!important;
+  gap:7px!important;
+  min-height:52px!important;
+  max-height:58px!important;
+  padding:6px 8px!important;
+  border-width:1px!important;
+  border-radius:10px!important;
+  text-align:left!important;
+  box-shadow:0 2px 6px rgba(15,23,42,.04)!important;
+}
+
+.geo-route-timeline>div.geo-local-trace-card>i{
+  position:static!important;
+  width:24px!important;
+  height:24px!important;
+  min-width:24px!important;
+  border-width:2px!important;
+  font-size:11px!important;
+}
+
+.geo-local-trace-content{
+  min-width:0!important;
+  width:100%!important;
+  display:block!important;
+}
+
+.geo-local-trace-summary{
+  display:grid;
+  grid-template-columns:minmax(150px,1fr) auto auto;
+  align-items:center;
+  gap:6px;
+  min-width:0;
+}
+
+.geo-local-trace-title{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  min-width:0;
+}
+
+.geo-local-trace-title>b{
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  color:#0f172a!important;
+  font-size:.8rem!important;
+  line-height:1.05!important;
+}
+
+.geo-local-trace-title .geo-stage-status{
+  flex:0 0 auto;
+  padding:3px 6px!important;
+  border-radius:999px!important;
+  font-size:.59rem!important;
+  line-height:1!important;
+}
+
+.geo-local-trace-mini-times{
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+
+.geo-local-trace-mini-times>span{
+  display:flex!important;
+  align-items:baseline;
+  gap:3px;
+  padding:3px 5px!important;
+  border:1px solid #e2e8f0;
+  border-radius:7px;
+  background:#fff;
+  white-space:nowrap;
+}
+
+.geo-local-trace-mini-times small{
+  font-size:.54rem!important;
+  color:#64748b!important;
+  font-weight:800!important;
+  text-transform:uppercase;
+}
+
+.geo-local-trace-mini-times strong{
+  font-size:.67rem!important;
+  color:#0f172a!important;
+  line-height:1!important;
+}
+
+.geo-local-trace-toggle{
+  min-width:88px!important;
+  min-height:26px!important;
+  width:auto!important;
+  padding:3px 6px!important;
+  border-radius:7px!important;
+  font-size:.6rem!important;
+  line-height:1!important;
+  white-space:nowrap!important;
+}
+
+.geo-local-trace-detail[hidden]{display:none!important}
+
+/* Al abrir vuelve toda la información */
+.geo-route-timeline>div.geo-local-trace-card.geo-local-trace-expanded{
+  display:grid!important;
+  grid-template-columns:30px minmax(0,1fr)!important;
+  align-items:start!important;
+  justify-items:stretch!important;
+  gap:8px!important;
+  min-height:0!important;
+  padding:10px!important;
+  border-radius:12px!important;
+  text-align:left!important;
+  overflow:visible!important;
+}
+
+.geo-local-trace-expanded .geo-local-trace-summary{
+  grid-template-columns:minmax(160px,1fr) auto auto;
+  padding-bottom:7px;
+  border-bottom:1px solid #e5edf4;
+}
+
+.geo-local-trace-detail{
+  margin-top:8px;
+  width:100%;
+  min-width:0;
+}
+
+.geo-local-trace-detail .geo-stage-address{
+  display:block!important;
+  margin:0 0 7px!important;
+  color:#475569!important;
+  font-size:.75rem!important;
+  line-height:1.3!important;
+}
+
+/* Incluso abierta, los 4 bloques ocupan bastante menos */
+.geo-local-trace-detail .geo-stage-times{
+  grid-template-columns:repeat(4,minmax(95px,1fr))!important;
+  gap:6px!important;
+  margin:6px 0 8px!important;
+}
+
+.geo-local-trace-detail .geo-stage-times>span{
+  min-height:0!important;
+  padding:6px 7px!important;
+  border-radius:8px!important;
+}
+
+.geo-local-trace-detail .geo-stage-times small{font-size:.62rem!important}
+.geo-local-trace-detail .geo-stage-times strong{font-size:.84rem!important}
+.geo-local-trace-detail .geo-stage-times em{font-size:.61rem!important}
+
+/* Recuadro naranja también más compacto */
+.geo-local-trace-detail .geo-close-outside{
+  gap:3px!important;
+  margin:6px 0!important;
+  padding:6px 8px!important;
+  border-radius:8px!important;
+}
+.geo-local-trace-detail .geo-close-outside b{font-size:.7rem!important}
+.geo-local-trace-detail .geo-close-outside span{
+  font-size:.65rem!important;
+  line-height:1.25!important;
+}
+
+.geo-local-trace-detail-actions,
+.geo-local-trace-admin-actions{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:5px;
+  margin:6px 0;
+}
+
+.geo-local-trace-observation{
+  display:block;
+  margin-top:5px;
+  font-size:.67rem!important;
+  color:#64748b!important;
+}
+
+/* Neutraliza el min-height 220/250 px de estilos anteriores */
+.geo-route-timeline>div.geo-local-trace-card.geo-trace-autoheight:not(.geo-local-trace-expanded){
+  min-height:52px!important;
+  max-height:58px!important;
+}
+
+@media(max-width:760px){
+  .geo-route-timeline>div.geo-local-trace-card:not(.geo-local-trace-expanded){
+    grid-template-columns:24px minmax(0,1fr)!important;
+    min-height:62px!important;
+    max-height:none!important;
+    padding:6px!important;
+  }
+
+  .geo-route-timeline>div.geo-local-trace-card>i{
+    width:21px!important;
+    height:21px!important;
+    min-width:21px!important;
+    font-size:9px!important;
+  }
+
+  .geo-local-trace-summary{
+    grid-template-columns:minmax(0,1fr) auto!important;
+    gap:4px!important;
+  }
+
+  .geo-local-trace-mini-times{
+    grid-column:1 / -1;
+    order:3;
+  }
+
+  .geo-local-trace-toggle{
+    min-width:56px!important;
+    min-height:24px!important;
+    padding:3px 5px!important;
+    font-size:.57rem!important;
+  }
+
+  .geo-local-trace-detail .geo-stage-times{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+}
+
+@media(max-width:480px){
+  .geo-local-trace-detail .geo-stage-times{
+    grid-template-columns:1fr!important;
+  }
+}
