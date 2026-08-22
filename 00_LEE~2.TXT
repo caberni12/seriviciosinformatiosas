@@ -1,0 +1,44 @@
+E-FLEET WEB 4.4.21 · R8.2.74
+GEO ADMIN · TARJETAS DE TRAZABILIDAD COMPACTAS
+
+CAMBIO
+======
+Las tarjetas de trazabilidad de Geo Admin dejan de mostrarse completamente
+abiertas por defecto.
+
+VISTA CERRADA
+=============
+Muestra solamente:
+- fecha;
+- Supervisor;
+- estado;
+- visitados / asignados;
+- cantidad en visita;
+- visitas físicas detectadas;
+- coincidencias del filtro cuando corresponde;
+- botón "Ver información".
+
+AL PULSAR "VER INFORMACIÓN"
+===========================
+Se despliega TODA la información anterior:
+- movilidad;
+- KPIs;
+- primera llegada;
+- última salida;
+- permanencia;
+- traslado;
+- visitas detectadas;
+- botones administrativos;
+- línea de tiempo por Local;
+- evidencia;
+- reasignar / cancelar / eliminar cuando corresponda.
+
+ACORDEÓN
+========
+Solo una tarjeta queda abierta a la vez. Al abrir otra, la anterior se
+cierra automáticamente.
+
+ALCANCE
+=======
+Solo Web / Geo Planificador Admin.
+No modifica Geo Supervisor, Android, flotas-api ni SQL.
